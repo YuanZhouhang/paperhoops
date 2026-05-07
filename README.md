@@ -181,7 +181,9 @@ Example simulation request:
 
 ## Developer
 
-Yutian
+- Developer: Yutian
+- Hupu ID: 予田
+- Xiaohongshu: 1670174606
 
 ## Disclaimer
 
