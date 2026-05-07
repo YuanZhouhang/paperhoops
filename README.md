@@ -20,11 +20,11 @@ Paper Hoops is an NBA roster-movement and trade-impact simulation website. It co
 - **Mobile layout**: use a compact mobile trade workflow designed for smaller screens.
 - **Chinese / English UI**: switch page text, dynamic labels, dialogs, and poster copy between Chinese and English.
 
-![Trade simulator workflow](docs/readme/trade-simulator.svg)
+![Trade simulator workflow](docs/readme/trade-simulator-en.svg)
 
-![Player and team data tabs](docs/readme/data-tables.svg)
+![Player and team data tabs](docs/readme/data-tables-en.svg)
 
-![Poster preview and download flow](docs/readme/poster-preview.svg)
+![Poster preview and download flow](docs/readme/poster-preview-en.svg)
 
 ## Tech Stack
 

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Player and team data tables</title>
+  <desc id="desc">Player and team data tabs with sortable tables and compact mobile columns.</desc>
+  <rect width="1280" height="720" fill="#f2eee7"/>
+  <text x="72" y="76" font-family="Arial, sans-serif" font-size="44" font-weight="900" fill="#1d1b17">Player And Team Data</text>
+  <text x="72" y="116" font-family="Arial, sans-serif" font-size="20" fill="#756e66">Current-season data with sorting, pagination, conference grouping, and compact mobile columns.</text>
+  <g transform="translate(72 170)">
+    <rect width="540" height="430" rx="26" fill="#fffaf2" stroke="#d7c8b6"/>
+    <text x="28" y="48" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#7c2314">Player Data</text>
+    <g transform="translate(28 80)">
+      <rect width="484" height="50" rx="12" fill="#7c2314"/>
+      <text x="22" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">Player</text>
+      <text x="210" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">PPG</text>
+      <text x="292" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">TS%</text>
+      <text x="376" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">BPM</text>
+      <g font-family="Arial, sans-serif" font-size="16" fill="#1d1b17">
+        <rect y="64" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="94" font-weight="900">Shai Gilgeous-Alexander</text><text x="216" y="94">32.4</text><text x="292" y="94">.640</text><text x="376" y="94">8.9</text>
+        <rect y="124" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="154" font-weight="900">Nikola Jokic</text><text x="216" y="154">29.8</text><text x="292" y="154">.668</text><text x="376" y="154">12.1</text>
+        <rect y="184" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="214" font-weight="900">Luka Doncic</text><text x="216" y="214">28.2</text><text x="292" y="214">.588</text><text x="376" y="214">7.5</text>
+      </g>
+    </g>
+    <text x="28" y="372" font-family="Arial, sans-serif" font-size="17" fill="#756e66">Box stats, shooting efficiency, salary, and sourced impact metrics.</text>
+  </g>
+  <g transform="translate(668 170)">
+    <rect width="540" height="430" rx="26" fill="#fffaf2" stroke="#d7c8b6"/>
+    <text x="28" y="48" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#7c2314">Team Data</text>
+    <g transform="translate(28 80)">
+      <rect width="484" height="50" rx="12" fill="#7c2314"/>
+      <text x="22" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">Team</text>
+      <text x="190" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">Wins</text>
+      <text x="274" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">Off Rtg</text>
+      <text x="378" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#fff">Net</text>
+      <g font-family="Arial, sans-serif" font-size="16" fill="#1d1b17">
+        <rect y="64" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="94" font-weight="900">Thunder</text><text x="204" y="94">64</text><text x="290" y="94">121.4</text><text x="386" y="94">+12.8</text>
+        <rect y="124" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="154" font-weight="900">Celtics</text><text x="204" y="154">61</text><text x="290" y="154">120.1</text><text x="386" y="154">+10.6</text>
+        <rect y="184" width="484" height="48" rx="10" fill="#ffffff" stroke="#eadccb"/>
+        <text x="22" y="214" font-weight="900">Nuggets</text><text x="204" y="214">56</text><text x="290" y="214">118.8</text><text x="386" y="214">+7.9</text>
+      </g>
+    </g>
+    <text x="28" y="372" font-family="Arial, sans-serif" font-size="17" fill="#756e66">Conference tables show record, pace, offensive rating, defensive rating, and net rating.</text>
+  </g>
+</svg>
