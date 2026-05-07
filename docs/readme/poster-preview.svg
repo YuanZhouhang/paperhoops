@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Poster preview before download</title>
+  <desc id="desc">Poster generation flow showing preview first and optional user download.</desc>
+  <rect width="1280" height="720" fill="#f2eee7"/>
+  <text x="72" y="76" font-family="Arial, sans-serif" font-size="44" font-weight="900" fill="#1d1b17">海报预览与下载</text>
+  <text x="72" y="116" font-family="Arial, sans-serif" font-size="20" fill="#756e66">点击生成后先展示预览，用户确认效果后再下载 PNG。</text>
+  <g transform="translate(112 160)">
+    <rect width="396" height="470" rx="30" fill="#fffaf2" stroke="#d7c8b6"/>
+    <text x="30" y="50" font-family="Arial, sans-serif" font-size="26" font-weight="900" fill="#7c2314">TRADE SNAPSHOT</text>
+    <text x="30" y="98" font-family="Arial, sans-serif" font-size="34" font-weight="900" fill="#1d1b17">OKC 2026-27</text>
+    <rect x="30" y="130" width="336" height="120" rx="18" fill="#ffffff" stroke="#d7c8b6"/>
+    <text x="52" y="168" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#1d1b17">Wins</text>
+    <text x="290" y="168" text-anchor="end" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#7c2314">+3</text>
+    <text x="52" y="204" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#1d1b17">Net Rating</text>
+    <text x="290" y="204" text-anchor="end" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#7c2314">+1.8</text>
+    <g transform="translate(30 288)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#7c2314">Incoming</text>
+      <circle cx="36" cy="58" r="32" fill="#d7c8b6"/>
+      <text x="86" y="54" font-family="Arial, sans-serif" font-size="20" font-weight="900" fill="#1d1b17">Player A</text>
+      <text x="86" y="80" font-family="Arial, sans-serif" font-size="15" fill="#756e66">24.1 pts · $32M</text>
+    </g>
+  </g>
+  <g transform="translate(640 170)">
+    <rect width="470" height="400" rx="30" fill="#fffaf2" stroke="#d7c8b6"/>
+    <text x="30" y="54" font-family="Arial, sans-serif" font-size="30" font-weight="900" fill="#1d1b17">海报预览</text>
+    <text x="30" y="88" font-family="Arial, sans-serif" font-size="18" fill="#756e66">检查海报效果后，可选择是否下载图片。</text>
+    <rect x="50" y="124" width="190" height="245" rx="18" fill="#ffffff" stroke="#d7c8b6"/>
+    <rect x="74" y="148" width="142" height="194" rx="14" fill="#efe3d2"/>
+    <rect x="270" y="180" width="152" height="54" rx="27" fill="#7c2314"/>
+    <text x="346" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#fff">下载图片</text>
+    <rect x="270" y="254" width="152" height="54" rx="27" fill="#ffffff" stroke="#d7c8b6"/>
+    <text x="346" y="289" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#1d1b17">关闭</text>
+  </g>
+  <path d="M532 382 C570 382, 592 382, 620 382" fill="none" stroke="#7c2314" stroke-width="6" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7c2314"/>
+    </marker>
+  </defs>
+</svg>

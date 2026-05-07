@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Paper Hoops homepage overview</title>
+  <desc id="desc">Homepage overview showing visit counters, open source information, language switch, feature tabs, and scoring leaders.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fffaf2"/>
+      <stop offset="100%" stop-color="#efe3d2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#2f210e" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="#f2eee7"/>
+  <rect x="46" y="42" width="1188" height="636" rx="36" fill="url(#bg)" stroke="#d8c9b7" filter="url(#shadow)"/>
+  <g transform="translate(82 78)">
+    <rect width="230" height="76" rx="18" fill="#ffffff" opacity="0.76" stroke="#d7c8b6"/>
+    <text x="18" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#756e66">访问总次数</text>
+    <text x="18" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#7c2314">12,345</text>
+    <text x="126" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#756e66">完成模拟</text>
+    <text x="126" y="60" font-family="Arial, sans-serif" font-size="28" font-weight="900" fill="#7c2314">678</text>
+  </g>
+  <g transform="translate(330 78)">
+    <rect width="390" height="118" rx="18" fill="#ffffff" opacity="0.76" stroke="#d7c8b6"/>
+    <text x="18" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#756e66">GitHub</text>
+    <text x="18" y="58" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#7c2314">github.com/your-name/paper-hoops</text>
+    <text x="18" y="92" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#756e66">开发者</text>
+    <text x="78" y="92" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#7c2314">雨田</text>
+    <text x="198" y="92" font-family="Arial, sans-serif" font-size="14" font-weight="800" fill="#756e66">虎扑 / 小红书 ID</text>
+  </g>
+  <g transform="translate(1070 78)">
+    <rect width="112" height="42" rx="21" fill="#ffffff" opacity="0.78" stroke="#d7c8b6"/>
+    <text x="56" y="27" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="900" fill="#1d1b17">中文 / EN</text>
+  </g>
+  <g transform="translate(94 260)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#756e66">2025-26 Season Model Workspace</text>
+    <text x="0" y="92" font-family="Arial, sans-serif" font-size="74" font-weight="900" fill="#1d1b17">纸上谈球</text>
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="22" fill="#756e66">NBA roster movement, team projection, and trade simulation workspace.</text>
+    <g transform="translate(0 188)">
+      <rect width="170" height="54" rx="27" fill="#7c2314"/>
+      <text x="85" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#fff">交易预测</text>
+      <rect x="184" width="170" height="54" rx="27" fill="#fff" stroke="#d7c8b6"/>
+      <text x="269" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#1d1b17">球员数据</text>
+      <rect x="368" width="170" height="54" rx="27" fill="#fff" stroke="#d7c8b6"/>
+      <text x="453" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#1d1b17">球队数据</text>
+    </g>
+  </g>
+  <g transform="translate(820 248)">
+    <rect width="330" height="328" rx="24" fill="#ffffff" opacity="0.72" stroke="#d7c8b6"/>
+    <text x="24" y="44" font-family="Arial, sans-serif" font-size="24" font-weight="900" fill="#1d1b17">得分榜背景样本</text>
+    <g transform="translate(24 76)">
+      <circle cx="30" cy="30" r="30" fill="#d7c8b6"/>
+      <text x="78" y="28" font-family="Arial, sans-serif" font-size="19" font-weight="900" fill="#1d1b17">Player A</text>
+      <text x="78" y="52" font-family="Arial, sans-serif" font-size="14" fill="#756e66">OKC · 32.4</text>
+    </g>
+    <g transform="translate(24 154)">
+      <circle cx="30" cy="30" r="30" fill="#d7c8b6"/>
+      <text x="78" y="28" font-family="Arial, sans-serif" font-size="19" font-weight="900" fill="#1d1b17">Player B</text>
+      <text x="78" y="52" font-family="Arial, sans-serif" font-size="14" fill="#756e66">DEN · 29.8</text>
+    </g>
+    <g transform="translate(24 232)">
+      <circle cx="30" cy="30" r="30" fill="#d7c8b6"/>
+      <text x="78" y="28" font-family="Arial, sans-serif" font-size="19" font-weight="900" fill="#1d1b17">Player C</text>
+      <text x="78" y="52" font-family="Arial, sans-serif" font-size="14" fill="#756e66">DAL · 28.6</text>
+    </g>
+  </g>
+</svg>

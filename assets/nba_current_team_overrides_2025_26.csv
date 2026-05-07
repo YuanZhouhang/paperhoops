@@ -1,0 +1,69 @@
+player_name,current_team,transaction_date,source,notes
+Trae Young,WAS,2026-01-09,NBA.com 2025-26 trade tracker,Washington receives Trae Young from Atlanta.
+CJ McCollum,ATL,2026-01-09,NBA.com 2025-26 trade tracker,Atlanta receives CJ McCollum from Washington.
+Corey Kispert,ATL,2026-01-09,NBA.com 2025-26 trade tracker,Atlanta receives Corey Kispert from Washington.
+Vít Krejčí,POR,2026-02-01,NBA.com 2025-26 trade tracker,Portland receives Vít Krejčí from Atlanta.
+Duop Reath,ATL,2026-02-01,NBA.com 2025-26 trade tracker,Atlanta receives Duop Reath from Portland.
+Keon Ellis,CLE,2026-02-01,NBA.com 2025-26 trade tracker,Cleveland receives Keon Ellis from Sacramento.
+Dennis Schröder,CLE,2026-02-01,NBA.com 2025-26 trade tracker,Cleveland receives Dennis Schröder from Sacramento.
+Emanuel Miller,CLE,2026-02-01,NBA.com 2025-26 trade tracker,Cleveland receives Emanuel Miller from Chicago.
+De'Andre Hunter,SAC,2026-02-01,NBA.com 2025-26 trade tracker,Sacramento receives De'Andre Hunter from Cleveland.
+Kevin Huerter,DET,2026-02-03,NBA.com 2025-26 trade tracker,Detroit receives Kevin Huerter from Chicago.
+Dario Šarić,DET,2026-02-03,NBA.com 2025-26 trade tracker,Detroit receives Dario Šarić from Chicago.
+Mike Conley Jr.,CHA,2026-02-05,NBA.com 2025-26 trade tracker,Charlotte receives Mike Conley Jr. after Chicago acquired him from Minnesota.
+Mike Conley,CHA,2026-02-05,NBA.com 2025-26 trade tracker,Local data alias for Mike Conley Jr.
+Jaden Ivey,CHI,2026-02-03,NBA.com 2025-26 trade tracker,Chicago receives Jaden Ivey from Detroit.
+Jaren Jackson Jr.,UTA,2026-02-03,NBA.com 2025-26 trade tracker,Utah receives Jaren Jackson Jr. from Memphis.
+Jock Landale,ATL,2026-02-05,NBA.com 2025-26 trade tracker,Atlanta receives Jock Landale after Utah acquired him from Memphis.
+John Konchar,UTA,2026-02-03,NBA.com 2025-26 trade tracker,Utah receives John Konchar from Memphis.
+Vince Williams Jr.,UTA,2026-02-03,NBA.com 2025-26 trade tracker,Utah receives Vince Williams Jr. from Memphis.
+Walter Clayton Jr.,MEM,2026-02-03,NBA.com 2025-26 trade tracker,Memphis receives Walter Clayton Jr. from Utah.
+Kyle Anderson,MEM,2026-02-03,NBA.com 2025-26 trade tracker,Memphis receives Kyle Anderson from Utah.
+Taylor Hendricks,MEM,2026-02-03,NBA.com 2025-26 trade tracker,Memphis receives Taylor Hendricks from Utah.
+Georges Niang,MEM,2026-02-03,NBA.com 2025-26 trade tracker,Memphis receives Georges Niang from Utah.
+James Harden,CLE,2026-02-04,NBA.com 2025-26 trade tracker,Cleveland receives James Harden from LA Clippers.
+Darius Garland,LAC,2026-02-04,NBA.com 2025-26 trade tracker,LA Clippers receive Darius Garland from Cleveland.
+Jared McCain,OKC,2026-02-04,NBA.com 2025-26 trade tracker,Oklahoma City receives Jared McCain from Philadelphia.
+Mason Plumlee,OKC,2026-02-04,NBA.com 2025-26 trade tracker,Oklahoma City receives Mason Plumlee from Charlotte.
+Tyus Jones,DAL,2026-02-05,NBA.com 2025-26 trade tracker,Dallas receives Tyus Jones after Charlotte acquired him from Orlando.
+Malaki Branham,CHA,2026-02-05,NBA.com 2025-26 trade tracker,Charlotte receives Malaki Branham from Washington.
+Khris Middleton,DAL,2026-02-05,NBA.com 2025-26 trade tracker,Dallas receives Khris Middleton from Washington.
+AJ Johnson,DAL,2026-02-05,NBA.com 2025-26 trade tracker,Dallas receives AJ Johnson from Washington.
+Marvin Bagley III,DAL,2026-02-05,NBA.com 2025-26 trade tracker,Dallas receives Marvin Bagley III from Washington.
+Anthony Davis,WAS,2026-02-05,NBA.com 2025-26 trade tracker,Washington receives Anthony Davis from Dallas.
+Jaden Hardy,WAS,2026-02-05,NBA.com 2025-26 trade tracker,Washington receives Jaden Hardy from Dallas.
+D'Angelo Russell,WAS,2026-02-05,NBA.com 2025-26 trade tracker,Washington receives D'Angelo Russell from Dallas.
+Dante Exum,WAS,2026-02-05,NBA.com 2025-26 trade tracker,Washington receives Dante Exum from Dallas.
+Jonathan Kuminga,ATL,2026-02-05,NBA.com 2025-26 trade tracker,Atlanta receives Jonathan Kuminga from Golden State.
+Buddy Hield,ATL,2026-02-05,NBA.com 2025-26 trade tracker,Atlanta receives Buddy Hield from Golden State.
+Kristaps Porziņģis,GSW,2026-02-05,NBA.com 2025-26 trade tracker,Golden State receives Kristaps Porziņģis from Atlanta.
+Ivica Zubac,IND,2026-02-05,NBA.com 2025-26 trade tracker,Indiana receives Ivica Zubac from LA Clippers.
+Kobe Brown,IND,2026-02-05,NBA.com 2025-26 trade tracker,Indiana receives Kobe Brown from LA Clippers.
+Bennedict Mathurin,LAC,2026-02-05,NBA.com 2025-26 trade tracker,LA Clippers receive Bennedict Mathurin from Indiana.
+Isaiah Jackson,LAC,2026-02-05,NBA.com 2025-26 trade tracker,LA Clippers receive Isaiah Jackson from Indiana.
+Nikola Vučević,BOS,2026-02-05,NBA.com 2025-26 trade tracker,Boston receives Nikola Vučević from Chicago.
+Anfernee Simons,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Anfernee Simons from Boston.
+Rob Dillingham,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Rob Dillingham from Minnesota.
+Leonard Miller,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Leonard Miller from Minnesota.
+Ayo Dosunmu,MIN,2026-02-05,NBA.com 2025-26 trade tracker,Minnesota receives Ayo Dosunmu from Chicago.
+Julian Phillips,MIN,2026-02-05,NBA.com 2025-26 trade tracker,Minnesota receives Julian Phillips from Chicago.
+Nigel Hayes-Davis,MIL,2026-02-05,NBA.com 2025-26 trade tracker,Milwaukee receives Nigel Hayes-Davis from Phoenix.
+Ousmane Dieng,MIL,2026-02-05,NBA.com 2025-26 trade tracker,Milwaukee receives Ousmane Dieng after Charlotte and Chicago movements.
+Cole Anthony,PHX,2026-02-05,NBA.com 2025-26 trade tracker,Phoenix receives Cole Anthony from Milwaukee.
+Amir Coffey,PHX,2026-02-05,NBA.com 2025-26 trade tracker,Phoenix receives Amir Coffey from Milwaukee.
+Nick Richards,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Nick Richards from Phoenix.
+Coby White,CHA,2026-02-05,NBA.com 2025-26 trade tracker,Charlotte receives Coby White from Chicago.
+Collin Sexton,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Collin Sexton from Charlotte.
+Jose Alvarado,NYK,2026-02-05,NBA.com 2025-26 trade tracker,New York receives Jose Alvarado from New Orleans.
+Dalen Terry,NYK,2026-02-05,NBA.com 2025-26 trade tracker,New York receives Dalen Terry in the Yabusele transaction.
+Guerschon Yabusele,CHI,2026-02-05,NBA.com 2025-26 trade tracker,Chicago receives Guerschon Yabusele.
+Trayce Jackson-Davis,TOR,2026-02-05,NBA.com 2025-26 trade tracker,Toronto receives Trayce Jackson-Davis from Golden State.
+Luke Kennard,LAL,2026-02-05,NBA.com 2025-26 trade tracker,Los Angeles Lakers receive Luke Kennard from Atlanta.
+Gabe Vincent,ATL,2026-02-05,NBA.com 2025-26 trade tracker,Atlanta receives Gabe Vincent from LA Lakers.
+Chris Paul,TOR,2026-02-05,NBA.com 2025-26 trade tracker,Toronto receives Chris Paul from LA Clippers.
+Ochai Agbaji,BKN,2026-02-05,NBA.com 2025-26 trade tracker,Brooklyn receives Ochai Agbaji from Toronto.
+Lonzo Ball,UTA,2026-02-05,NBA.com 2025-26 trade tracker,Utah receives Lonzo Ball from Cleveland.
+Xavier Tillman Sr.,CHA,2026-02-05,NBA.com 2025-26 trade tracker,Charlotte receives Xavier Tillman Sr. from Boston.
+Josh Minott,BKN,2026-02-05,NBA.com 2025-26 trade tracker,Brooklyn receives Josh Minott from Boston.
+Hunter Tyson,BKN,2026-02-05,NBA.com 2025-26 trade tracker,Brooklyn receives Hunter Tyson from Denver.
+Eric Gordon,MEM,2026-02-05,NBA.com 2025-26 trade tracker,Memphis receives Eric Gordon from Philadelphia.

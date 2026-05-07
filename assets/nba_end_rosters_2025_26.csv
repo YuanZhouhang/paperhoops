@@ -1,0 +1,539 @@
+﻿team_abbreviation,team_name,season,player_name,position,jersey,status,source,source_url
+ATL,Atlanta Hawks,2025-26,Nickeil Alexander-Walker,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Tony Bradley,C,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Dyson Daniels,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,RayJ Dennis,G,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Keshon Gilbert,G,,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Mouhamed Gueye,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Buddy Hield,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Caleb Houstan,G,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Jalen Johnson,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Corey Kispert,F,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Christian Koloko,C,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Jonathan Kuminga,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Jock Landale,C,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,CJ McCollum,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Asa Newell,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Onyeka Okongwu,F,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Zaccharie Risacher,F,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Gabe Vincent,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+ATL,Atlanta Hawks,2025-26,Keaton Wallace,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/atl/roster
+BOS,Boston Celtics,2025-26,Dalano Banton,F,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Jaylen Brown,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Luka Garza,C,52,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Hugo Gonzalez,G,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Ron Harper Jr.,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Sam Hauser,F,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Payton Pritchard,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Neemias Queta,C,88,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Baylor Scheierman,G,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Max Shulga,G,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Jayson Tatum,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,John Tonje,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Nikola Vucevic,C,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Jordan Walsh,G,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Derrick White,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BOS,Boston Celtics,2025-26,Amari Williams,F,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bos/roster
+BKN,Brooklyn Nets,2025-26,Ochai Agbaji,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Nic Claxton,C,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Noah Clowney,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Egor Demin,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Tyson Etienne,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Chaney Johnson,F,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,E.J. Liddell,F,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Terance Mann,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Josh Minott,F,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Michael Porter Jr.,F,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Drake Powell,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Ben Saraf,G,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Trevon Scott,F,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Day'Ron Sharpe,C,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Malachi Smith,G,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Nolan Traore,G,88,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Ziaire Williams,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Jalen Wilson,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+BKN,Brooklyn Nets,2025-26,Danny Wolf,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/bkn/roster
+CHA,Charlotte Hornets,2025-26,LaMelo Ball,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Miles Bridges,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Pat Connaughton,G,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Moussa Diabate,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Tosan Evbuomwan,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Josh Green,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,PJ Hall,C,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Sion James,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Ryan Kalkbrenner,C,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Kon Knueppel,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Tre Mann,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Liam McNeeley,G,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Brandon Miller,F,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Antonio Reeves,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Tidjane Salaun,F,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Xavier Tillman,F,26,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Coby White,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHA,Charlotte Hornets,2025-26,Grant Williams,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cha/roster
+CHI,Chicago Bulls,2025-26,Matas Buzelis,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Zach Collins,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Rob Dillingham,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Noa Essengue,F,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Josh Giddey,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Mouhamadou Gueye,F,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Tre Jones,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Yuki Kawamura,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Mac McClung,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Leonard Miller,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Isaac Okoro,F,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Lachlan Olbrich,C,47,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Nick Richards,C,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Collin Sexton,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Anfernee Simons,G,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Jalen Smith,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Patrick Williams,F,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CHI,Chicago Bulls,2025-26,Guerschon Yabusele,F,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/chi/roster
+CLE,Cleveland Cavaliers,2025-26,Jarrett Allen,C,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Thomas Bryant,C,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Keon Ellis,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Tristan Enaruna,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,James Harden,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Sam Merrill,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Riley Minix,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Donovan Mitchell,G,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Evan Mobley,C,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Larry Nance Jr.,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Craig Porter Jr.,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Tyrese Proctor,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Olivier Sarr,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Dennis Schroder,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Max Strus,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Nae'Qwan Tomlin,F,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Jaylon Tyson,G,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+CLE,Cleveland Cavaliers,2025-26,Dean Wade,F,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/cle/roster
+DAL,Dallas Mavericks,2025-26,Marvin Bagley III,F,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Max Christie,G,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Moussa Cisse,C,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Cooper Flagg,F,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Daniel Gafford,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Kyrie Irving,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,AJ Johnson,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Dereck Lively II,C,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Naji Marshall,F,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Caleb Martin,F,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Khris Middleton,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Ryan Nembhard,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,John Poulakidas,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Dwight Powell,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Tyler Smith,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Klay Thompson,G,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,P.J. Washington,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DAL,Dallas Mavericks,2025-26,Brandon Williams,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/dal/roster
+DEN,Denver Nuggets,2025-26,Christian Braun,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Bruce Brown,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Aaron Gordon,F,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Tim Hardaway Jr.,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,DaRon Holmes II,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Cameron Johnson,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Nikola Jokic,C,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Curtis Jones,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Spencer Jones,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Tyus Jones,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Jamal Murray,G,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Zeke Nnaji,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Jalen Pickett,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,David Roddy,F,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,KJ Simpson,G,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Julian Strawther,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Jonas Valanciunas,C,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DEN,Denver Nuggets,2025-26,Peyton Watson,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/den/roster
+DET,Detroit Pistons,2025-26,Cade Cunningham,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Jalen Duren,C,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Javonte Green,G,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Tobias Harris,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Ronald Holland II,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Kevin Huerter,G,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Daniss Jenkins,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Isaac Jones,C,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Chaz Lanier,G,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Caris LeVert,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Wendell Moore Jr.,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Paul Reed,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Duncan Robinson,F,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Marcus Sasser,G,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Tolu Smith,F,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Isaiah Stewart,F,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+DET,Detroit Pistons,2025-26,Ausar Thompson,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/det/roster
+GSW,Golden State Warriors,2025-26,Charles Bassey,C,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Jimmy Butler III,F,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,LJ Cryer,G,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Seth Curry,G,31,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Stephen Curry,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Draymond Green,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Al Horford,C,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Malevy Leons,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,De'Anthony Melton,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Moses Moody,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Gary Payton II,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Brandin Podziemski,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Kristaps Porzingis,C,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Quinten Post,C,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Will Richard,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Gui Santos,F,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Pat Spencer,G,61,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Nate Williams,G,19,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+GSW,Golden State Warriors,2025-26,Omer Yurtseven,C,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/gs/roster
+HOU,Houston Rockets,2025-26,Steven Adams,C,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Clint Capela,C,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Isaiah Crawford,F,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,JD Davison,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Kevin Durant,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Tari Eason,F,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Dorian Finney-Smith,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Jeff Green,F,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Aaron Holiday,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Tristen Newton,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Josh Okogie,G,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Alperen Sengun,C,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Reed Sheppard,G,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Jabari Smith Jr.,F,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Jae'Sean Tate,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Amen Thompson,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+HOU,Houston Rockets,2025-26,Fred VanVleet,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/hou/roster
+IND,Indiana Pacers,2025-26,Kobe Brown,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Johnny Furphy,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Tyrese Haliburton,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Jay Huff,C,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Quenton Jackson,G,29,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Kam Jones,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,T.J. McConnell,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Andrew Nembhard,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Aaron Nesmith,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Taelon Peter,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Micah Potter,C,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Ben Sheppard,G,26,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Pascal Siakam,F,43,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Jalen Slawson,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Ethan Thompson,G,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Obi Toppin,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Jarace Walker,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+IND,Indiana Pacers,2025-26,Ivica Zubac,C,40,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ind/roster
+LAC,LA Clippers,2025-26,Nicolas Batum,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Bradley Beal,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Bogdan Bogdanovic,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Cam Christie,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,John Collins,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Kris Dunn,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Darius Garland,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Isaiah Jackson,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Derrick Jones Jr.,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Kawhi Leonard,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Brook Lopez,C,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Bennedict Mathurin,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Jordan Miller,G,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Yanic Konan Niederhauser,C,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Norchad Omier,F,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Sean Pedulla,G,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,Kobe Sanders,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAC,LA Clippers,2025-26,TyTy Washington Jr.,G,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lac/roster
+LAL,Los Angeles Lakers,2025-26,Deandre Ayton,C,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Luka Doncic,G,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Rui Hachimura,F,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Jaxson Hayes,C,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Bronny James,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,LeBron James,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Luke Kennard,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Maxi Kleber,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Dalton Knecht,F,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Jake LaRavia,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Chris Manon,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Austin Reaves,G,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Marcus Smart,G,36,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Nick Smith Jr.,G,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Adou Thiero,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Drew Timme,F,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+LAL,Los Angeles Lakers,2025-26,Jarred Vanderbilt,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/lal/roster
+MEM,Memphis Grizzlies,2025-26,Santi Aldama,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Adama Bal,G,72,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Kentavious Caldwell-Pope,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Brandon Clarke,F,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Walter Clayton Jr.,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Cedric Coward,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Zach Edey,C,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Taj Gibson,F,67,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Taylor Hendricks,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,GG Jackson,F,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Ty Jerome,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Jahmai Mashack,G,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Ja Morant,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Toby Okani,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Scotty Pippen Jr.,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Olivier-Maxence Prosper,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Rayan Rupert,G,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Javon Small,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Cam Spencer,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Jaylen Wells,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Dariq Whitehead,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MEM,Memphis Grizzlies,2025-26,Lucas Williamson,G,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mem/roster
+MIA,Miami Heat,2025-26,Bam Adebayo,C,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Simone Fontecchio,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Myron Gardner,F,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Vladislav Goldin,C,50,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Tyler Herro,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Kasparas Jakucionis,G,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Jaime Jaquez Jr.,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Keshad Johnson,F,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Nikola Jovic,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Trevor Keels,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Pelle Larsson,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Davion Mitchell,G,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Norman Powell,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Dru Smith,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Kel'el Ware,C,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Andrew Wiggins,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIA,Miami Heat,2025-26,Jahmir Young,G,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mia/roster
+MIL,Milwaukee Bucks,2025-26,Alex Antetokounmpo,F,29,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Giannis Antetokounmpo,F,34,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Thanasis Antetokounmpo,F,43,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Ousmane Dieng,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,AJ Green,G,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Gary Harris,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Andre Jackson Jr.,G,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Kyle Kuzma,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Pete Nance,F,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Kevin Porter Jr.,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Bobby Portis,F,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Taurean Prince,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Ryan Rollins,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Cormac Ryan,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Jericho Sims,C,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Gary Trent Jr.,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIL,Milwaukee Bucks,2025-26,Myles Turner,C,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/mil/roster
+MIN,Minnesota Timberwolves,2025-26,Kyle Anderson,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Joan Beringer,F,19,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Jaylen Clark,G,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Mike Conley,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Donte DiVincenzo,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Ayo Dosunmu,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Anthony Edwards,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Enrique Freeman,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Rudy Gobert,C,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Bones Hyland,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Joe Ingles,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Jaden McDaniels,F,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Julian Phillips,F,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Zyon Pullin,G,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Julius Randle,F,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Naz Reid,C,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Terrence Shannon Jr.,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+MIN,Minnesota Timberwolves,2025-26,Rocco Zikarsky,C,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/min/roster
+NOP,New Orleans Pelicans,2025-26,Trey Alexander,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Saddiq Bey,G,41,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Hunter Dickinson,C,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Jeremiah Fears,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Jordan Hawkins,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Herbert Jones,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,DeAndre Jordan,C,6,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Kevon Looney,F,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Karlo Matkovic,F,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Bryce McGowens,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Yves Missi,C,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Trey Murphy III,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Dejounte Murray,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Josh Oduro,C,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Micah Peavy,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Jordan Poole,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Derik Queen,C,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NOP,New Orleans Pelicans,2025-26,Zion Williamson,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/no/roster
+NYK,New York Knicks,2025-26,Jose Alvarado,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,OG Anunoby,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Mikal Bridges,G,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Jalen Brunson,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Jordan Clarkson,G,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Pacome Dadiet,F,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Mohamed Diawara,F,51,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Josh Hart,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Ariel Hukporti,C,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Trey Jemison III,F,50,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Dillon Jones,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Tyler Kolek,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Miles McBride,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Kevin McCullar Jr.,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Mitchell Robinson,C,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Landry Shamet,G,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Jeremy Sochan,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+NYK,New York Knicks,2025-26,Karl-Anthony Towns,C,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/ny/roster
+OKC,Oklahoma City Thunder,2025-26,Brooks Barnhizer,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Branden Carlson,C,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Alex Caruso,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Luguentz Dort,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Shai Gilgeous-Alexander,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Isaiah Hartenstein,C,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Chet Holmgren,C,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Isaiah Joe,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Jared McCain,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Ajay Mitchell,G,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Payton Sandfort,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Thomas Sorber,C,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Nikola Topic,G,44,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Cason Wallace,G,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Aaron Wiggins,G,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Jalen Williams,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Jaylin Williams,F,6,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+OKC,Oklahoma City Thunder,2025-26,Kenrich Williams,G,34,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/okc/roster
+ORL,Orlando Magic,2025-26,Paolo Banchero,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Desmond Bane,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Goga Bitadze,C,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Anthony Black,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jamal Cain,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jevon Carter,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Wendell Carter Jr.,C,34,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Colin Castleton,C,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Tristan da Silva,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jett Howard,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jonathan Isaac,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Alex Morales,G,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Noah Penda,F,93,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jase Richardson,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Jalen Suggs,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Franz Wagner,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+ORL,Orlando Magic,2025-26,Moritz Wagner,F,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/orl/roster
+PHI,Philadelphia 76ers,2025-26,Dominick Barlow,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,MarJon Beauchamp,F,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Adem Bona,C,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Johni Broome,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Andre Drummond,C,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,VJ Edgecombe,G,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Justin Edwards,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Joel Embiid,C,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Paul George,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Quentin Grimes,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Kyle Lowry,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Tyrese Martin,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Tyrese Maxey,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Kelly Oubre Jr.,G,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Dalen Terry,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Jabari Walker,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHI,Philadelphia 76ers,2025-26,Trendon Watford,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phi/roster
+PHX,Phoenix Suns,2025-26,Grayson Allen,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Devin Booker,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Jamaree Bouyea,G,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Koby Brea,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Dillon Brooks,F,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Amir Coffey,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Ryan Dunn,F,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Rasheer Fleming,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Collin Gillespie,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Jordan Goodwin,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Jalen Green,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Haywood Highsmith,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,CJ Huntley,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Oso Ighodaro,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Isaiah Livers,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Khaman Maluach,C,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Royce O'Neale,F,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+PHX,Phoenix Suns,2025-26,Mark Williams,C,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/phx/roster
+POR,Portland Trail Blazers,2025-26,Deni Avdija,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Toumani Camara,F,33,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Sidy Cissoko,G,91,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Donovan Clingan,C,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Jerami Grant,F,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Yang Hansen,C,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Scoot Henderson,G,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Jrue Holiday,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Jayson Kent,G,29,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Vit Krejci,G,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Damian Lillard,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Caleb Love,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Kris Murray,F,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Shaedon Sharpe,G,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Matisse Thybulle,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Blake Wesley,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Robert Williams III,C,35,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+POR,Portland Trail Blazers,2025-26,Chris Youngblood,G,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/por/roster
+SAC,Sacramento Kings,2025-26,Precious Achiuwa,PF,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Patrick Baldwin Jr.,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Dylan Cardwell,C,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Devin Carter,G,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Nique Clifford,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,DeMar DeRozan,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Drew Eubanks,F,19,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Killian Hayes,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,De'Andre Hunter,F,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Zach LaVine,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Doug McDermott,F,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Malik Monk,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Keegan Murray,F,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Daeqwon Plowden,G,29,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Maxime Raynaud,C,42,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Domantas Sabonis,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Isaiah Stevens,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAC,Sacramento Kings,2025-26,Russell Westbrook,G,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sac/roster
+SAS,San Antonio Spurs,2025-26,Harrison Barnes,F,40,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Bismack Biyombo,C,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Carter Bryant,F,11,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Stephon Castle,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Julian Champagnie,F,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,De'Aaron Fox,G,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Dylan Harper,G,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Harrison Ingram,F,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Keldon Johnson,F,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,David Jones Garcia,F,25,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Luke Kornet,C,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Jordan McLaughlin,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Emanuel Miller,F,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Kelly Olynyk,F,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Mason Plumlee,C,45,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Devin Vassell,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Lindy Waters III,F,43,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+SAS,San Antonio Spurs,2025-26,Victor Wembanyama,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/sa/roster
+TOR,Toronto Raptors,2025-26,Scottie Barnes,F,4,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,RJ Barrett,F,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Jamison Battle,F,77,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Gradey Dick,G,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Chucky Hepburn,G,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Brandon Ingram,F,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Trayce Jackson-Davis,F,32,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,A.J. Lawson,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Sandro Mamukelashvili,F,54,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Alijah Martin,G,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Jonathan Mogbo,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Collin Murray-Boyles,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Jakob Poeltl,C,19,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Immanuel Quickley,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Jamal Shead,G,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Garrett Temple,G,17,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+TOR,Toronto Raptors,2025-26,Ja'Kobe Walter,G,14,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/tor/roster
+UTA,Utah Jazz,2025-26,Ace Bailey,G,19,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Kennedy Chandler,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Isaiah Collier,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Kyle Filipowski,F,22,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Keyonte George,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Hayden Gray,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Elijah Harkless,G,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Blake Hinson,F,2,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Jaren Jackson Jr.,F,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Walker Kessler,C,24,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,John Konchar,G,55,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Kevin Love,F,42,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Lauri Markkanen,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Bez Mbeng,G,21,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Svi Mykhailiuk,G,10,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Jusuf Nurkic,C,30,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Brice Sensabaugh,F,28,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Oscar Tshiebwe,C,34,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+UTA,Utah Jazz,2025-26,Cody Williams,F,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/utah/roster
+WAS,Washington Wizards,2025-26,Leaky Black,F,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Bub Carrington,G,7,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Justin Champagnie,F,9,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Sharife Cooper,G,13,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Bilal Coulibaly,G,0,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Anthony Davis,F,23,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Kyshawn George,F,18,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Anthony Gill,F,16,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Jaden Hardy,G,8,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Tre Johnson,G,12,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Julian Reese,F,15,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Will Riley,G,27,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,D'Angelo Russell,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Alex Sarr,C,20,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Tristan Vukcevic,F,00,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Jamir Watkins,G,5,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Cam Whitmore,F,1,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster
+WAS,Washington Wizards,2025-26,Trae Young,G,3,Active,ESPN team roster API,https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/wsh/roster

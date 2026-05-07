@@ -1,0 +1,10 @@
+services:
+  - name: zhishangtanqiu-web
+    type: web
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit

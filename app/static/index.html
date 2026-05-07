@@ -1,0 +1,3839 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>纸上谈球</title>
+  <style>
+    :root {
+      --bg: #f2eee7;
+      --paper: rgba(255, 251, 245, 0.82);
+      --paper-strong: #fffaf2;
+      --line: rgba(71, 54, 29, 0.14);
+      --ink: #1d1b17;
+      --muted: #756e66;
+      --accent: #aa3a22;
+      --accent-deep: #7c2314;
+      --field: rgba(255, 255, 255, 0.78);
+      --shadow: 0 20px 50px rgba(47, 33, 14, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(170, 58, 34, 0.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(53, 82, 132, 0.08), transparent 30%),
+        linear-gradient(180deg, #f5efe5 0%, #efe7db 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      width: min(1600px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 76vh;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 250, 242, 0.88), rgba(247, 239, 229, 0.74)),
+        #f7efe5;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      align-items: end;
+      min-height: calc(76vh - 60px);
+    }
+
+    .hero-top-left {
+      position: absolute;
+      top: 26px;
+      left: 26px;
+      z-index: 3;
+      display: flex;
+      align-items: stretch;
+      gap: 10px;
+      max-width: min(760px, calc(100% - 160px));
+    }
+
+    .site-counter {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(92px, auto));
+      gap: 8px;
+      padding: 8px;
+      border-radius: 18px;
+      background: rgba(255, 252, 247, 0.76);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 26px rgba(47, 33, 14, 0.08);
+    }
+
+    .open-source-card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, auto));
+      gap: 8px 12px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 252, 247, 0.76);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 26px rgba(47, 33, 14, 0.08);
+    }
+
+    .open-source-item {
+      min-width: 0;
+    }
+
+    .open-source-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .open-source-value {
+      display: block;
+      margin-top: 3px;
+      max-width: 180px;
+      overflow: hidden;
+      color: var(--accent-deep);
+      font-size: 13px;
+      line-height: 1.2;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .open-source-value[href]:hover {
+      text-decoration: underline;
+    }
+
+    .github-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-top: 3px;
+      border-radius: 50%;
+      color: var(--accent-deep);
+      background: rgba(124, 35, 20, 0.08);
+      border: 1px solid rgba(124, 35, 20, 0.12);
+    }
+
+    .github-icon-link:hover {
+      color: #1d1b17;
+      background: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+    }
+
+    .github-icon-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .language-toggle {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 40px;
+      padding: 0 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      background: rgba(255, 252, 247, 0.78);
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 26px rgba(47, 33, 14, 0.08);
+    }
+
+    .counter-item {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.56);
+      min-width: 92px;
+    }
+
+    .counter-label {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .counter-value {
+      margin-top: 3px;
+      color: var(--accent-deep);
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand-chip,
+    .section-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .brand-chip::before,
+    .section-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(170, 58, 34, 0.12);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 18px;
+      padding: 14px 6px 8px;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      font-size: clamp(52px, 8vw, 104px);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+    }
+
+    .hero-logo {
+      display: block;
+      width: min(720px, 82vw);
+      max-height: 220px;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 20px 38px rgba(88, 70, 43, 0.18));
+    }
+
+    .hero-logo-fallback {
+      display: none;
+    }
+
+    .hero-logo.is-hidden {
+      display: none;
+    }
+
+    .hero-logo.is-hidden + .hero-logo-fallback {
+      display: block;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.8vw, 21px);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-top: 6px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.46;
+      transform: none;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 12px 26px rgba(124, 35, 20, 0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.74);
+      border-color: rgba(88, 70, 43, 0.12);
+      color: var(--ink);
+    }
+
+    .hero-panel {
+      align-self: start;
+      justify-self: end;
+      width: min(100%, 420px);
+      padding: 22px;
+      border-radius: 28px;
+      background: rgba(255, 252, 247, 0.72);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-panel h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .hero-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .headline-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .headline-row {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .headline-row:last-child { border-bottom: 0; }
+
+    .headline-row img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid rgba(88, 70, 43, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .headline-name {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .headline-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .headline-score {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .avatar-wall {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0.92;
+    }
+
+    .avatar-strip {
+      position: absolute;
+      display: flex;
+      gap: 18px;
+      filter: blur(1.4px) saturate(0.92);
+    }
+
+    .avatar-strip.one { top: 7%; left: 28%; transform: rotate(-7deg); }
+    .avatar-strip.two { top: 39%; right: -6%; transform: rotate(9deg); }
+    .avatar-strip.three { bottom: 8%; left: 34%; transform: rotate(-3deg); }
+
+    .avatar-card {
+      width: 130px;
+      padding: 10px;
+      border-radius: 26px;
+      background: rgba(255, 251, 245, 0.48);
+      border: 1px solid rgba(88, 70, 43, 0.09);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .avatar-card .ppg {
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(29, 27, 23, 0.78);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 28px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background: rgba(255, 252, 246, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      margin: 8px 0 0;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+    }
+
+    .section-header p {
+      margin: 10px 0 0;
+      max-width: 900px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .feature-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0 0 22px;
+    }
+
+    .hero-copy .feature-tabs {
+      margin: 0;
+    }
+
+    .feature-tab {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      background: rgba(255, 255, 255, 0.6);
+      color: var(--muted);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .feature-tab:hover {
+      transform: translateY(-1px);
+      color: var(--ink);
+    }
+
+    .feature-tab.is-active {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 12px 24px rgba(124, 35, 20, 0.18);
+    }
+
+    .feature-view {
+      display: none;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .feature-view.is-active {
+      display: block;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 1.05fr 0.9fr 1.05fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .data-panel {
+      display: grid;
+      gap: 18px;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .data-card {
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .data-card h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .data-card .sub {
+      margin: 8px 0 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .metric-guide {
+      margin: 0 0 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(88, 70, 43, 0.1);
+      background: rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+    }
+
+    .metric-guide summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: 900;
+      color: var(--accent-deep);
+    }
+
+    .metric-guide-body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      padding: 0 14px 14px;
+    }
+
+    .metric-note {
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 250, 242, 0.76);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .metric-note strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .table-shell {
+      overflow: auto;
+      max-height: 760px;
+      border-radius: 22px;
+      border: 1px solid rgba(88, 70, 43, 0.08);
+      background: rgba(255, 255, 255, 0.46);
+    }
+
+    .player-table-shell {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      max-height: none;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scrollbar-gutter: stable;
+      padding-bottom: 6px;
+    }
+
+    .player-table-shell .data-table {
+      width: max-content;
+      min-width: 4200px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1180px;
+      font-size: 13px;
+    }
+
+    .data-table th {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      padding: 12px 10px;
+      background: rgba(255, 250, 242, 0.94);
+      color: var(--muted);
+      text-align: right;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .data-table th.is-sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sort-mark {
+      display: inline-block;
+      margin-left: 4px;
+      color: var(--accent-deep);
+      font-size: 10px;
+    }
+
+    .data-table th:first-child,
+    .data-table td:first-child {
+      text-align: left;
+      position: sticky;
+      left: 0;
+      z-index: 2;
+      background: rgba(255, 250, 242, 0.94);
+    }
+
+    .data-table th:first-child {
+      z-index: 4;
+    }
+
+    .data-table td {
+      padding: 10px;
+      text-align: right;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(88, 70, 43, 0.07);
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .identity-cell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 230px;
+    }
+
+    .table-avatar,
+    .table-logo {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      object-fit: cover;
+      border-radius: 13px;
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      background: #f4ede2;
+    }
+
+    .table-logo {
+      object-fit: contain;
+      padding: 4px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .identity-main {
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .identity-sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .conference-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .pagination-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px 0 2px;
+    }
+
+    .page-status {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .panel {
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .panel .sub {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .field-label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    select {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(88, 70, 43, 0.13);
+      background: var(--field);
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .action-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat-card {
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid rgba(88, 70, 43, 0.1);
+    }
+
+    .stat-card .k {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 700;
+    }
+
+    .stat-card .v {
+      margin-top: 8px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .list-shell {
+      min-height: 220px;
+      max-height: 740px;
+      overflow: auto;
+      padding: 8px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.46);
+      border: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .list-shell::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    .list-shell::-webkit-scrollbar-thumb {
+      background: rgba(88, 70, 43, 0.18);
+      border-radius: 999px;
+    }
+
+    .player-row {
+      display: grid;
+      grid-template-columns: auto 52px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 18px;
+      transition: background 0.16s ease, transform 0.16s ease;
+    }
+
+    .player-row:hover {
+      background: rgba(255, 255, 255, 0.76);
+      transform: translateY(-1px);
+    }
+
+    .player-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .player-avatar {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      background: #f4ede2;
+    }
+
+    .player-name-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .player-name {
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(170, 58, 34, 0.1);
+      color: var(--accent-deep);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .badge-default {
+      background: rgba(35, 113, 95, 0.12);
+      color: #23715f;
+    }
+
+    .badge-locked {
+      background: rgba(29, 27, 23, 0.12);
+      color: rgba(29, 27, 23, 0.72);
+    }
+
+    .player-meta,
+    .compact-meta {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .salary-line {
+      color: var(--accent-deep);
+      font-weight: 800;
+    }
+
+    .player-row.is-locked {
+      background: rgba(29, 27, 23, 0.08);
+      border: 1px solid rgba(29, 27, 23, 0.08);
+      opacity: 0.84;
+    }
+
+    .player-row.is-locked:hover {
+      background: rgba(29, 27, 23, 0.08);
+      transform: none;
+    }
+
+    .player-row.is-locked input[type="checkbox"] {
+      cursor: not-allowed;
+      filter: grayscale(1);
+    }
+
+    .selection-board {
+      display: grid;
+      gap: 12px;
+    }
+
+    .selection-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(88, 70, 43, 0.09);
+    }
+
+    .selection-card h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .salary-total {
+      margin: 0 0 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(170, 58, 34, 0.08);
+      color: var(--accent-deep);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 900;
+    }
+
+    .salary-note {
+      margin: -2px 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .mini-player {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .mini-player.is-locked {
+      opacity: 0.72;
+    }
+
+    .mini-player:last-child { border-bottom: 0; }
+
+    .mini-player img {
+      width: 42px;
+      height: 42px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #f4ede2;
+      border: 1px solid rgba(88, 70, 43, 0.12);
+    }
+
+    .empty {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.42);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .projection-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .projection-header .season-label {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .poster-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .poster-actions .btn {
+      min-height: 44px;
+      padding: 0 12px;
+      font-size: 13px;
+    }
+
+    .mobile-trade-flow,
+    .mobile-result-modal {
+      display: none;
+    }
+
+    .mobile-trade-card {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 20px;
+      background: var(--paper);
+      border: 1px solid rgba(88, 70, 43, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .mobile-flow-step {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.46);
+      border: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .mobile-step-heading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-step-heading span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--accent-deep);
+      font-size: 12px;
+      font-weight: 900;
+      flex: 0 0 24px;
+    }
+
+    .mobile-step-heading h3 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .mobile-stat-card {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 14px;
+      background: rgba(255, 250, 242, 0.84);
+      border: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .mobile-stat-card .k {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .mobile-stat-card .v {
+      margin-top: 5px;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-picker-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .mobile-add-btn {
+      min-height: 48px;
+      padding: 0 14px;
+    }
+
+    .mobile-player-tokens {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-player-token {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr) 32px;
+      gap: 9px;
+      align-items: center;
+      padding: 8px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(88, 70, 43, 0.08);
+    }
+
+    .mobile-player-token img,
+    .mobile-player-token .player-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .mobile-player-token-name {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .mobile-remove-token {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--muted);
+      background: rgba(88, 70, 43, 0.08);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .mobile-remove-token:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .mobile-flow-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mobile-poster-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mobile-result-modal[hidden] {
+      display: none;
+    }
+
+    .mobile-result-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(32, 28, 21, 0.48);
+      z-index: 40;
+    }
+
+    .mobile-result-panel {
+      position: fixed;
+      left: 10px;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 41;
+      display: grid;
+      gap: 14px;
+      max-height: calc(100vh - 28px);
+      overflow: auto;
+      padding: 16px;
+      border-radius: 22px;
+      background: var(--paper);
+      border: 1px solid rgba(88, 70, 43, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .poster-preview-modal[hidden] {
+      display: none;
+    }
+
+    .poster-preview-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      background: rgba(32, 28, 21, 0.58);
+    }
+
+    .poster-preview-panel {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: 81;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 14px;
+      width: min(920px, calc(100vw - 28px));
+      max-height: calc(100vh - 28px);
+      padding: 16px;
+      border-radius: 22px;
+      transform: translate(-50%, -50%);
+      background: var(--paper);
+      border: 1px solid rgba(88, 70, 43, 0.14);
+      box-shadow: var(--shadow);
+    }
+
+    .poster-preview-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .poster-preview-header h3 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+    }
+
+    .poster-preview-header p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .poster-preview-close {
+      width: 38px;
+      height: 38px;
+      border: 0;
+      border-radius: 50%;
+      color: var(--muted);
+      background: rgba(88, 70, 43, 0.08);
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      flex: 0 0 38px;
+    }
+
+    .poster-preview-stage {
+      min-height: 0;
+      overflow: auto;
+      padding: 12px;
+      border-radius: 18px;
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid rgba(88, 70, 43, 0.1);
+      text-align: center;
+    }
+
+    .poster-preview-stage img {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: min(68vh, 900px);
+      margin: 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 14px 36px rgba(50, 38, 25, 0.18);
+    }
+
+    .poster-preview-actions {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 1360px) {
+      .workspace { grid-template-columns: 1fr; }
+      .conference-grid { grid-template-columns: 1fr; }
+      .panel { min-height: auto; }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-panel { justify-self: stretch; width: 100%; }
+      .avatar-strip.one { left: 10%; }
+      .avatar-strip.three { left: 4%; }
+    }
+
+    @media (max-width: 720px) {
+      .page { width: min(100vw - 20px, 1600px); padding-top: 10px; gap: 12px; }
+      .hero, .section { padding: 16px; border-radius: 22px; }
+      .hero {
+        min-height: auto;
+      }
+      .hero-grid {
+        min-height: auto;
+        gap: 0;
+      }
+      .hero-copy {
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 0;
+      }
+      .hero-copy h1 {
+        font-size: 42px;
+        line-height: 1;
+      }
+      .hero-logo {
+        width: min(100%, 360px);
+        max-height: 96px;
+      }
+      .hero-copy p,
+      .avatar-wall,
+      .hero-panel,
+      .section-header p,
+      .panel .sub,
+      .data-card .sub,
+      .metric-guide {
+        display: none;
+      }
+      .brand-chip,
+      .section-chip {
+        font-size: 10px;
+      }
+      .hero-top-left {
+        position: relative;
+        top: auto;
+        left: auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: none;
+        margin-bottom: 14px;
+        gap: 8px;
+      }
+      .site-counter {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .open-source-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 10px;
+        border-radius: 16px;
+      }
+      .open-source-value {
+        max-width: 100%;
+        font-size: 12px;
+      }
+      .language-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 12px;
+      }
+      .counter-item {
+        padding: 10px;
+        border-radius: 16px;
+      }
+      .counter-label {
+        font-size: 10px;
+      }
+      .counter-value {
+        font-size: 22px;
+      }
+      .hero-actions,
+      .feature-tabs {
+        gap: 8px;
+      }
+      .feature-tab {
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 13px;
+        flex: 1 1 30%;
+      }
+      .section-header h2 {
+        font-size: 28px;
+        line-height: 1.04;
+      }
+      .data-card {
+        padding: 14px;
+        border-radius: 20px;
+      }
+      #tradeFeature .workspace {
+        display: none;
+      }
+      .mobile-trade-flow {
+        display: block;
+      }
+      .mobile-result-modal:not([hidden]) {
+        display: block;
+      }
+      .panel { padding: 16px; border-radius: 22px; }
+      .stat-grid { grid-template-columns: 1fr; }
+      .list-shell {
+        min-height: 180px;
+        max-height: 420px;
+      }
+      .avatar-card { width: 92px; }
+      .avatar-strip { gap: 10px; }
+      .player-row { grid-template-columns: auto 44px minmax(0, 1fr); }
+      .player-avatar { width: 44px; height: 44px; border-radius: 14px; }
+      .player-meta {
+        font-size: 11px;
+        line-height: 1.45;
+      }
+      .salary-line,
+      .salary-note {
+        display: none;
+      }
+      .table-shell {
+        max-height: 560px;
+        border-radius: 16px;
+      }
+      .player-table-shell .data-table {
+        min-width: 980px;
+      }
+      .data-table {
+        min-width: 760px;
+        font-size: 12px;
+      }
+      .data-table th {
+        padding: 10px 8px;
+        font-size: 10px;
+      }
+      .data-table td {
+        padding: 9px 8px;
+      }
+      .identity-cell {
+        min-width: 158px;
+        gap: 8px;
+      }
+      .identity-main {
+        max-width: 108px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .identity-sub {
+        font-size: 11px;
+      }
+      .table-avatar,
+      .table-logo {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+        border-radius: 10px;
+      }
+      .pagination-bar {
+        gap: 8px;
+      }
+      .pagination-bar .btn {
+        min-height: 38px;
+        padding: 0 12px;
+      }
+      .page-status {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+      }
+      .poster-preview-panel {
+        width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        padding: 12px;
+        border-radius: 20px;
+      }
+      .poster-preview-header h3 {
+        font-size: 19px;
+      }
+      .poster-preview-stage {
+        padding: 8px;
+      }
+      .poster-preview-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <button class="language-toggle" type="button" id="languageToggle">中文 / EN</button>
+      <div class="hero-top-left">
+        <div class="site-counter" aria-label="网站访问统计">
+          <div class="counter-item">
+            <div class="counter-label">访问总次数</div>
+            <div class="counter-value" id="siteVisitCount">0</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-label">完成模拟</div>
+            <div class="counter-value" id="siteSimCount">0</div>
+          </div>
+        </div>
+        <div class="open-source-card" aria-label="开源项目信息">
+          <div class="open-source-item">
+            <div class="open-source-label">GitHub</div>
+            <a class="github-icon-link" href="https://github.com/YuanZhouhang/paperhoops" target="_blank" rel="noopener" aria-label="GitHub repository">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.99c1.02 0 2.05.14 3.01.4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12C24 5.37 18.63 0 12 0z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="open-source-item">
+            <div class="open-source-label">开发者</div>
+            <div class="open-source-value">雨田</div>
+          </div>
+          <div class="open-source-item">
+            <div class="open-source-label">虎扑 ID</div>
+            <div class="open-source-value">待补充</div>
+          </div>
+          <div class="open-source-item">
+            <div class="open-source-label">小红书 ID</div>
+            <div class="open-source-value">待补充</div>
+          </div>
+        </div>
+      </div>
+      <div class="avatar-wall">
+        <div class="avatar-strip one" id="heroStripOne"></div>
+        <div class="avatar-strip two" id="heroStripTwo"></div>
+        <div class="avatar-strip three" id="heroStripThree"></div>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="brand-chip" id="heroChip">25-26 Season Model Workspace</span>
+          <h1>
+            <img
+              class="hero-logo"
+              src="/assets/brand/paper-hoops-logo.png"
+              alt="纸上谈球"
+              onerror="this.classList.add('is-hidden')"
+            >
+            <span class="hero-logo-fallback">纸上谈球</span>
+          </h1>
+          <p>一个围绕 NBA 阵容变动、球队走向和交易影响进行建模与模拟的本地工作台。当前首页聚焦最新赛季概览，交易预测作为主功能独立展开。</p>
+          <div class="hero-actions feature-tabs" aria-label="功能页面切换">
+            <button class="feature-tab is-active" type="button" data-feature="trade">交易预测</button>
+            <button class="feature-tab" type="button" data-feature="players">球员数据</button>
+            <button class="feature-tab" type="button" data-feature="teams">球队数据</button>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <span class="section-chip">Scoring Leaders</span>
+          <h2>最新赛季得分榜背景样本</h2>
+          <div class="headline-list" id="headlineList">
+            <div class="empty">正在加载首页球员数据...</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="trade-forecast">
+      <div class="section-header">
+        <div>
+          <span class="section-chip">Model Workspace</span>
+          <h2>功能面板</h2>
+          <p>围绕 2025-26 赛季阵容、球员数据、球队战绩和交易影响进行浏览与模拟。</p>
+        </div>
+      </div>
+
+      <div class="feature-view is-active" id="tradeFeature">
+      <div class="mobile-trade-flow" aria-label="移动端交易预测">
+        <section class="mobile-trade-card">
+          <div class="mobile-flow-step">
+            <div class="mobile-step-heading">
+              <span>1</span>
+              <h3>选定球队</h3>
+            </div>
+            <label class="field-label" for="mobileTeamSelect">Target Team</label>
+            <select id="mobileTeamSelect"></select>
+            <div class="mobile-stat-grid" id="mobileCurrentStats">
+              <div class="empty">等待球队数据...</div>
+            </div>
+          </div>
+
+          <div class="mobile-flow-step">
+            <div class="mobile-step-heading">
+              <span>2</span>
+              <h3>移出球员</h3>
+            </div>
+            <div class="mobile-picker-row">
+              <select id="mobileOutgoingPlayerSelect" aria-label="选择移出球员"></select>
+              <button class="btn btn-secondary mobile-add-btn" type="button" id="mobileAddOutgoingBtn">加入</button>
+            </div>
+            <div class="mobile-player-tokens" id="mobileOutgoingList">
+              <div class="empty">尚未选择移出球员。</div>
+            </div>
+          </div>
+
+          <div class="mobile-flow-step">
+            <div class="mobile-step-heading">
+              <span>3</span>
+              <h3>移入球员</h3>
+            </div>
+            <label class="field-label" for="mobileIncomingTeamSelect">Source Team</label>
+            <select id="mobileIncomingTeamSelect"></select>
+            <div class="mobile-picker-row">
+              <select id="mobileIncomingPlayerSelect" aria-label="选择移入球员"></select>
+              <button class="btn btn-secondary mobile-add-btn" type="button" id="mobileAddIncomingBtn">加入</button>
+            </div>
+            <div class="mobile-player-tokens" id="mobileIncomingList">
+              <div class="empty">尚未选择移入球员。</div>
+            </div>
+          </div>
+
+          <div class="mobile-flow-actions">
+            <button class="btn btn-primary" type="button" id="mobilePredictBtn">生成预测</button>
+            <button class="btn btn-secondary" type="button" id="mobileResetBtn">清空重来</button>
+          </div>
+        </section>
+      </div>
+
+      <div class="mobile-result-modal" id="mobileResultModal" hidden>
+        <div class="mobile-result-backdrop"></div>
+        <section class="mobile-result-panel" role="dialog" aria-modal="true" aria-labelledby="mobileResultTitle">
+          <div class="projection-header">
+            <div>
+              <h3 id="mobileResultTitle">预测球队数据</h3>
+              <p class="sub">2026-27</p>
+            </div>
+          </div>
+          <div class="mobile-stat-grid" id="mobileResultStats">
+            <div class="empty">尚未生成预测结果。</div>
+          </div>
+          <div class="mobile-poster-actions">
+            <button class="btn btn-secondary" type="button" id="mobileDownloadCompactPosterBtn">精简海报</button>
+            <button class="btn btn-secondary" type="button" id="mobileDownloadFullPosterBtn">完整海报</button>
+          </div>
+          <button class="btn btn-primary" type="button" id="mobileResultBackBtn">返回并清空</button>
+        </section>
+      </div>
+
+      <div class="workspace">
+        <section class="panel">
+          <div>
+            <h3>目标球队</h3>
+            <p class="sub">选择要操作的球队，下面会展示该队当前赛季基础数据与完整球员名单。</p>
+          </div>
+
+          <div>
+            <label class="field-label" for="teamSelect">Target Team</label>
+            <select id="teamSelect"></select>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-secondary" type="button" id="loadTeamBtn">重新加载球队</button>
+          </div>
+
+          <div class="stat-grid" id="teamStatsCurrent">
+            <div class="empty">等待球队数据...</div>
+          </div>
+
+          <div class="list-shell" id="teamRoster">
+            <div class="empty">等待球队名单...</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div>
+            <h3>交易篮子</h3>
+            <p class="sub">先勾选目标球队要移出的球员，再选择来源球队和移入球员。下方会汇总本次交易涉及的球员。</p>
+          </div>
+
+          <div>
+            <label class="field-label" for="sourceTeamSelect">Incoming Source Team</label>
+            <select id="sourceTeamSelect"></select>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-primary" type="button" id="simulateBtn">生成下赛季预测</button>
+            <button class="btn btn-secondary" type="button" id="clearSelectionBtn">清空选择</button>
+          </div>
+
+          <div class="selection-board">
+            <div class="selection-card">
+              <h4>移出球员</h4>
+              <div class="salary-total" id="outgoingSalaryTotal">计薪移出薪资：本季 $0 / 下季 $0</div>
+              <div class="salary-note">深色锁定球员为赛季末已离队的默认移出项，会参与阵容校正，但不计入交易薪资匹配。</div>
+              <div class="mini-list" id="outgoingSelection">
+                <div class="empty">尚未选择移出球员。</div>
+              </div>
+            </div>
+            <div class="selection-card">
+              <h4>移入球员</h4>
+              <div class="salary-total" id="incomingSalaryTotal">移入薪资：本季 $0 / 下季 $0</div>
+              <div class="mini-list" id="incomingSelection">
+                <div class="empty">尚未选择移入球员。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-shell" id="incomingPool">
+            <div class="empty">请选择来源球队。</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="projection-header">
+            <div>
+              <h3>交易后预测</h3>
+              <p class="sub">预测结果来自当前项目的交易模拟模型，面向 2026-27 赛季。</p>
+            </div>
+            <div class="season-label">2026-27</div>
+          </div>
+
+          <div class="stat-grid" id="teamStatsProjected">
+            <div class="empty">尚未生成预测结果。</div>
+          </div>
+
+          <div class="poster-actions">
+            <button class="btn btn-secondary" type="button" id="downloadCompactPosterBtn" disabled>下载精简海报</button>
+            <button class="btn btn-secondary" type="button" id="downloadFullPosterBtn" disabled>下载完整海报</button>
+          </div>
+
+          <div class="list-shell" id="projectedRoster">
+            <div class="empty">点击“生成下赛季预测”后，这里会展示预测球队阵容与球员数据。</div>
+          </div>
+        </section>
+      </div>
+      </div>
+
+      <div class="feature-view" id="playersFeature">
+        <section class="data-panel">
+          <div class="data-card">
+            <h3>球员数据</h3>
+            <p class="sub">2025-26 赛季常规赛球员基础数据与影响力高阶指标，头像来自当前项目的 StatMuse 头像缓存。当前表格已接入 Basketball-Reference 的 BPM/WS/VORP 与投篮、篮板、使用率等高级字段，以及 NBA Stats 的进攻/防守效率、真实命中率、使用率、PIE、节奏和回合数。空值密集的 EPM/DPM/RAPM/LEBRON 列已暂时隐藏，后续补齐后再恢复显示。</p>
+            <details class="metric-guide">
+              <summary>高阶数据说明</summary>
+              <div class="metric-guide-body" id="playerMetricGuide"></div>
+            </details>
+            <div class="table-shell player-table-shell" id="playerStatsTable">
+              <div class="empty">正在加载球员数据...</div>
+            </div>
+            <div class="pagination-bar" id="playerPagination"></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="feature-view" id="teamsFeature">
+        <section class="data-panel">
+          <div class="conference-grid">
+            <div class="data-card">
+              <h3>东部球队数据</h3>
+              <p class="sub">2025-26 赛季常规赛东部球队战绩与基础数据。</p>
+              <div class="table-shell" id="teamStatsEastTable">
+                <div class="empty">正在加载东部球队数据...</div>
+              </div>
+            </div>
+            <div class="data-card">
+              <h3>西部球队数据</h3>
+              <p class="sub">2025-26 赛季常规赛西部球队战绩与基础数据。</p>
+              <div class="table-shell" id="teamStatsWestTable">
+                <div class="empty">正在加载西部球队数据...</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <div class="poster-preview-modal" id="posterPreviewModal" hidden>
+    <div class="poster-preview-backdrop" id="posterPreviewBackdrop"></div>
+    <section class="poster-preview-panel" role="dialog" aria-modal="true" aria-labelledby="posterPreviewTitle">
+      <div class="poster-preview-header">
+        <div>
+          <h3 id="posterPreviewTitle">海报预览</h3>
+          <p id="posterPreviewHint">检查海报效果后，可选择下载图片。</p>
+        </div>
+        <button class="poster-preview-close" type="button" id="posterPreviewCloseBtn" aria-label="关闭">×</button>
+      </div>
+      <div class="poster-preview-stage">
+        <img id="posterPreviewImage" alt="海报预览">
+      </div>
+      <div class="poster-preview-actions">
+        <button class="btn btn-primary" type="button" id="posterPreviewDownloadBtn">下载图片</button>
+        <button class="btn btn-secondary" type="button" id="posterPreviewCancelBtn">关闭</button>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const state = {
+      home: null,
+      teams: [],
+      teamView: null,
+      incomingPool: [],
+      incomingPlayerCache: {},
+      projected: null,
+      selectedOutgoing: [],
+      selectedIncoming: [],
+      defaultOutgoing: [],
+      defaultOutgoingDetails: [],
+      playerStats: null,
+      teamStats: null,
+      playerSort: {
+        key: "points_per_game",
+        direction: "desc",
+      },
+      playerPage: 1,
+      playerPageSize: 20,
+      loadedFeatures: {
+        players: false,
+        teams: false,
+      },
+      posterPreview: null,
+      language: localStorage.getItem("paperHoopsLanguage") || "zh",
+    };
+
+    const MOBILE_QUERY = window.matchMedia("(max-width: 720px)");
+
+    function isMobileView() {
+      return MOBILE_QUERY.matches;
+    }
+
+    const teamSelect = document.getElementById('teamSelect');
+    const sourceTeamSelect = document.getElementById('sourceTeamSelect');
+    const featureTabs = [...document.querySelectorAll("[data-feature]")];
+    const featureViews = {
+      trade: document.getElementById("tradeFeature"),
+      players: document.getElementById("playersFeature"),
+      teams: document.getElementById("teamsFeature"),
+    };
+    const headlineList = document.getElementById('headlineList');
+    const heroChip = document.getElementById('heroChip');
+    const heroStripOne = document.getElementById('heroStripOne');
+    const heroStripTwo = document.getElementById('heroStripTwo');
+    const heroStripThree = document.getElementById('heroStripThree');
+    const siteVisitCount = document.getElementById('siteVisitCount');
+    const siteSimCount = document.getElementById('siteSimCount');
+    const teamStatsCurrent = document.getElementById('teamStatsCurrent');
+    const teamRoster = document.getElementById('teamRoster');
+    const incomingPool = document.getElementById('incomingPool');
+    const outgoingSelection = document.getElementById('outgoingSelection');
+    const incomingSelection = document.getElementById('incomingSelection');
+    const outgoingSalaryTotal = document.getElementById('outgoingSalaryTotal');
+    const incomingSalaryTotal = document.getElementById('incomingSalaryTotal');
+    const teamStatsProjected = document.getElementById('teamStatsProjected');
+    const projectedRoster = document.getElementById('projectedRoster');
+    const playerStatsTable = document.getElementById('playerStatsTable');
+    const playerPagination = document.getElementById('playerPagination');
+    const playerMetricGuide = document.getElementById('playerMetricGuide');
+    const teamStatsEastTable = document.getElementById('teamStatsEastTable');
+    const teamStatsWestTable = document.getElementById('teamStatsWestTable');
+    const languageToggle = document.getElementById('languageToggle');
+    const mobileTeamSelect = document.getElementById('mobileTeamSelect');
+    const mobileCurrentStats = document.getElementById('mobileCurrentStats');
+    const mobileOutgoingPlayerSelect = document.getElementById('mobileOutgoingPlayerSelect');
+    const mobileAddOutgoingBtn = document.getElementById('mobileAddOutgoingBtn');
+    const mobileOutgoingList = document.getElementById('mobileOutgoingList');
+    const mobileIncomingTeamSelect = document.getElementById('mobileIncomingTeamSelect');
+    const mobileIncomingPlayerSelect = document.getElementById('mobileIncomingPlayerSelect');
+    const mobileAddIncomingBtn = document.getElementById('mobileAddIncomingBtn');
+    const mobileIncomingList = document.getElementById('mobileIncomingList');
+    const mobilePredictBtn = document.getElementById('mobilePredictBtn');
+    const mobileResetBtn = document.getElementById('mobileResetBtn');
+    const mobileResultModal = document.getElementById('mobileResultModal');
+    const mobileResultStats = document.getElementById('mobileResultStats');
+    const mobileResultBackBtn = document.getElementById('mobileResultBackBtn');
+    const downloadCompactPosterBtn = document.getElementById('downloadCompactPosterBtn');
+    const downloadFullPosterBtn = document.getElementById('downloadFullPosterBtn');
+    const mobileDownloadCompactPosterBtn = document.getElementById('mobileDownloadCompactPosterBtn');
+    const mobileDownloadFullPosterBtn = document.getElementById('mobileDownloadFullPosterBtn');
+    const posterPreviewModal = document.getElementById('posterPreviewModal');
+    const posterPreviewBackdrop = document.getElementById('posterPreviewBackdrop');
+    const posterPreviewTitle = document.getElementById('posterPreviewTitle');
+    const posterPreviewHint = document.getElementById('posterPreviewHint');
+    const posterPreviewImage = document.getElementById('posterPreviewImage');
+    const posterPreviewDownloadBtn = document.getElementById('posterPreviewDownloadBtn');
+    const posterPreviewCancelBtn = document.getElementById('posterPreviewCancelBtn');
+    const posterPreviewCloseBtn = document.getElementById('posterPreviewCloseBtn');
+
+    const UI_TEXT = {
+      zh: {
+        langToggle: "中文 / EN",
+        siteVisits: "访问总次数",
+        siteSims: "完成模拟",
+        siteCounterAria: "网站访问统计",
+        openSourceAria: "开源项目信息",
+        developer: "开发者",
+        hupuId: "虎扑 ID",
+        xhsId: "小红书 ID",
+        pending: "待补充",
+        developerName: "雨田",
+        heroCopy: "一个围绕 NBA 阵容变动、球队走向和交易影响进行建模与模拟的本地工作台。当前首页聚焦最新赛季概览，交易预测作为主功能独立展开。",
+        trade: "交易预测",
+        players: "球员数据",
+        teams: "球队数据",
+        scoringLeaders: "最新赛季得分榜背景样本",
+        loadingHome: "正在加载首页球员数据...",
+        featurePanel: "功能面板",
+        featurePanelCopy: "围绕 2025-26 赛季阵容、球员数据、球队战绩和交易影响进行浏览与模拟。",
+        mobileTradeAria: "移动端交易预测",
+        selectTeam: "选定球队",
+        targetTeam: "目标球队",
+        targetTeamHint: "选择要操作的球队，下面会展示该队当前赛季基础数据与完整球员名单。",
+        targetTeamLabel: "目标球队",
+        waitingTeamData: "等待球队数据...",
+        waitingRoster: "等待球队名单...",
+        outgoingPlayers: "移出球员",
+        incomingPlayers: "移入球员",
+        add: "加入",
+        noOutgoing: "尚未选择移出球员。",
+        noIncoming: "尚未选择移入球员。",
+        sourceTeam: "来源球队",
+        predict: "生成预测",
+        reset: "清空重来",
+        resultTeamData: "预测球队数据",
+        noResult: "尚未生成预测结果。",
+        compactPoster: "精简海报",
+        fullPoster: "完整海报",
+        backClear: "返回并清空",
+        reloadTeam: "重新加载球队",
+        tradeBasket: "交易篮子",
+        tradeBasketHint: "先勾选目标球队要移出的球员，再选择来源球队和移入球员。下方会汇总本次交易涉及的球员。",
+        simulateNext: "生成下赛季预测",
+        clearSelection: "清空选择",
+        outgoingSalary: "计薪移出薪资",
+        incomingSalary: "移入薪资",
+        salaryNote: "深色锁定球员为赛季末已离队的默认移出项，会参与阵容校正，但不计入交易薪资匹配。",
+        chooseSourceTeam: "请选择来源球队。",
+        projectedTitle: "交易后预测",
+        projectedHint: "预测结果来自当前项目的交易模拟模型，面向 2026-27 赛季。",
+        downloadCompactPoster: "生成精简海报",
+        downloadFullPoster: "生成完整海报",
+        posterPreviewTitle: "海报预览",
+        posterPreviewHint: "检查海报效果后，可选择是否下载图片。",
+        downloadPosterImage: "下载图片",
+        close: "关闭",
+        projectedRosterEmpty: "点击“生成下赛季预测”后，这里会展示预测球队阵容与球员数据。",
+        playerDataCopy: "2025-26 赛季常规赛球员基础数据与影响力高阶指标，头像来自当前项目的 StatMuse 头像缓存。当前表格已接入 Basketball-Reference 的 BPM/WS/VORP 与投篮、篮板、使用率等高级字段，以及 NBA Stats 的进攻/防守效率、真实命中率、使用率、PIE、节奏和回合数。空值密集的 EPM/DPM/RAPM/LEBRON 列已暂时隐藏，后续补齐后再恢复显示。",
+        metricGuide: "高阶数据说明",
+        loadingPlayers: "正在加载球员数据...",
+        eastTeams: "东部球队数据",
+        westTeams: "西部球队数据",
+        eastTeamsCopy: "2025-26 赛季常规赛东部球队战绩与基础数据。",
+        westTeamsCopy: "2025-26 赛季常规赛西部球队战绩与基础数据。",
+        loadingEastTeams: "正在加载东部球队数据...",
+        loadingWestTeams: "正在加载西部球队数据...",
+        noTeamData: "暂无球队数据。",
+        noPlayerData: "暂无球员数据。",
+        noRoster: "暂无球员名单。",
+        noSourcePlayers: "该来源球队暂无可选球员，或尚未加载。",
+        noAvailablePlayers: "暂无可选球员",
+        currentSeasonSalary: "本季",
+        nextSeasonSalary: "下季",
+        unknown: "未知",
+        current: "当前",
+        projected: "预测",
+        change: "变化",
+        fullReport: "FULL TRADE REPORT",
+        compactSnapshot: "TRADE SNAPSHOT",
+        coreChange: "核心变化",
+        teamChange: "交易前后球队数据变化",
+        rosterCorrection: "阵容校正项",
+        projectedRosterPoster: "交易后球队名单及预测数据",
+        outgoingObject: "交易移出对象",
+        incomingObject: "交易移入对象",
+        outgoingPoster: "移出球员",
+        incomingPoster: "移入球员",
+        noSelection: "暂无选择",
+        incomingBadge: "移入",
+        retainedBadge: "留队",
+        generateFirst: "请先生成预测结果，再下载海报。",
+        initFailed: "页面初始化失败，请检查本地服务和数据文件。",
+        sourceTeamPrefix: "来源球队",
+        defaultOutgoing: "默认移出球员",
+        remove: "移除",
+      },
+      en: {
+        langToggle: "EN / 中文",
+        siteVisits: "Total visits",
+        siteSims: "Simulations",
+        siteCounterAria: "Site visit statistics",
+        openSourceAria: "Open-source project information",
+        developer: "Developer",
+        hupuId: "Hupu ID",
+        xhsId: "Xiaohongshu ID",
+        pending: "Pending",
+        developerName: "Yutian",
+        heroCopy: "A local NBA workspace for modeling roster movement, team direction, and trade impact. The homepage highlights the latest season, with trade projection as the main workflow.",
+        trade: "Trade Projection",
+        players: "Player Data",
+        teams: "Team Data",
+        scoringLeaders: "Latest Scoring Leaders",
+        loadingHome: "Loading homepage player data...",
+        featurePanel: "Workspace",
+        featurePanelCopy: "Browse and simulate around 2025-26 rosters, player data, team records, and trade impact.",
+        mobileTradeAria: "Mobile trade projection",
+        selectTeam: "Select Team",
+        targetTeam: "Target Team",
+        targetTeamHint: "Choose a team to operate on. Current-season team data and the full roster will appear below.",
+        targetTeamLabel: "Target Team",
+        waitingTeamData: "Waiting for team data...",
+        waitingRoster: "Waiting for roster...",
+        outgoingPlayers: "Outgoing Players",
+        incomingPlayers: "Incoming Players",
+        add: "Add",
+        noOutgoing: "No outgoing players selected.",
+        noIncoming: "No incoming players selected.",
+        sourceTeam: "Source Team",
+        predict: "Generate Projection",
+        reset: "Reset",
+        resultTeamData: "Projected Team Data",
+        noResult: "No projection generated yet.",
+        compactPoster: "Compact Poster",
+        fullPoster: "Full Poster",
+        backClear: "Back and Clear",
+        reloadTeam: "Reload Team",
+        tradeBasket: "Trade Basket",
+        tradeBasketHint: "Select outgoing players from the target team, then choose source teams and incoming players. The selected package is summarized below.",
+        simulateNext: "Generate Next-Season Projection",
+        clearSelection: "Clear Selection",
+        outgoingSalary: "Counted outgoing salary",
+        incomingSalary: "Incoming salary",
+        salaryNote: "Dark locked players are default outgoing roster-correction items. They affect roster correction but are excluded from salary matching.",
+        chooseSourceTeam: "Choose a source team.",
+        projectedTitle: "Post-Trade Projection",
+        projectedHint: "Projection results come from the current trade simulation model for the 2026-27 season.",
+        downloadCompactPoster: "Generate Compact Poster",
+        downloadFullPoster: "Generate Full Poster",
+        posterPreviewTitle: "Poster Preview",
+        posterPreviewHint: "Review the poster first, then choose whether to download the image.",
+        downloadPosterImage: "Download Image",
+        close: "Close",
+        projectedRosterEmpty: "After generating a next-season projection, the projected roster and player data will appear here.",
+        playerDataCopy: "2025-26 regular-season player box-score and impact metrics. Avatars come from the local StatMuse cache. The table includes Basketball-Reference BPM/WS/VORP plus shooting, rebounding, and usage fields, along with NBA Stats efficiency, TS%, usage, PIE, pace, and possessions. Sparse EPM/DPM/RAPM/LEBRON columns are temporarily hidden until coverage improves.",
+        metricGuide: "Advanced Metric Guide",
+        loadingPlayers: "Loading player data...",
+        eastTeams: "Eastern Conference Teams",
+        westTeams: "Western Conference Teams",
+        eastTeamsCopy: "2025-26 Eastern Conference regular-season records and basic team data.",
+        westTeamsCopy: "2025-26 Western Conference regular-season records and basic team data.",
+        loadingEastTeams: "Loading Eastern Conference team data...",
+        loadingWestTeams: "Loading Western Conference team data...",
+        noTeamData: "No team data available.",
+        noPlayerData: "No player data available.",
+        noRoster: "No roster available.",
+        noSourcePlayers: "No selectable players for this source team, or it has not loaded yet.",
+        noAvailablePlayers: "No available players",
+        currentSeasonSalary: "Current",
+        nextSeasonSalary: "Next",
+        unknown: "Unknown",
+        current: "Current",
+        projected: "Projected",
+        change: "Change",
+        fullReport: "FULL TRADE REPORT",
+        compactSnapshot: "TRADE SNAPSHOT",
+        coreChange: "Core Changes",
+        teamChange: "Team Data Before / After Trade",
+        rosterCorrection: "Roster correction",
+        projectedRosterPoster: "Post-Trade Roster and Projection",
+        outgoingObject: "Outgoing Trade Assets",
+        incomingObject: "Incoming Trade Assets",
+        outgoingPoster: "Outgoing Players",
+        incomingPoster: "Incoming Players",
+        noSelection: "No selection",
+        incomingBadge: "Incoming",
+        retainedBadge: "Retained",
+        generateFirst: "Generate a projection before downloading a poster.",
+        initFailed: "Page initialization failed. Please check the local server and data files.",
+        sourceTeamPrefix: "Source team",
+        defaultOutgoing: "Default outgoing player",
+        remove: "Remove",
+      },
+    };
+
+    const STATIC_TRANSLATIONS = Object.fromEntries(
+      Object.keys(UI_TEXT.zh).map((key) => [UI_TEXT.zh[key], UI_TEXT.en[key]])
+    );
+    STATIC_TRANSLATIONS["Model Workspace"] = "Model Workspace";
+    STATIC_TRANSLATIONS["Scoring Leaders"] = "Scoring Leaders";
+    STATIC_TRANSLATIONS["模型工作台"] = "Model Workspace";
+    STATIC_TRANSLATIONS["得分榜"] = "Scoring Leaders";
+    const STATIC_TRANSLATIONS_REVERSE = Object.fromEntries(
+      Object.keys(UI_TEXT.zh).map((key) => [UI_TEXT.en[key], UI_TEXT.zh[key]])
+    );
+    STATIC_TRANSLATIONS_REVERSE["Model Workspace"] = "模型工作台";
+    STATIC_TRANSLATIONS_REVERSE["Scoring Leaders"] = "得分榜";
+
+    const METRIC_LABELS = {
+      wins: { zh: "胜场", en: "Wins" },
+      losses: { zh: "负场", en: "Losses" },
+      win_pct: { zh: "胜率", en: "Win%" },
+      pace: { zh: "节奏", en: "Pace" },
+      offensive_rating: { zh: "进攻效率", en: "Off Rtg" },
+      defensive_rating: { zh: "防守效率", en: "Def Rtg" },
+      net_rating: { zh: "净效率", en: "Net Rtg" },
+      points_per_game: { zh: "场均得分", en: "PPG" },
+      rebounds_per_game: { zh: "场均篮板", en: "RPG" },
+      assists_per_game: { zh: "场均助攻", en: "APG" },
+      games_played: { zh: "场次", en: "GP" },
+      minutes_per_game: { zh: "分钟", en: "MPG" },
+      steals_per_game: { zh: "抢断", en: "SPG" },
+      blocks_per_game: { zh: "盖帽", en: "BPG" },
+      turnovers_per_game: { zh: "失误", en: "TOV" },
+      field_goal_pct: { zh: "投篮%", en: "FG%" },
+      three_point_pct: { zh: "三分%", en: "3P%" },
+      free_throw_pct: { zh: "罚球%", en: "FT%" },
+      true_shooting_pct: { zh: "TS%", en: "TS%" },
+      effective_field_goal_pct: { zh: "eFG%", en: "eFG%" },
+    };
+
+    function t(key) {
+      return UI_TEXT[state.language]?.[key] || UI_TEXT.zh[key] || key;
+    }
+
+    function metricLabel(key, fallback) {
+      return METRIC_LABELS[key]?.[state.language] || fallback;
+    }
+
+    function translatePlainText(value) {
+      return state.language === "en"
+        ? (STATIC_TRANSLATIONS[value] || value)
+        : (STATIC_TRANSLATIONS_REVERSE[value] || value);
+    }
+
+    function applyStaticLanguage() {
+      document.documentElement.lang = state.language === "en" ? "en" : "zh-CN";
+      document.title = state.language === "en" ? "Paper Hoops" : "纸上谈球";
+      languageToggle.textContent = t("langToggle");
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach((node) => {
+        if (["SCRIPT", "STYLE"].includes(node.parentElement?.tagName)) return;
+        const raw = node.nodeValue;
+        const trimmed = raw.trim();
+        if (!trimmed) return;
+        const translated = translatePlainText(trimmed);
+        if (translated !== trimmed) {
+          node.nodeValue = raw.replace(trimmed, translated);
+        }
+      });
+      document.querySelectorAll("[aria-label]").forEach((node) => {
+        const value = node.getAttribute("aria-label");
+        node.setAttribute("aria-label", translatePlainText(value));
+      });
+      document.querySelectorAll("[title]").forEach((node) => {
+        const value = node.getAttribute("title");
+        node.setAttribute("title", translatePlainText(value));
+      });
+    }
+
+    function rerenderForLanguage() {
+      applyStaticLanguage();
+      if (state.home) {
+        heroChip.textContent = state.language === "en"
+          ? `${state.home.season_label} Season Model Workspace`
+          : `${state.home.season_label} 赛季模型工作台`;
+        renderHeroBackground(state.home.headline_players || []);
+        renderHeadlineList(state.home.headline_players || []);
+      }
+      renderTeamOptionsZh();
+      renderSourceTeamOptions();
+      renderTeamStatGrid(teamStatsCurrent, state.teamView?.team || null);
+      renderMobileStatGrid(mobileCurrentStats, state.teamView?.team || null);
+      if (state.projected?.team) {
+        renderTeamStatGrid(teamStatsProjected, state.projected.team);
+        renderMobileStatGrid(mobileResultStats, state.projected.team);
+      } else {
+        renderTeamStatGrid(teamStatsProjected, null);
+        renderMobileStatGrid(mobileResultStats, null);
+      }
+      renderCurrentRosterZh();
+      renderIncomingPoolZh();
+      renderSelectionPanelsZh();
+      renderProjectedRosterZh();
+      renderMobileTradeControls();
+      if (state.loadedFeatures.players) {
+        renderMetricGuide(playerMetricGuide, playerTableColumnsForViewport());
+        renderPlayerStatsTable();
+      }
+      if (state.loadedFeatures.teams) {
+        renderTeamStatsTable(teamStatsEastTable, state.teamStats?.conferences?.East || []);
+        renderTeamStatsTable(teamStatsWestTable, state.teamStats?.conferences?.West || []);
+      }
+      updatePosterActions();
+    }
+
+    function setLanguage(language) {
+      state.language = language === "en" ? "en" : "zh";
+      localStorage.setItem("paperHoopsLanguage", state.language);
+      rerenderForLanguage();
+    }
+
+    const TEAM_STAT_FIELDS = [
+      ["wins", "胜场"],
+      ["losses", "负场"],
+      ["win_pct", "胜率"],
+      ["pace", "节奏"],
+      ["offensive_rating", "进攻效率"],
+      ["defensive_rating", "防守效率"],
+      ["net_rating", "净效率"],
+      ["points_per_game", "场均得分"],
+      ["rebounds_per_game", "场均篮板"],
+      ["assists_per_game", "场均助攻"],
+    ];
+
+    const MOBILE_TEAM_STAT_FIELD_KEYS = new Set([
+      "wins",
+      "losses",
+      "win_pct",
+      "offensive_rating",
+      "defensive_rating",
+      "net_rating",
+    ]);
+
+    const FULL_POSTER_TEAM_STAT_FIELDS = TEAM_STAT_FIELDS.filter(([key]) => (
+      !["points_per_game", "rebounds_per_game", "assists_per_game"].includes(key)
+    ));
+
+    function teamStatFieldsForViewport() {
+      return isMobileView()
+        ? TEAM_STAT_FIELDS.filter(([key]) => MOBILE_TEAM_STAT_FIELD_KEYS.has(key))
+        : TEAM_STAT_FIELDS;
+    }
+
+    const PLAYER_TABLE_COLUMNS = [
+      { key: "games_played", label: "场次", digits: 0, description: "出场场次。" },
+      { key: "minutes_per_game", label: "分钟", digits: 1, description: "场均上场时间。" },
+      { key: "points_per_game", label: "得分", digits: 1, description: "场均得分。" },
+      { key: "rebounds_per_game", label: "篮板", digits: 1, description: "场均篮板。" },
+      { key: "assists_per_game", label: "助攻", digits: 1, description: "场均助攻。" },
+      { key: "steals_per_game", label: "抢断", digits: 1, description: "场均抢断。" },
+      { key: "blocks_per_game", label: "盖帽", digits: 1, description: "场均盖帽。" },
+      { key: "turnovers_per_game", label: "失误", digits: 1, description: "场均失误。" },
+      { key: "field_goal_pct", label: "投篮%", digits: 3, description: "投篮命中率。" },
+      { key: "three_point_pct", label: "三分%", digits: 3, description: "三分命中率。" },
+      { key: "free_throw_pct", label: "罚球%", digits: 3, description: "罚球命中率。" },
+      { key: "true_shooting_pct", label: "TS%", digits: 3, description: "真实命中率，综合两分、三分和罚球效率。" },
+      { key: "effective_field_goal_pct", label: "eFG%", digits: 3, description: "有效命中率，对三分命中给予额外权重。" },
+      { key: "per", label: "PER", digits: 1, description: "Player Efficiency Rating，球员效率值，综合基础技术统计并按节奏调整。" },
+      { key: "epm", label: "EPM", digits: 2, description: "Estimated Plus-Minus，来自已抓到的 Dunks and Threes 公开样本；缺失时显示为“-”。" },
+      { key: "o_epm", label: "O-EPM", digits: 2, description: "进攻 Estimated Plus-Minus。" },
+      { key: "d_epm", label: "D-EPM", digits: 2, description: "防守 Estimated Plus-Minus。" },
+      { key: "dpm", label: "DPM", digits: 2, description: "DataBallr Daily Plus-Minus，总体影响估计，通常 O-DPM + D-DPM。" },
+      { key: "o_dpm", label: "O-DPM", digits: 2, description: "DataBallr 进攻 Daily Plus-Minus。" },
+      { key: "d_dpm", label: "D-DPM", digits: 2, description: "DataBallr 防守 Daily Plus-Minus。" },
+      { key: "rapm", label: "RAPM", digits: 2, description: "Regularized Adjusted Plus-Minus；当前资产表使用本地 DataBallr 三年 RAPM 字段。" },
+      { key: "o_rapm", label: "O-RAPM", digits: 2, description: "进攻 RAPM。" },
+      { key: "d_rapm", label: "D-RAPM", digits: 2, description: "防守 RAPM。" },
+      { key: "lebron", label: "LEBRON", digits: 2, description: "BBall Index LEBRON 影响力指标。暂不合成；缺失时显示为“-”。" },
+      { key: "o_lebron", label: "O-LEBRON", digits: 2, description: "进攻 LEBRON；仅在授权或公开数据可用时展示。" },
+      { key: "d_lebron", label: "D-LEBRON", digits: 2, description: "防守 LEBRON；仅在授权或公开数据可用时展示。" },
+      { key: "bpm", label: "BPM", digits: 1, description: "Box Plus/Minus，来自 Basketball-Reference advanced table。" },
+      { key: "obpm", label: "OBPM", digits: 1, description: "进攻 Box Plus/Minus。" },
+      { key: "dbpm", label: "DBPM", digits: 1, description: "防守 Box Plus/Minus。" },
+      { key: "ws", label: "WS", digits: 1, description: "Win Shares，胜利贡献值，来自 Basketball-Reference advanced table。" },
+      { key: "ows", label: "OWS", digits: 1, description: "Offensive Win Shares，进攻胜利贡献值。" },
+      { key: "dws", label: "DWS", digits: 1, description: "Defensive Win Shares，防守胜利贡献值。" },
+      { key: "ws_per_48", label: "WS/48", digits: 3, description: "每 48 分钟胜利贡献值。" },
+      { key: "vorp", label: "VORP", digits: 1, description: "Value Over Replacement Player，相对替补水平的总价值。" },
+      { key: "bbref_ts_pct", label: "BBRef TS%", digits: 3, description: "Basketball-Reference 真实命中率。" },
+      { key: "bbref_three_point_attempt_rate", label: "BBRef 3PAr", digits: 3, description: "Basketball-Reference 三分出手率。" },
+      { key: "bbref_free_throw_attempt_rate", label: "BBRef FTr", digits: 3, description: "Basketball-Reference 罚球出手率。" },
+      { key: "bbref_off_reb_pct", label: "BBRef ORB%", digits: 1, description: "Basketball-Reference 进攻篮板率。" },
+      { key: "bbref_def_reb_pct", label: "BBRef DRB%", digits: 1, description: "Basketball-Reference 防守篮板率。" },
+      { key: "bbref_total_reb_pct", label: "BBRef TRB%", digits: 1, description: "Basketball-Reference 总篮板率。" },
+      { key: "bbref_assist_pct", label: "BBRef AST%", digits: 1, description: "Basketball-Reference 助攻率。" },
+      { key: "bbref_steal_pct", label: "BBRef STL%", digits: 1, description: "Basketball-Reference 抢断率。" },
+      { key: "bbref_block_pct", label: "BBRef BLK%", digits: 1, description: "Basketball-Reference 盖帽率。" },
+      { key: "bbref_turnover_pct", label: "BBRef TOV%", digits: 1, description: "Basketball-Reference 失误率。" },
+      { key: "bbref_usage_pct", label: "BBRef USG%", digits: 1, description: "Basketball-Reference 使用率。" },
+      { key: "nba_off_rating", label: "NBA ORtg", digits: 1, description: "NBA Stats 进攻效率。" },
+      { key: "nba_def_rating", label: "NBA DRtg", digits: 1, description: "NBA Stats 防守效率。" },
+      { key: "nba_net_rating", label: "NBA Net", digits: 1, description: "NBA Stats 净效率。" },
+      { key: "nba_est_off_rating", label: "NBA eORtg", digits: 1, description: "NBA Stats 估算进攻效率。" },
+      { key: "nba_est_def_rating", label: "NBA eDRtg", digits: 1, description: "NBA Stats 估算防守效率。" },
+      { key: "nba_est_net_rating", label: "NBA eNet", digits: 1, description: "NBA Stats 估算净效率。" },
+      { key: "nba_assist_pct", label: "NBA AST%", digits: 3, description: "NBA Stats 助攻率。" },
+      { key: "nba_assist_to", label: "NBA AST/TO", digits: 2, description: "NBA Stats 助攻失误比。" },
+      { key: "nba_assist_ratio", label: "NBA AST Ratio", digits: 1, description: "NBA Stats 助攻比率。" },
+      { key: "nba_off_reb_pct", label: "NBA ORB%", digits: 3, description: "NBA Stats 进攻篮板率。" },
+      { key: "nba_def_reb_pct", label: "NBA DRB%", digits: 3, description: "NBA Stats 防守篮板率。" },
+      { key: "nba_reb_pct", label: "NBA REB%", digits: 3, description: "NBA Stats 总篮板率。" },
+      { key: "nba_team_turnover_pct", label: "NBA TOV%", digits: 3, description: "NBA Stats 球队失误率。" },
+      { key: "nba_est_turnover_pct", label: "NBA eTOV%", digits: 3, description: "NBA Stats 估算失误率。" },
+      { key: "nba_effective_fg_pct", label: "NBA eFG%", digits: 3, description: "NBA Stats 有效命中率。" },
+      { key: "nba_true_shooting_pct", label: "NBA TS%", digits: 3, description: "NBA Stats 真实命中率。" },
+      { key: "nba_usage_pct", label: "NBA USG%", digits: 3, description: "NBA Stats 使用率。" },
+      { key: "nba_est_usage_pct", label: "NBA eUSG%", digits: 3, description: "NBA Stats 估算使用率。" },
+      { key: "nba_pace", label: "NBA Pace", digits: 1, description: "NBA Stats 节奏。" },
+      { key: "nba_est_pace", label: "NBA ePace", digits: 1, description: "NBA Stats 估算节奏。" },
+      { key: "nba_pie", label: "NBA PIE", digits: 3, description: "NBA Stats Player Impact Estimate。" },
+      { key: "nba_possessions", label: "NBA Poss", digits: 0, description: "NBA Stats 估算回合数。" },
+    ];
+
+    const HIDDEN_PLAYER_TABLE_COLUMNS = new Set([
+      "epm",
+      "o_epm",
+      "d_epm",
+      "dpm",
+      "o_dpm",
+      "d_dpm",
+      "rapm",
+      "o_rapm",
+      "d_rapm",
+      "lebron",
+      "o_lebron",
+      "d_lebron",
+    ]);
+
+    const PLAYER_TABLE_VISIBLE_COLUMNS = PLAYER_TABLE_COLUMNS.filter((column) => (
+      !HIDDEN_PLAYER_TABLE_COLUMNS.has(column.key)
+    ));
+
+    const MOBILE_PLAYER_TABLE_KEYS = new Set([
+      "games_played",
+      "minutes_per_game",
+      "points_per_game",
+      "rebounds_per_game",
+      "assists_per_game",
+      "true_shooting_pct",
+      "per",
+      "bpm",
+      "ws",
+      "vorp",
+      "nba_net_rating",
+      "nba_pie",
+    ]);
+
+    const TEAM_TABLE_COLUMNS = [
+      { key: "wins", label: "胜", digits: 0, description: "常规赛胜场。" },
+      { key: "losses", label: "负", digits: 0, description: "常规赛负场；本项目会在原始 losses 缺失时由 82 - wins 补算。" },
+      { key: "win_pct", label: "胜率", digits: 3, description: "胜场占比赛场次比例。" },
+      { key: "points_per_game", label: "得分", digits: 1, description: "场均得分。" },
+      { key: "rebounds_per_game", label: "篮板", digits: 1, description: "场均篮板。" },
+      { key: "assists_per_game", label: "助攻", digits: 1, description: "场均助攻。" },
+      { key: "steals_per_game", label: "抢断", digits: 1, description: "场均抢断。" },
+      { key: "blocks_per_game", label: "盖帽", digits: 1, description: "场均盖帽。" },
+      { key: "turnovers_per_game", label: "失误", digits: 1, description: "场均失误。" },
+      { key: "field_goal_pct", label: "投篮%", digits: 2, description: "投篮命中率。" },
+      { key: "three_point_pct", label: "三分%", digits: 2, description: "三分命中率。" },
+      { key: "free_throw_pct", label: "罚球%", digits: 2, description: "罚球命中率。" },
+      { key: "true_shooting_pct", label: "TS%", digits: 2, description: "真实命中率，综合两分、三分和罚球效率。" },
+      { key: "effective_field_goal_pct", label: "eFG%", digits: 2, description: "有效命中率，对三分命中给予额外权重。" },
+      { key: "pace", label: "节奏", digits: 1, description: "每 48 分钟估计回合数。" },
+      { key: "offensive_rating", label: "进攻效率", digits: 1, description: "每百回合得分。" },
+      { key: "defensive_rating", label: "防守效率", digits: 1, description: "每百回合失分，越低通常越好。" },
+      { key: "net_rating", label: "净效率", digits: 1, description: "进攻效率 - 防守效率，每百回合净胜分。" },
+    ];
+
+    const MOBILE_TEAM_TABLE_KEYS = new Set([
+      "wins",
+      "losses",
+      "win_pct",
+      "offensive_rating",
+      "defensive_rating",
+      "net_rating",
+    ]);
+
+    function playerTableColumnsForViewport() {
+      return isMobileView()
+        ? PLAYER_TABLE_VISIBLE_COLUMNS.filter((column) => MOBILE_PLAYER_TABLE_KEYS.has(column.key))
+        : PLAYER_TABLE_VISIBLE_COLUMNS;
+    }
+
+    function teamTableColumnsForViewport() {
+      return isMobileView()
+        ? TEAM_TABLE_COLUMNS.filter((column) => MOBILE_TEAM_TABLE_KEYS.has(column.key))
+        : TEAM_TABLE_COLUMNS;
+    }
+
+    function normalizePlayerSortForViewport() {
+      const availableKeys = new Set(playerTableColumnsForViewport().map((column) => column.key));
+      if (!availableKeys.has(state.playerSort.key)) {
+        state.playerSort = { key: "points_per_game", direction: "desc" };
+      }
+    }
+
+    function formatNumber(value, digits = 1) {
+      const num = Number(value);
+      return Number.isFinite(num) ? num.toFixed(digits) : "-";
+    }
+
+    function formatCount(value) {
+      const num = Number(value);
+      return Number.isFinite(num) ? Math.round(num).toLocaleString("zh-Hans-CN") : "0";
+    }
+
+    function formatPosterValue(value, key) {
+      if (key === "wins" || key === "losses") {
+        return formatNumber(value, 0);
+      }
+      if (key.includes("pct")) {
+        return formatNumber(value, 3);
+      }
+      return formatNumber(value, 1);
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    async function api(path, options = {}) {
+      const response = await fetch(path, options);
+      if (!response.ok) {
+        throw new Error(`Request failed: ${response.status}`);
+      }
+      return response.json();
+    }
+
+    function avatarMarkup(player, sizeClass = "player-avatar") {
+      const src = player?.avatar_url || "";
+      const alt = escapeHtml(playerDisplayName(player));
+      return src
+        ? `<img class="${sizeClass}" src="${src}" alt="${alt}">`
+        : `<div class="${sizeClass}" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;">No Photo</div>`;
+    }
+
+    function playerDisplayName(player) {
+      if (state.language === "en") {
+        return player?.player_name_en || player?.player_name || player?.display_name || "Unknown";
+      }
+      return player?.display_name || player?.player_name_zh || player?.player_name_en || player?.player_name || "Unknown";
+    }
+
+    function playerEnglishName(player) {
+      return player?.player_name_en || player?.player_name || "";
+    }
+
+    function uniqueNames(names) {
+      return [...new Set((names || []).filter(Boolean))];
+    }
+
+    function isDefaultOutgoing(name) {
+      return (state.defaultOutgoing || []).includes(name);
+    }
+
+    function rememberIncomingPlayers(players) {
+      (players || []).forEach((player) => {
+        if (player?.player_name) {
+          state.incomingPlayerCache[player.player_name] = player;
+        }
+      });
+    }
+
+    function salaryNumber(player, key) {
+      const value = Number(player?.[key]);
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function formatSalary(value, options = {}) {
+      const num = Number(value);
+      if (Number.isFinite(num) && num > 0) {
+        return `$${Math.round(num).toLocaleString("en-US")}`;
+      }
+      if (Number.isFinite(num) && num === 0 && options.zeroAsDollar) {
+        return "$0";
+      }
+      if (!Number.isFinite(num) || num <= 0) {
+        return t("unknown");
+      }
+      return t("unknown");
+    }
+
+    function playerSalaryLine(player) {
+      const current = salaryNumber(player, "salary_2025_26");
+      const next = salaryNumber(player, "salary_2026_27");
+      const defaulted = player?.salary_next_defaulted
+        ? (state.language === "en" ? " (carried from current season)" : "（到期按本季延续）")
+        : "";
+      return `${t("currentSeasonSalary")} ${formatSalary(current)}<br>${t("nextSeasonSalary")} ${formatSalary(next)}${defaulted}`;
+    }
+
+    function totalSalary(names, key, options = {}) {
+      const excludedDefaults = options.excludeDefaults === true;
+      return uniqueNames(names).reduce((total, name) => {
+        if (excludedDefaults && isDefaultOutgoing(name)) {
+          return total;
+        }
+        return total + salaryNumber(findCurrentPlayer(name), key);
+      }, 0);
+    }
+
+    function setIncomingSelected(name, selected) {
+      const current = new Set(state.selectedIncoming || []);
+      if (selected) {
+        current.add(name);
+      } else {
+        current.delete(name);
+      }
+      state.selectedIncoming = [...current];
+    }
+
+    function defaultOutgoingDetail(name) {
+      return (state.defaultOutgoingDetails || []).find((item) => item.player_name === name) || null;
+    }
+
+    function defaultOutgoingMeta(name) {
+      const detail = defaultOutgoingDetail(name);
+      if (!detail?.current_team) {
+        return "";
+      }
+      return detail.current_team === "FA"
+        ? "默认移出，赛季末不在该队名单"
+        : `默认移出，赛季末归属 ${detail.current_team}`;
+    }
+
+    function playerSummaryZh(player, projected = false) {
+      const parts = [];
+      if (player?.player_name_zh) {
+        parts.push(escapeHtml(playerEnglishName(player)));
+      }
+      parts.push(`${metricLabel("points_per_game", "场均得分")} ${formatNumber(player?.points_per_game, 1)}`);
+      parts.push(`${metricLabel("rebounds_per_game", "场均篮板")} ${formatNumber(player?.rebounds_per_game, 1)}`);
+      parts.push(`${metricLabel("assists_per_game", "场均助攻")} ${formatNumber(player?.assists_per_game, 1)}`);
+      parts.push(`${metricLabel("minutes_per_game", "分钟")} ${formatNumber(player?.minutes_per_game, 1)}`);
+      if (projected) {
+        parts.push(`${metricLabel("true_shooting_pct", "TS%")} ${formatNumber(player?.true_shooting_pct, 2)}`);
+        parts.push(`PER ${formatNumber(player?.per, 1)}`);
+      } else {
+        parts.push(`${metricLabel("games_played", "场次")} ${formatNumber(player?.games_played, 0)}`);
+      }
+      parts.push(`<span class="salary-line">${playerSalaryLine(player)}</span>`);
+      return parts.join("<br>");
+    }
+
+    function playerRowMarkupZh(player, type) {
+      const lockedDefault = type === "outgoing" && isDefaultOutgoing(player.player_name);
+      const checked = lockedDefault || (type === "outgoing"
+        ? state.selectedOutgoing.includes(player.player_name)
+        : state.selectedIncoming.includes(player.player_name));
+      const defaultMeta = type === "outgoing" ? defaultOutgoingMeta(player.player_name) : "";
+      return `
+        <label class="player-row ${lockedDefault ? "is-locked" : ""}">
+          <input type="checkbox" data-${type} value="${escapeHtml(player.player_name)}" ${checked ? "checked" : ""} ${lockedDefault ? "disabled" : ""}>
+          ${avatarMarkup(player)}
+          <div>
+            <div class="player-name-row">
+              <span class="player-name">${escapeHtml(playerDisplayName(player))}</span>
+              <span class="badge">${escapeHtml(player.team_abbreviation || "")}</span>
+              ${defaultMeta ? `<span class="badge badge-default">${state.language === "en" ? "Default out" : "预移出"}</span><span class="badge badge-locked">${state.language === "en" ? "No salary" : "不计薪"}</span>` : ""}
+            </div>
+            <div class="player-meta">${playerSummaryZh(player, false)}${defaultMeta ? `<br>${escapeHtml(defaultMeta)}` : ""}</div>
+          </div>
+        </label>
+      `;
+    }
+
+    function renderMiniListZh(target, names, emptyText) {
+      if (!names.length) {
+        target.innerHTML = `<div class="empty">${emptyText}</div>`;
+        return;
+      }
+      target.innerHTML = names.map((name) => {
+        const player = findCurrentPlayer(name) || { player_name: name };
+        const defaultMeta = defaultOutgoingMeta(name);
+        const lockedDefault = isDefaultOutgoing(name);
+        return `
+          <div class="mini-player ${lockedDefault ? "is-locked" : ""}">
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
+            <div>
+              <div class="player-name">${escapeHtml(playerDisplayName(player))}</div>
+              <div class="compact-meta">
+                ${escapeHtml(playerEnglishName(player))}${playerEnglishName(player) ? " · " : ""}${escapeHtml(player.team_abbreviation || "")}
+                ${player.points_per_game != null ? ` · ${metricLabel("points_per_game", "场均得分")} ${formatNumber(player.points_per_game, 1)}` : ""}
+                · ${t("currentSeasonSalary")} ${formatSalary(salaryNumber(player, "salary_2025_26"))}
+                · ${t("nextSeasonSalary")} ${formatSalary(salaryNumber(player, "salary_2026_27"))}
+                ${lockedDefault ? ` · ${state.language === "en" ? "Locked / no salary" : "锁定不计薪"}` : ""}
+                ${defaultMeta ? ` · ${escapeHtml(defaultMeta)}` : ""}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderProjectedRosterZh() {
+      const players = state.projected?.players || [];
+      if (!players.length) {
+        projectedRoster.innerHTML = `<div class="empty">点击“生成下赛季预测”后，这里会展示预测阵容。</div>`;
+        return;
+      }
+      projectedRoster.innerHTML = players.map((player) => `
+        <div class="player-row" style="grid-template-columns:52px minmax(0, 1fr);">
+          ${avatarMarkup(player)}
+          <div>
+            <div class="player-name-row">
+              <span class="player-name">${escapeHtml(playerDisplayName(player))}</span>
+              <span class="badge">${player.projection_type === "incoming" ? t("incomingBadge") : t("retainedBadge")}</span>
+            </div>
+            <div class="player-meta">${playerSummaryZh(player, true)}</div>
+            <div class="compact-meta">${t("sourceTeamPrefix")}：${escapeHtml(player.source_team || "-")}</div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function renderTeamOptionsZh() {
+      const currentValue = teamSelect.value;
+      teamSelect.innerHTML = state.teams.map((team) => `
+        <option value="${team.team_abbreviation}">
+          ${escapeHtml(team.team_name)} (${escapeHtml(team.team_abbreviation)}) · ${formatNumber(team.wins, 0)}${state.language === "en" ? "W" : " 胜"}
+        </option>
+      `).join("");
+      if (currentValue && state.teams.some((team) => team.team_abbreviation === currentValue)) {
+        teamSelect.value = currentValue;
+      }
+      renderMobileTeamOptions();
+      renderSourceTeamOptions();
+    }
+
+    function renderCurrentRosterZh() {
+      const players = state.teamView?.players || [];
+      if (!players.length) {
+        teamRoster.innerHTML = `<div class="empty">${t("noRoster")}</div>`;
+        return;
+      }
+      teamRoster.innerHTML = players.map((player) => playerRowMarkupZh(player, "outgoing")).join("");
+      teamRoster.querySelectorAll("[data-outgoing]").forEach((input) => {
+        input.addEventListener("change", () => {
+          const checked = [...teamRoster.querySelectorAll("[data-outgoing]:checked:not(:disabled)")].map((node) => node.value);
+          state.selectedOutgoing = uniqueNames([...state.defaultOutgoing, ...checked]);
+          renderSelectionPanelsZh();
+        });
+      });
+    }
+
+    function renderIncomingPoolZh() {
+      if (!state.incomingPool.length) {
+        incomingPool.innerHTML = `<div class="empty">${t("noSourcePlayers")}</div>`;
+        return;
+      }
+      incomingPool.innerHTML = state.incomingPool.map((player) => playerRowMarkupZh(player, "incoming")).join("");
+      incomingPool.querySelectorAll("[data-incoming]").forEach((input) => {
+        input.addEventListener("change", () => {
+          setIncomingSelected(input.value, input.checked);
+          renderSelectionPanelsZh();
+        });
+      });
+    }
+
+    function renderSelectionPanelsZh() {
+      renderMiniListZh(outgoingSelection, state.selectedOutgoing, t("noOutgoing"));
+      renderMiniListZh(incomingSelection, state.selectedIncoming, t("noIncoming"));
+      outgoingSalaryTotal.textContent = `${t("outgoingSalary")}：${t("currentSeasonSalary")} ${formatSalary(totalSalary(state.selectedOutgoing, "salary_2025_26", { excludeDefaults: true }), { zeroAsDollar: true })} / ${t("nextSeasonSalary")} ${formatSalary(totalSalary(state.selectedOutgoing, "salary_2026_27", { excludeDefaults: true }), { zeroAsDollar: true })}`;
+      incomingSalaryTotal.textContent = `${t("incomingSalary")}：${t("currentSeasonSalary")} ${formatSalary(totalSalary(state.selectedIncoming, "salary_2025_26"), { zeroAsDollar: true })} / ${t("nextSeasonSalary")} ${formatSalary(totalSalary(state.selectedIncoming, "salary_2026_27"), { zeroAsDollar: true })}`;
+    }
+
+    function tableImageMarkup(src, alt, className) {
+      return src
+        ? `<img class="${className}" src="${src}" alt="${escapeHtml(alt)}" onerror="this.style.visibility='hidden'">`
+        : `<div class="${className}"></div>`;
+    }
+
+    function renderMetricGuide(target, columns) {
+      const impactKeys = new Set([
+        "o_epm", "d_epm",
+        "per", "ws", "ows", "dws", "ws_per_48",
+        "bpm", "obpm", "dbpm", "vorp",
+        "dpm", "o_dpm", "d_dpm",
+        "rapm", "o_rapm", "d_rapm",
+        "epm", "lebron", "o_lebron", "d_lebron",
+      ]);
+      const advanced = columns.filter((column) => (
+        column.key.includes("rating")
+        || column.key.includes("pct")
+        || column.key.startsWith("bbref_")
+        || column.key.startsWith("nba_")
+        || column.key.startsWith("db_")
+        || impactKeys.has(column.key)
+        || ["pace"].includes(column.key)
+      ));
+      target.innerHTML = advanced.map((column) => `
+        <div class="metric-note">
+          <strong>${escapeHtml(metricLabel(column.key, column.label))}</strong>
+          ${escapeHtml(state.language === "en" ? "Advanced or efficiency metric from the project data sources." : (column.description || "项目数据源提供的高阶或效率指标。"))}
+        </div>
+      `).join("");
+    }
+
+    function sortableValue(row, key) {
+      const value = Number(row?.[key]);
+      return Number.isFinite(value) ? value : null;
+    }
+
+    function sortedPlayerRows() {
+      const players = [...(state.playerStats?.players || [])];
+      const { key, direction } = state.playerSort;
+      const sign = direction === "asc" ? 1 : -1;
+      players.sort((a, b) => {
+        const av = sortableValue(a, key);
+        const bv = sortableValue(b, key);
+        if (av == null && bv == null) {
+          return playerDisplayName(a).localeCompare(playerDisplayName(b), "zh-Hans-CN");
+        }
+        if (av == null) return 1;
+        if (bv == null) return -1;
+        if (av === bv) {
+          return playerDisplayName(a).localeCompare(playerDisplayName(b), "zh-Hans-CN");
+        }
+        return sign * (av - bv);
+      });
+      return players;
+    }
+
+    function renderPlayerPagination(totalRows) {
+      const totalPages = Math.max(1, Math.ceil(totalRows / state.playerPageSize));
+      state.playerPage = Math.min(Math.max(1, state.playerPage), totalPages);
+      const start = totalRows ? (state.playerPage - 1) * state.playerPageSize + 1 : 0;
+      const end = Math.min(totalRows, state.playerPage * state.playerPageSize);
+      playerPagination.innerHTML = `
+        <button class="btn btn-secondary" type="button" data-page-action="prev" ${state.playerPage <= 1 ? "disabled" : ""}>${state.language === "en" ? "Prev" : "上一页"}</button>
+        <span class="page-status">${state.language === "en" ? `Page ${state.playerPage} / ${totalPages}` : `第 ${state.playerPage} / ${totalPages} 页`} · ${start}-${end} / ${totalRows}</span>
+        <button class="btn btn-secondary" type="button" data-page-action="next" ${state.playerPage >= totalPages ? "disabled" : ""}>${state.language === "en" ? "Next" : "下一页"}</button>
+      `;
+      playerPagination.querySelectorAll("[data-page-action]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.playerPage += button.dataset.pageAction === "next" ? 1 : -1;
+          renderPlayerStatsTable();
+        });
+      });
+    }
+
+    function renderPlayerStatsTable() {
+      normalizePlayerSortForViewport();
+      const columns = playerTableColumnsForViewport();
+      const allPlayers = sortedPlayerRows();
+      const totalRows = allPlayers.length;
+      const start = (state.playerPage - 1) * state.playerPageSize;
+      const players = allPlayers.slice(start, start + state.playerPageSize);
+      if (!players.length) {
+        playerStatsTable.innerHTML = `<div class="empty">${t("noPlayerData")}</div>`;
+        playerPagination.innerHTML = "";
+        return;
+      }
+      playerStatsTable.innerHTML = `
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>${state.language === "en" ? "Player" : "球员"}</th>
+              ${columns.map((column) => `
+                <th class="is-sortable" data-player-sort="${column.key}" title="${escapeHtml(column.description || "")}">
+                  ${escapeHtml(metricLabel(column.key, column.label))}
+                  ${state.playerSort.key === column.key ? `<span class="sort-mark">${state.playerSort.direction === "desc" ? "↓" : "↑"}</span>` : ""}
+                </th>
+              `).join("")}
+            </tr>
+          </thead>
+          <tbody>
+            ${players.map((player) => `
+              <tr>
+                <td>
+                  <div class="identity-cell">
+                    ${tableImageMarkup(player.avatar_url, playerDisplayName(player), "table-avatar")}
+                    <div>
+                      <div class="identity-main">${escapeHtml(playerDisplayName(player))}</div>
+                      <div class="identity-sub">${escapeHtml(playerEnglishName(player))}${playerEnglishName(player) ? " · " : ""}${escapeHtml(player.team_abbreviation || "")}</div>
+                    </div>
+                  </div>
+                </td>
+                ${columns.map((column) => `<td>${formatNumber(player[column.key], column.digits)}</td>`).join("")}
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+      playerStatsTable.querySelectorAll("[data-player-sort]").forEach((header) => {
+        header.addEventListener("click", () => {
+          const key = header.dataset.playerSort;
+          if (state.playerSort.key === key) {
+            state.playerSort.direction = state.playerSort.direction === "desc" ? "asc" : "desc";
+          } else {
+            state.playerSort.key = key;
+            state.playerSort.direction = "desc";
+          }
+          state.playerPage = 1;
+          renderPlayerStatsTable();
+        });
+      });
+      renderPlayerPagination(totalRows);
+    }
+
+    function renderTeamStatsTable(target, teams) {
+      if (!teams.length) {
+        target.innerHTML = `<div class="empty">${t("noTeamData")}</div>`;
+        return;
+      }
+      const columns = teamTableColumnsForViewport();
+      target.innerHTML = `
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>${state.language === "en" ? "Team" : "球队"}</th>
+              ${columns.map((column) => `<th title="${escapeHtml(column.description || "")}">${escapeHtml(metricLabel(column.key, column.label))}</th>`).join("")}
+            </tr>
+          </thead>
+          <tbody>
+            ${teams.map((team) => `
+              <tr>
+                <td>
+                  <div class="identity-cell">
+                    ${tableImageMarkup(team.logo_url, team.team_name, "table-logo")}
+                    <div>
+                      <div class="identity-main">${escapeHtml(team.team_name)}</div>
+                      <div class="identity-sub">${escapeHtml(team.team_abbreviation || "")} · ${team.conference === "East" ? (state.language === "en" ? "East" : "东部") : (state.language === "en" ? "West" : "西部")}</div>
+                    </div>
+                  </div>
+                </td>
+                ${columns.map((column) => `<td>${formatNumber(team[column.key], column.digits)}</td>`).join("")}
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    async function loadPlayerStats() {
+      if (state.loadedFeatures.players) {
+        return;
+      }
+      state.playerStats = await api("/api/player_stats");
+      state.loadedFeatures.players = true;
+      renderMetricGuide(playerMetricGuide, playerTableColumnsForViewport());
+      renderPlayerStatsTable();
+    }
+
+    async function loadTeamStats() {
+      if (state.loadedFeatures.teams) {
+        return;
+      }
+      state.teamStats = await api("/api/team_stats");
+      state.loadedFeatures.teams = true;
+      renderTeamStatsTable(teamStatsEastTable, state.teamStats?.conferences?.East || []);
+      renderTeamStatsTable(teamStatsWestTable, state.teamStats?.conferences?.West || []);
+    }
+
+    async function activateFeature(feature, scroll = false) {
+      featureTabs.forEach((button) => button.classList.toggle("is-active", button.dataset.feature === feature));
+      Object.entries(featureViews).forEach(([key, node]) => node.classList.toggle("is-active", key === feature));
+      if (feature === "players") {
+        await loadPlayerStats();
+      }
+      if (feature === "teams") {
+        await loadTeamStats();
+      }
+      if (scroll) {
+        document.getElementById("trade-forecast").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function renderHeroBackground(players) {
+      const groups = [
+        players.slice(0, 6),
+        players.slice(6, 12),
+        players.slice(12, 18),
+      ];
+      [heroStripOne, heroStripTwo, heroStripThree].forEach((node, idx) => {
+        node.innerHTML = groups[idx].map((player) => `
+          <div class="avatar-card">
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : ""}
+            <div class="ppg">${escapeHtml(playerDisplayName(player))} · ${formatNumber(player.points_per_game, 1)} ${state.language === "en" ? "PPG" : "场均分"}</div>
+          </div>
+        `).join("");
+      });
+    }
+
+    function renderHeadlineList(players) {
+      headlineList.innerHTML = players.slice(0, 6).map((player) => `
+        <div class="headline-row">
+          ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar"></div>`}
+          <div>
+            <div class="headline-name">${escapeHtml(playerDisplayName(player))}</div>
+            <div class="headline-meta">${escapeHtml(playerEnglishName(player))}${playerEnglishName(player) ? " · " : ""}${escapeHtml(player.team_abbreviation || "")}</div>
+          </div>
+          <div class="headline-score">${formatNumber(player.points_per_game, 1)}</div>
+        </div>
+      `).join("");
+    }
+
+    async function loadHome() {
+      state.home = await api("/api/home");
+      heroChip.textContent = state.language === "en"
+        ? `${state.home.season_label} Season Model Workspace`
+        : `${state.home.season_label} 赛季模型工作台`;
+      renderHeroBackground(state.home.headline_players || []);
+      renderHeadlineList(state.home.headline_players || []);
+    }
+
+    async function loadSiteMetrics() {
+      const metrics = await api("/api/site_metrics");
+      siteVisitCount.textContent = formatCount(metrics.total_visits);
+      siteSimCount.textContent = formatCount(metrics.trade_simulations);
+    }
+
+    function renderTeamOptions() {
+      const currentValue = teamSelect.value;
+      teamSelect.innerHTML = state.teams.map((team) => `
+        <option value="${team.team_abbreviation}">
+          ${escapeHtml(team.team_name)} (${escapeHtml(team.team_abbreviation)}) · ${formatNumber(team.wins, 0)}${state.language === "en" ? "W" : " 胜"}
+        </option>
+      `).join("");
+      if (currentValue && state.teams.some((team) => team.team_abbreviation === currentValue)) {
+        teamSelect.value = currentValue;
+      }
+      renderSourceTeamOptions();
+    }
+
+    function renderSourceTeamOptions() {
+      const selectedTeam = teamSelect.value;
+      const options = state.teams
+        .filter((team) => team.team_abbreviation !== selectedTeam)
+        .map((team) => `
+          <option value="${team.team_abbreviation}">
+            ${escapeHtml(team.team_name)} (${escapeHtml(team.team_abbreviation)})
+          </option>
+        `).join("");
+      sourceTeamSelect.innerHTML = options || `<option value="">${state.language === "en" ? "No source teams" : "暂无来源球队"}</option>`;
+      mobileIncomingTeamSelect.innerHTML = options || `<option value="">${state.language === "en" ? "No source teams" : "暂无来源球队"}</option>`;
+      mobileIncomingTeamSelect.value = sourceTeamSelect.value;
+    }
+
+    function renderTeamStatGrid(target, team) {
+      if (!team) {
+        target.innerHTML = `<div class="empty">${t("noTeamData")}</div>`;
+        return;
+      }
+      target.innerHTML = teamStatFieldsForViewport().map(([key, label]) => `
+        <div class="stat-card">
+          <div class="k">${metricLabel(key, label)}</div>
+          <div class="v">${key.includes("pct") ? formatNumber(team[key], 3) : formatNumber(team[key], 1)}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderMobileStatGrid(target, team) {
+      if (!team) {
+        target.innerHTML = `<div class="empty">${t("noTeamData")}</div>`;
+        return;
+      }
+      const fields = TEAM_STAT_FIELDS.filter(([key]) => MOBILE_TEAM_STAT_FIELD_KEYS.has(key));
+      target.innerHTML = fields.map(([key, label]) => `
+        <div class="mobile-stat-card">
+          <div class="k">${metricLabel(key, label)}</div>
+          <div class="v">${key.includes("pct") ? formatNumber(team[key], 3) : formatNumber(team[key], 1)}</div>
+        </div>
+      `).join("");
+    }
+
+    function renderMobileTeamOptions() {
+      mobileTeamSelect.innerHTML = state.teams.map((team) => `
+        <option value="${team.team_abbreviation}">
+          ${escapeHtml(team.team_name)} (${escapeHtml(team.team_abbreviation)})
+        </option>
+      `).join("");
+      mobileTeamSelect.value = teamSelect.value;
+    }
+
+    function renderMobileOutgoingOptions() {
+      const selected = new Set(state.selectedOutgoing || []);
+      const players = (state.teamView?.players || []).filter((player) => !selected.has(player.player_name));
+      mobileOutgoingPlayerSelect.innerHTML = players.length
+        ? players.map((player) => `<option value="${escapeHtml(player.player_name)}">${escapeHtml(playerDisplayName(player))}</option>`).join("")
+        : `<option value="">${t("noAvailablePlayers")}</option>`;
+      mobileAddOutgoingBtn.disabled = !players.length;
+    }
+
+    function renderMobileIncomingOptions() {
+      const selected = new Set(state.selectedIncoming || []);
+      const players = (state.incomingPool || []).filter((player) => !selected.has(player.player_name));
+      mobileIncomingPlayerSelect.innerHTML = players.length
+        ? players.map((player) => `<option value="${escapeHtml(player.player_name)}">${escapeHtml(playerDisplayName(player))}</option>`).join("")
+        : `<option value="">${t("noAvailablePlayers")}</option>`;
+      mobileAddIncomingBtn.disabled = !players.length;
+    }
+
+    function mobilePlayerTokenMarkup(name, type) {
+      const player = findCurrentPlayer(name) || { player_name: name };
+      const locked = type === "outgoing" && isDefaultOutgoing(name);
+      const removeAttr = type === "outgoing" ? "data-mobile-remove-outgoing" : "data-mobile-remove-incoming";
+      const removeButton = locked
+        ? `<button class="mobile-remove-token" type="button" disabled aria-label="${t("defaultOutgoing")}">×</button>`
+        : `<button class="mobile-remove-token" type="button" ${removeAttr}="${escapeHtml(name)}" aria-label="${t("remove")} ${escapeHtml(playerDisplayName(player))}">×</button>`;
+      return `
+        <div class="mobile-player-token">
+          ${avatarMarkup(player)}
+          <div class="mobile-player-token-name">${escapeHtml(playerDisplayName(player))}</div>
+          ${removeButton}
+        </div>
+      `;
+    }
+
+    function bindMobileTokenRemoval() {
+      mobileOutgoingList.querySelectorAll("[data-mobile-remove-outgoing]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.mobileRemoveOutgoing;
+          state.selectedOutgoing = uniqueNames(state.selectedOutgoing).filter((item) => item !== name || isDefaultOutgoing(item));
+          renderCurrentRosterZh();
+          renderSelectionPanelsZh();
+          renderMobileTradeControls();
+        });
+      });
+      mobileIncomingList.querySelectorAll("[data-mobile-remove-incoming]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.mobileRemoveIncoming;
+          state.selectedIncoming = uniqueNames(state.selectedIncoming).filter((item) => item !== name);
+          renderIncomingPoolZh();
+          renderSelectionPanelsZh();
+          renderMobileTradeControls();
+        });
+      });
+    }
+
+    function renderMobileSelectedPlayers() {
+      const outgoing = uniqueNames(state.selectedOutgoing || []).filter((name) => !isDefaultOutgoing(name));
+      const incoming = uniqueNames(state.selectedIncoming || []);
+      mobileOutgoingList.innerHTML = outgoing.length
+        ? outgoing.map((name) => mobilePlayerTokenMarkup(name, "outgoing")).join("")
+        : `<div class="empty">${t("noOutgoing")}</div>`;
+      mobileIncomingList.innerHTML = incoming.length
+        ? incoming.map((name) => mobilePlayerTokenMarkup(name, "incoming")).join("")
+        : `<div class="empty">${t("noIncoming")}</div>`;
+      bindMobileTokenRemoval();
+    }
+
+    function renderMobileTradeControls() {
+      renderMobileTeamOptions();
+      renderMobileStatGrid(mobileCurrentStats, state.teamView?.team || null);
+      mobileIncomingTeamSelect.value = sourceTeamSelect.value;
+      renderMobileOutgoingOptions();
+      renderMobileIncomingOptions();
+      renderMobileSelectedPlayers();
+      mobilePredictBtn.disabled = !teamSelect.value;
+    }
+
+    function updateModalScrollLock() {
+      const mobileOpen = mobileResultModal && !mobileResultModal.hidden;
+      const posterOpen = posterPreviewModal && !posterPreviewModal.hidden;
+      document.body.style.overflow = mobileOpen || posterOpen ? "hidden" : "";
+    }
+
+    function openMobileResultModal() {
+      mobileResultModal.hidden = false;
+      updateModalScrollLock();
+      mobileResultBackBtn.focus();
+    }
+
+    function closeMobileResultModal() {
+      mobileResultModal.hidden = true;
+      updateModalScrollLock();
+    }
+
+    function resetMobileTradeFlow() {
+      closeMobileResultModal();
+      clearSelections();
+      renderMobileTradeControls();
+    }
+
+    function updatePosterActions() {
+      const enabled = Boolean(state.projected?.team);
+      if (downloadCompactPosterBtn) {
+        downloadCompactPosterBtn.disabled = !enabled;
+        downloadCompactPosterBtn.textContent = t("downloadCompactPoster");
+      }
+      if (downloadFullPosterBtn) {
+        downloadFullPosterBtn.disabled = !enabled;
+        downloadFullPosterBtn.textContent = t("downloadFullPoster");
+      }
+      if (mobileDownloadCompactPosterBtn) {
+        mobileDownloadCompactPosterBtn.disabled = !enabled;
+        mobileDownloadCompactPosterBtn.textContent = t("downloadCompactPoster");
+      }
+      if (mobileDownloadFullPosterBtn) {
+        mobileDownloadFullPosterBtn.disabled = !enabled;
+        mobileDownloadFullPosterBtn.textContent = t("downloadFullPoster");
+      }
+      updatePosterPreviewLanguage();
+    }
+
+    function updatePosterPreviewLanguage() {
+      if (!posterPreviewModal) {
+        return;
+      }
+      posterPreviewTitle.textContent = t("posterPreviewTitle");
+      posterPreviewHint.textContent = t("posterPreviewHint");
+      posterPreviewDownloadBtn.textContent = t("downloadPosterImage");
+      posterPreviewCancelBtn.textContent = t("close");
+      posterPreviewCloseBtn.setAttribute("aria-label", t("close"));
+      posterPreviewImage.alt = t("posterPreviewTitle");
+    }
+
+    function openPosterPreview(dataUrl, filename, mode) {
+      state.posterPreview = { dataUrl, filename, mode };
+      updatePosterPreviewLanguage();
+      posterPreviewImage.src = dataUrl;
+      posterPreviewModal.hidden = false;
+      updateModalScrollLock();
+      posterPreviewDownloadBtn.focus();
+    }
+
+    function closePosterPreview() {
+      posterPreviewModal.hidden = true;
+      posterPreviewImage.removeAttribute("src");
+      state.posterPreview = null;
+      updateModalScrollLock();
+    }
+
+    function downloadPosterPreview() {
+      if (!state.posterPreview?.dataUrl) {
+        return;
+      }
+      const link = document.createElement("a");
+      link.download = state.posterPreview.filename;
+      link.href = state.posterPreview.dataUrl;
+      link.click();
+    }
+
+    function posterTeamName(team) {
+      return team?.team_name || team?.team_abbreviation || teamSelect.value || "Target Team";
+    }
+
+    function posterSelectedPlayers(kind, options = {}) {
+      const names = kind === "outgoing" ? state.selectedOutgoing : state.selectedIncoming;
+      const includeDefaults = options.includeDefaults === true;
+      return uniqueNames(names || [])
+        .filter((name) => includeDefaults || kind !== "outgoing" || !isDefaultOutgoing(name))
+        .map((name) => findCurrentPlayer(name) || { player_name: name });
+    }
+
+    function posterFilename(mode) {
+      const team = (state.projected?.team?.team_abbreviation || teamSelect.value || "trade").toLowerCase();
+      const stamp = new Date().toISOString().slice(0, 10).replaceAll("-", "");
+      return `paper-hoops-${team}-${mode}-${stamp}.png`;
+    }
+
+    function posterDelta(current, projected, key) {
+      const before = Number(current?.[key]);
+      const after = Number(projected?.[key]);
+      if (!Number.isFinite(before) || !Number.isFinite(after)) return "-";
+      const delta = after - before;
+      const digits = key === "wins" || key === "losses" ? 0 : key.includes("pct") ? 3 : 1;
+      const formatted = Math.abs(delta).toFixed(digits);
+      return `${delta >= 0 ? "+" : "-"}${formatted}`;
+    }
+
+    function posterMetricLine(player) {
+      return state.language === "en"
+        ? `${formatNumber(player?.points_per_game, 1)} pts / ${formatNumber(player?.rebounds_per_game, 1)} reb / ${formatNumber(player?.assists_per_game, 1)} ast`
+        : `${formatNumber(player?.points_per_game, 1)}分 / ${formatNumber(player?.rebounds_per_game, 1)}板 / ${formatNumber(player?.assists_per_game, 1)}助`;
+    }
+
+    function posterSalaryLine(player) {
+      return `${t("currentSeasonSalary")} ${formatSalary(salaryNumber(player, "salary_2025_26"))} · ${t("nextSeasonSalary")} ${formatSalary(salaryNumber(player, "salary_2026_27"))}`;
+    }
+
+    function roundedRect(ctx, x, y, w, h, radius) {
+      const r = Math.min(radius, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function fillRoundedRect(ctx, x, y, w, h, radius, fillStyle) {
+      roundedRect(ctx, x, y, w, h, radius);
+      ctx.fillStyle = fillStyle;
+      ctx.fill();
+    }
+
+    function strokeRoundedRect(ctx, x, y, w, h, radius, strokeStyle, lineWidth = 1) {
+      roundedRect(ctx, x, y, w, h, radius);
+      ctx.strokeStyle = strokeStyle;
+      ctx.lineWidth = lineWidth;
+      ctx.stroke();
+    }
+
+    function wrapPosterText(ctx, text, x, y, maxWidth, lineHeight, maxLines = 3) {
+      const raw = String(text || "");
+      const words = raw.includes(" ") ? raw.split(/\s+/).filter(Boolean) : Array.from(raw);
+      const lines = [];
+      let line = "";
+      words.forEach((word) => {
+        const sep = raw.includes(" ") ? " " : "";
+        const test = line ? `${line}${sep}${word}` : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = test;
+        }
+      });
+      if (line) lines.push(line);
+      const visible = lines.slice(0, maxLines);
+      visible.forEach((item, index) => {
+        const suffix = index === maxLines - 1 && lines.length > maxLines ? "..." : "";
+        ctx.fillText(`${item}${suffix}`, x, y + index * lineHeight);
+      });
+      return visible.length * lineHeight;
+    }
+
+    function loadPosterImage(src) {
+      if (!src || (!src.startsWith("/") && !src.startsWith(window.location.origin))) {
+        return Promise.resolve(null);
+      }
+      return new Promise((resolve) => {
+        const image = new Image();
+        image.onload = () => resolve(image);
+        image.onerror = () => resolve(null);
+        image.src = src;
+        setTimeout(() => resolve(null), 2500);
+      });
+    }
+
+    function drawCoverImage(ctx, image, x, y, w, h) {
+      const sourceRatio = image.width / image.height;
+      const targetRatio = w / h;
+      let sx = 0;
+      let sy = 0;
+      let sw = image.width;
+      let sh = image.height;
+      if (sourceRatio > targetRatio) {
+        sw = image.height * targetRatio;
+        sx = (image.width - sw) / 2;
+      } else {
+        sh = image.width / targetRatio;
+        sy = (image.height - sh) / 2;
+      }
+      ctx.drawImage(image, sx, sy, sw, sh, x, y, w, h);
+    }
+
+    async function drawPosterLogo(ctx, x, y, maxWidth, maxHeight) {
+      const logo = await loadPosterImage("/assets/brand/paper-hoops-logo.png");
+      if (!logo) {
+        ctx.fillStyle = "#7c2314";
+        ctx.font = "900 26px Arial, sans-serif";
+        ctx.fillText(state.language === "en" ? "Paper Hoops" : "纸上谈球", x, y + 30);
+        return;
+      }
+      const scale = Math.min(maxWidth / logo.width, maxHeight / logo.height);
+      const width = logo.width * scale;
+      const height = logo.height * scale;
+      ctx.drawImage(logo, x, y, width, height);
+    }
+
+    async function drawPosterAvatar(ctx, player, x, y, size) {
+      const image = await loadPosterImage(player?.avatar_url || "");
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x + size / 2, y + size / 2, size / 2, 0, Math.PI * 2);
+      ctx.clip();
+      if (image) {
+        drawCoverImage(ctx, image, x, y, size, size);
+      } else {
+        ctx.fillStyle = "#efe2d0";
+        ctx.fillRect(x, y, size, size);
+        ctx.fillStyle = "#7c2314";
+        ctx.font = `900 ${Math.round(size * 0.28)}px Arial, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(playerDisplayName(player).slice(0, 2), x + size / 2, y + size / 2);
+        ctx.textAlign = "left";
+        ctx.textBaseline = "alphabetic";
+      }
+      ctx.restore();
+      ctx.strokeStyle = "rgba(88,70,43,0.22)";
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(x + size / 2, y + size / 2, size / 2, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    function drawPosterFooter(ctx, width, height) {
+      ctx.fillStyle = "#7a6b57";
+      ctx.font = "700 22px Arial, sans-serif";
+      ctx.fillText(`${state.language === "en" ? "Paper Hoops" : "纸上谈球"} · NBA Trade Simulator`, 72, height - 58);
+      const date = new Date().toLocaleDateString(state.language === "en" ? "en-US" : "zh-Hans-CN");
+      ctx.textAlign = "right";
+      ctx.fillText(`Generated ${date}`, width - 72, height - 58);
+      ctx.textAlign = "left";
+    }
+
+    function drawTeamDeltaTable(ctx, current, projected, x, y, width, options = {}) {
+      const fields = options.fields || [
+        ["wins", metricLabel("wins", "胜场")],
+        ["win_pct", metricLabel("win_pct", "胜率")],
+        ["offensive_rating", metricLabel("offensive_rating", "进攻效率")],
+        ["defensive_rating", metricLabel("defensive_rating", "防守效率")],
+        ["net_rating", metricLabel("net_rating", "净效率")],
+      ];
+      const rowHeight = options.rowHeight || 58;
+      const headerHeight = 54;
+      const totalHeight = headerHeight + fields.length * rowHeight + 26;
+      fillRoundedRect(ctx, x, y, width, totalHeight, 22, "rgba(255,250,242,0.92)");
+      strokeRoundedRect(ctx, x, y, width, totalHeight, 22, "rgba(88,70,43,0.16)");
+      ctx.fillStyle = "#7c2314";
+      ctx.font = "900 28px Arial, sans-serif";
+      ctx.fillText(options.title || t("teamChange"), x + 24, y + 38);
+      ctx.fillStyle = "#7a6b57";
+      ctx.font = "800 20px Arial, sans-serif";
+      ctx.fillText(t("current"), x + width - 360, y + 38);
+      ctx.fillText(t("projected"), x + width - 238, y + 38);
+      ctx.fillText(t("change"), x + width - 116, y + 38);
+      fields.forEach(([key, label], index) => {
+        const yy = y + headerHeight + index * rowHeight;
+        ctx.fillStyle = index % 2 ? "rgba(255,255,255,0.40)" : "rgba(255,255,255,0.18)";
+        ctx.fillRect(x + 18, yy, width - 36, rowHeight - 4);
+        ctx.fillStyle = "#211c16";
+        ctx.font = "800 23px Arial, sans-serif";
+        ctx.fillText(metricLabel(key, label), x + 28, yy + 37);
+        ctx.textAlign = "right";
+        ctx.font = "900 25px Arial, sans-serif";
+        ctx.fillText(formatPosterValue(current?.[key], key), x + width - 300, yy + 37);
+        ctx.fillText(formatPosterValue(projected?.[key], key), x + width - 178, yy + 37);
+        ctx.fillStyle = posterDelta(current, projected, key).startsWith("-") ? "#1f6b4f" : "#7c2314";
+        ctx.fillText(posterDelta(current, projected, key), x + width - 48, yy + 37);
+        ctx.textAlign = "left";
+      });
+      return y + totalHeight;
+    }
+
+    async function drawCompactTradeSide(ctx, title, players, x, y, width) {
+      ctx.fillStyle = "#7c2314";
+      ctx.font = "900 30px Arial, sans-serif";
+      ctx.fillText(title, x, y);
+      const visible = players.slice(0, 4);
+      if (!visible.length) {
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "800 24px Arial, sans-serif";
+        ctx.fillText(t("noSelection"), x, y + 54);
+        return;
+      }
+      for (let index = 0; index < visible.length; index += 1) {
+        const player = visible[index];
+        const rowY = y + 36 + index * 116;
+        fillRoundedRect(ctx, x, rowY, width, 96, 22, "rgba(255,255,255,0.70)");
+        await drawPosterAvatar(ctx, player, x + 16, rowY + 14, 68);
+        ctx.fillStyle = "#211c16";
+        ctx.font = "900 25px Arial, sans-serif";
+        wrapPosterText(ctx, playerDisplayName(player), x + 98, rowY + 36, width - 118, 28, 1);
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "700 18px Arial, sans-serif";
+        wrapPosterText(ctx, posterMetricLine(player), x + 98, rowY + 68, width - 118, 22, 1);
+      }
+    }
+
+    async function drawFullTradePlayerTable(ctx, title, players, x, y, width) {
+      ctx.fillStyle = "#7c2314";
+      ctx.font = "900 30px Arial, sans-serif";
+      ctx.fillText(title, x, y);
+      const visible = players.slice(0, 6);
+      if (!visible.length) {
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "800 23px Arial, sans-serif";
+        ctx.fillText(t("noSelection"), x, y + 46);
+        return y + 88;
+      }
+      for (let index = 0; index < visible.length; index += 1) {
+        const player = visible[index];
+        const rowY = y + 32 + index * 104;
+        fillRoundedRect(ctx, x, rowY, width, 88, 18, "rgba(255,255,255,0.72)");
+        await drawPosterAvatar(ctx, player, x + 14, rowY + 12, 64);
+        ctx.fillStyle = "#211c16";
+        ctx.font = "900 23px Arial, sans-serif";
+        wrapPosterText(ctx, playerDisplayName(player), x + 92, rowY + 34, width - 112, 26, 1);
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "700 17px Arial, sans-serif";
+        wrapPosterText(ctx, `${posterMetricLine(player)} · ${posterSalaryLine(player)}`, x + 92, rowY + 63, width - 112, 21, 1);
+      }
+      return y + 42 + visible.length * 104;
+    }
+
+    async function drawProjectedRosterTable(ctx, players, x, y, width) {
+      ctx.fillStyle = "#7c2314";
+      ctx.font = "900 32px Arial, sans-serif";
+      ctx.fillText(t("projectedRosterPoster"), x, y);
+      const visible = [...players]
+        .sort((a, b) => Number(b.points_per_game || 0) - Number(a.points_per_game || 0))
+        .slice(0, 14);
+      const rowHeight = 76;
+      for (let index = 0; index < visible.length; index += 1) {
+        const player = visible[index];
+        const rowY = y + 34 + index * rowHeight;
+        fillRoundedRect(ctx, x, rowY, width, 64, 16, index % 2 ? "rgba(255,255,255,0.56)" : "rgba(255,250,242,0.76)");
+        await drawPosterAvatar(ctx, player, x + 12, rowY + 8, 48);
+        ctx.fillStyle = "#211c16";
+        ctx.font = "900 21px Arial, sans-serif";
+        wrapPosterText(ctx, `${index + 1}. ${playerDisplayName(player)}`, x + 74, rowY + 27, width * 0.36, 24, 1);
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "700 18px Arial, sans-serif";
+        const label = player.projection_type === "incoming" ? t("incomingBadge") : t("retainedBadge");
+        ctx.fillText(label, x + width * 0.44, rowY + 27);
+        ctx.textAlign = "right";
+        ctx.fillStyle = "#211c16";
+        ctx.font = "800 19px Arial, sans-serif";
+        ctx.fillText(state.language === "en" ? `${formatNumber(player.points_per_game, 1)} pts` : `${formatNumber(player.points_per_game, 1)}分`, x + width - 280, rowY + 27);
+        ctx.fillText(state.language === "en" ? `${formatNumber(player.rebounds_per_game, 1)} reb` : `${formatNumber(player.rebounds_per_game, 1)}板`, x + width - 190, rowY + 27);
+        ctx.fillText(state.language === "en" ? `${formatNumber(player.assists_per_game, 1)} ast` : `${formatNumber(player.assists_per_game, 1)}助`, x + width - 100, rowY + 27);
+        ctx.textAlign = "left";
+        ctx.fillStyle = "#7a6b57";
+        ctx.font = "700 16px Arial, sans-serif";
+        ctx.fillText(posterSalaryLine(player), x + 74, rowY + 51);
+      }
+      return y + 60 + visible.length * rowHeight;
+    }
+
+    async function drawTradePoster(mode) {
+      if (!state.projected?.team) {
+        alert(t("generateFirst"));
+        return;
+      }
+      const isCompact = mode === "compact";
+      const width = isCompact ? 1080 : 1440;
+      const height = isCompact ? 1500 : 3200;
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#f6efe5";
+      ctx.fillRect(0, 0, width, height);
+      ctx.fillStyle = "#fffaf2";
+      ctx.beginPath();
+      ctx.arc(width - 160, 160, isCompact ? 320 : 460, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "rgba(124,35,20,0.12)";
+      ctx.beginPath();
+      ctx.arc(120, height - 120, isCompact ? 260 : 380, 0, Math.PI * 2);
+      ctx.fill();
+
+      const margin = isCompact ? 60 : 72;
+      const innerWidth = width - margin * 2;
+      fillRoundedRect(ctx, margin, margin, innerWidth, height - margin * 2, 34, "rgba(255,255,255,0.62)");
+      strokeRoundedRect(ctx, margin, margin, innerWidth, height - margin * 2, 34, "rgba(88,70,43,0.14)", 2);
+
+      const currentTeam = state.teamView?.team || {};
+      const projectedTeam = state.projected.team || {};
+      const outgoing = posterSelectedPlayers("outgoing");
+      const incoming = posterSelectedPlayers("incoming");
+      const titleX = margin + 48;
+      const titleY = margin + 88;
+      await drawPosterLogo(ctx, width - margin - 250, margin + 30, 190, 72);
+      ctx.fillStyle = "#7c2314";
+      ctx.font = "900 30px Arial, sans-serif";
+      ctx.fillText(isCompact ? t("compactSnapshot") : t("fullReport"), titleX, titleY);
+      ctx.fillStyle = "#211c16";
+      ctx.font = `900 ${isCompact ? 62 : 76}px Arial, sans-serif`;
+      wrapPosterText(ctx, state.language === "en" ? `${posterTeamName(currentTeam)} 2026-27 Projection` : `${posterTeamName(currentTeam)} 2026-27 预测`, titleX, titleY + 82, innerWidth - 96, isCompact ? 68 : 82, 2);
+
+      const tableTop = isCompact ? 330 : 360;
+      const deltaBottom = drawTeamDeltaTable(
+        ctx,
+        currentTeam,
+        projectedTeam,
+        titleX,
+        tableTop,
+        innerWidth - 96,
+        {
+          title: isCompact ? t("coreChange") : t("teamChange"),
+          fields: isCompact
+            ? [["wins", metricLabel("wins", "胜场")], ["win_pct", metricLabel("win_pct", "胜率")], ["offensive_rating", metricLabel("offensive_rating", "进攻效率")], ["defensive_rating", metricLabel("defensive_rating", "防守效率")], ["net_rating", metricLabel("net_rating", "净效率")]]
+            : FULL_POSTER_TEAM_STAT_FIELDS,
+          rowHeight: isCompact ? 54 : 58,
+        },
+      );
+
+      if (isCompact) {
+        const half = (innerWidth - 128) / 2;
+        await drawCompactTradeSide(ctx, t("outgoingPoster"), outgoing, titleX, deltaBottom + 58, half);
+        await drawCompactTradeSide(ctx, t("incomingPoster"), incoming, titleX + half + 32, deltaBottom + 58, half);
+      } else {
+        const half = (innerWidth - 128) / 2;
+        const playerTop = deltaBottom + 68;
+        const leftBottom = await drawFullTradePlayerTable(ctx, t("outgoingObject"), outgoing, titleX, playerTop, half);
+        const rightBottom = await drawFullTradePlayerTable(ctx, t("incomingObject"), incoming, titleX + half + 32, playerTop, half);
+        const correction = posterSelectedPlayers("outgoing", { includeDefaults: true }).filter((player) => isDefaultOutgoing(player.player_name));
+        let rosterTop = Math.max(leftBottom, rightBottom) + 46;
+        if (correction.length) {
+          ctx.fillStyle = "#7a6b57";
+          ctx.font = "700 22px Arial, sans-serif";
+          wrapPosterText(ctx, `${t("rosterCorrection")}：${correction.map(playerDisplayName).join(state.language === "en" ? ", " : "、")}`, titleX, rosterTop, innerWidth - 96, 30, 2);
+          rosterTop += 62;
+        }
+        await drawProjectedRosterTable(ctx, state.projected.players || [], titleX, rosterTop, innerWidth - 96);
+      }
+
+      drawPosterFooter(ctx, width, height);
+      openPosterPreview(canvas.toDataURL("image/png"), posterFilename(mode), mode);
+    }
+
+    function playerRowMarkup(player, type) {
+      const checked = type === "outgoing"
+        ? state.selectedOutgoing.includes(player.player_name)
+        : state.selectedIncoming.includes(player.player_name);
+      return `
+        <label class="player-row">
+          <input type="checkbox" data-${type} value="${escapeHtml(player.player_name)}" ${checked ? "checked" : ""}>
+          ${avatarMarkup(player)}
+          <div>
+            <div class="player-name-row">
+              <span class="player-name">${escapeHtml(playerDisplayName(player))}</span>
+              <span class="badge">${escapeHtml(player.team_abbreviation || "")}</span>
+            </div>
+            <div class="player-meta">
+              ${formatNumber(player.points_per_game, 1)} PPG ·
+              ${formatNumber(player.rebounds_per_game, 1)} RPG ·
+              ${formatNumber(player.assists_per_game, 1)} APG ·
+              ${formatNumber(player.minutes_per_game, 1)} MPG ·
+              ${formatNumber(player.games_played, 0)} GP
+            </div>
+          </div>
+        </label>
+      `;
+    }
+
+    function renderCurrentRoster() {
+      const players = state.teamView?.players || [];
+      if (!players.length) {
+        teamRoster.innerHTML = `<div class="empty">暂无球员名单。</div>`;
+        return;
+      }
+      teamRoster.innerHTML = players.map((player) => playerRowMarkup(player, "outgoing")).join("");
+      teamRoster.querySelectorAll("[data-outgoing]").forEach((input) => {
+        input.addEventListener("change", () => {
+          state.selectedOutgoing = [...teamRoster.querySelectorAll("[data-outgoing]:checked")].map((node) => node.value);
+          renderSelectionPanels();
+        });
+      });
+    }
+
+    function renderIncomingPool() {
+      if (!state.incomingPool.length) {
+        incomingPool.innerHTML = `<div class="empty">该来源球队暂无可选球员，或尚未加载。</div>`;
+        return;
+      }
+      incomingPool.innerHTML = state.incomingPool.map((player) => playerRowMarkup(player, "incoming")).join("");
+      incomingPool.querySelectorAll("[data-incoming]").forEach((input) => {
+        input.addEventListener("change", () => {
+          state.selectedIncoming = [...incomingPool.querySelectorAll("[data-incoming]:checked")].map((node) => node.value);
+          renderSelectionPanels();
+        });
+      });
+    }
+
+    function findCurrentPlayer(name) {
+      return (state.teamView?.players || []).find((player) => player.player_name === name)
+        || state.incomingPool.find((player) => player.player_name === name)
+        || state.incomingPlayerCache[name]
+        || null;
+    }
+
+    function renderMiniList(target, names, emptyText) {
+      if (!names.length) {
+        target.innerHTML = `<div class="empty">${emptyText}</div>`;
+        return;
+      }
+      target.innerHTML = names.map((name) => {
+        const player = findCurrentPlayer(name) || { player_name: name };
+        return `
+          <div class="mini-player">
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
+            <div>
+              <div class="player-name">${escapeHtml(playerDisplayName(player))}</div>
+              <div class="compact-meta">
+                ${escapeHtml(playerEnglishName(player))}${playerEnglishName(player) ? " · " : ""}${escapeHtml(player.team_abbreviation || "")}
+                ${player.points_per_game != null ? ` · ${formatNumber(player.points_per_game, 1)} PPG` : ""}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderSelectionPanels() {
+      renderMiniList(outgoingSelection, state.selectedOutgoing, "尚未选择移出球员。");
+      renderMiniList(incomingSelection, state.selectedIncoming, "尚未选择移入球员。");
+    }
+
+    function renderProjectedRoster() {
+      const players = state.projected?.players || [];
+      if (!players.length) {
+        projectedRoster.innerHTML = `<div class="empty">点击“生成下赛季预测”后展示预测阵容。</div>`;
+        return;
+      }
+      projectedRoster.innerHTML = players.map((player) => `
+        <div class="player-row" style="grid-template-columns:52px minmax(0, 1fr);">
+          ${avatarMarkup(player)}
+          <div>
+            <div class="player-name-row">
+              <span class="player-name">${escapeHtml(playerDisplayName(player))}</span>
+              <span class="badge">${player.projection_type === "incoming" ? "Incoming" : "Retained"}</span>
+            </div>
+            <div class="player-meta">
+              ${formatNumber(player.points_per_game, 1)} PPG ·
+              ${formatNumber(player.rebounds_per_game, 1)} RPG ·
+              ${formatNumber(player.assists_per_game, 1)} APG ·
+              ${formatNumber(player.minutes_per_game, 1)} MPG ·
+              TS ${formatNumber(player.true_shooting_pct, 2)} ·
+              PER ${formatNumber(player.per, 1)}
+            </div>
+            <div class="compact-meta">
+              来源球队：${escapeHtml(player.source_team || "-")}
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function renderProjectedRosterView() {
+      const players = state.projected?.players || [];
+      if (!players.length) {
+        projectedRoster.innerHTML = `<div class="empty">点击“生成下赛季预测”后，这里会展示预测阵容。</div>`;
+        return;
+      }
+      projectedRoster.innerHTML = players.map((player) => `
+        <div class="player-row" style="grid-template-columns:52px minmax(0, 1fr);">
+          ${avatarMarkup(player)}
+          <div>
+            <div class="player-name-row">
+              <span class="player-name">${escapeHtml(playerDisplayName(player))}</span>
+              <span class="badge">${player.projection_type === "incoming" ? "Incoming" : "Retained"}</span>
+            </div>
+            <div class="player-meta">
+              ${player.player_name_zh ? `${escapeHtml(playerEnglishName(player))}<br>` : ""}
+              ${formatNumber(player.points_per_game, 1)} PPG ·
+              ${formatNumber(player.rebounds_per_game, 1)} RPG ·
+              ${formatNumber(player.assists_per_game, 1)} APG ·
+              ${formatNumber(player.minutes_per_game, 1)} MPG ·
+              TS ${formatNumber(player.true_shooting_pct, 2)} ·
+              PER ${formatNumber(player.per, 1)}
+            </div>
+            <div class="compact-meta">
+              来源球队：${escapeHtml(player.source_team || "-")}
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    async function loadTeams() {
+      state.teams = await api("/api/teams");
+      renderTeamOptionsZh();
+      await loadTeamView();
+    }
+
+    async function loadTeamView() {
+      const team = teamSelect.value;
+      state.teamView = await api(`/api/team_view?team=${encodeURIComponent(team)}`);
+      state.projected = null;
+      state.defaultOutgoing = Array.isArray(state.teamView.default_outgoing) ? state.teamView.default_outgoing : [];
+      state.defaultOutgoingDetails = Array.isArray(state.teamView.default_outgoing_details) ? state.teamView.default_outgoing_details : [];
+      state.selectedOutgoing = [...state.defaultOutgoing];
+      state.selectedIncoming = [];
+      state.incomingPlayerCache = {};
+      renderTeamStatGrid(teamStatsCurrent, state.teamView.team);
+      renderMobileStatGrid(mobileCurrentStats, state.teamView.team);
+      renderCurrentRosterZh();
+      renderSelectionPanelsZh();
+      renderTeamStatGrid(teamStatsProjected, null);
+      renderMobileStatGrid(mobileResultStats, null);
+      renderProjectedRosterZh();
+      updatePosterActions();
+      renderSourceTeamOptions();
+      await loadIncomingTeam();
+      renderMobileTradeControls();
+      if (state.selectedOutgoing.length) {
+        await simulateTrade();
+      }
+    }
+
+    async function loadIncomingTeam() {
+      const targetTeam = teamSelect.value;
+      const sourceTeam = sourceTeamSelect.value;
+      if (!sourceTeam) {
+        state.incomingPool = [];
+        renderIncomingPoolZh();
+        renderMobileIncomingOptions();
+        renderMobileSelectedPlayers();
+        return;
+      }
+      state.incomingPool = await api(`/api/players_by_team?team=${encodeURIComponent(sourceTeam)}&exclude_team=${encodeURIComponent(targetTeam)}`);
+      rememberIncomingPlayers(state.incomingPool);
+      renderIncomingPoolZh();
+      renderMobileIncomingOptions();
+      renderMobileSelectedPlayers();
+    }
+
+    async function simulateTrade(options = {}) {
+      const payload = {
+        team: teamSelect.value,
+        outgoing: state.selectedOutgoing,
+        incoming: state.selectedIncoming,
+      };
+      const result = await api("/api/simulate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (result.error) {
+        alert(result.error);
+        return;
+      }
+      state.projected = result;
+      if (result.site_metrics) {
+        siteVisitCount.textContent = formatCount(result.site_metrics.total_visits);
+        siteSimCount.textContent = formatCount(result.site_metrics.trade_simulations);
+      }
+      renderTeamStatGrid(teamStatsProjected, result.team);
+      renderMobileStatGrid(mobileResultStats, result.team);
+      renderProjectedRosterZh();
+      updatePosterActions();
+      if (options?.showMobileResult === true) {
+        openMobileResultModal();
+      }
+    }
+
+    function clearSelections() {
+      state.selectedOutgoing = [...state.defaultOutgoing];
+      state.selectedIncoming = [];
+      state.projected = null;
+      renderCurrentRosterZh();
+      renderIncomingPoolZh();
+      renderSelectionPanelsZh();
+      renderTeamStatGrid(teamStatsProjected, null);
+      renderProjectedRosterZh();
+      renderMobileStatGrid(mobileResultStats, null);
+      renderMobileTradeControls();
+      updatePosterActions();
+    }
+
+    document.getElementById("loadTeamBtn").addEventListener("click", loadTeamView);
+    document.getElementById("simulateBtn").addEventListener("click", simulateTrade);
+    document.getElementById("clearSelectionBtn").addEventListener("click", clearSelections);
+    downloadCompactPosterBtn.addEventListener("click", () => drawTradePoster("compact"));
+    downloadFullPosterBtn.addEventListener("click", () => drawTradePoster("full"));
+    mobileDownloadCompactPosterBtn.addEventListener("click", () => drawTradePoster("compact"));
+    mobileDownloadFullPosterBtn.addEventListener("click", () => drawTradePoster("full"));
+    posterPreviewDownloadBtn.addEventListener("click", downloadPosterPreview);
+    posterPreviewCancelBtn.addEventListener("click", closePosterPreview);
+    posterPreviewCloseBtn.addEventListener("click", closePosterPreview);
+    posterPreviewBackdrop.addEventListener("click", closePosterPreview);
+    featureTabs.forEach((button) => {
+      button.addEventListener("click", () => activateFeature(button.dataset.feature, true));
+    });
+    const refreshViewportTables = () => {
+      if (!isMobileView()) {
+        closeMobileResultModal();
+      }
+      if (state.teamView?.team) {
+        renderTeamStatGrid(teamStatsCurrent, state.teamView.team);
+        renderMobileStatGrid(mobileCurrentStats, state.teamView.team);
+      }
+      if (state.projected?.team) {
+        renderTeamStatGrid(teamStatsProjected, state.projected.team);
+        renderMobileStatGrid(mobileResultStats, state.projected.team);
+      }
+      renderMobileTradeControls();
+      if (state.loadedFeatures.players) {
+        renderMetricGuide(playerMetricGuide, playerTableColumnsForViewport());
+        renderPlayerStatsTable();
+      }
+      if (state.loadedFeatures.teams) {
+        renderTeamStatsTable(teamStatsEastTable, state.teamStats?.conferences?.East || []);
+        renderTeamStatsTable(teamStatsWestTable, state.teamStats?.conferences?.West || []);
+      }
+    };
+    if (MOBILE_QUERY.addEventListener) {
+      MOBILE_QUERY.addEventListener("change", refreshViewportTables);
+    } else {
+      MOBILE_QUERY.addListener(refreshViewportTables);
+    }
+    teamSelect.addEventListener("change", loadTeamView);
+    sourceTeamSelect.addEventListener("change", async () => {
+      mobileIncomingTeamSelect.value = sourceTeamSelect.value;
+      await loadIncomingTeam();
+      renderSelectionPanelsZh();
+    });
+    mobileTeamSelect.addEventListener("change", async () => {
+      teamSelect.value = mobileTeamSelect.value;
+      await loadTeamView();
+    });
+    mobileIncomingTeamSelect.addEventListener("change", async () => {
+      sourceTeamSelect.value = mobileIncomingTeamSelect.value;
+      await loadIncomingTeam();
+      renderSelectionPanelsZh();
+      renderMobileTradeControls();
+    });
+    mobileAddOutgoingBtn.addEventListener("click", () => {
+      const name = mobileOutgoingPlayerSelect.value;
+      if (!name) {
+        return;
+      }
+      state.selectedOutgoing = uniqueNames([...state.selectedOutgoing, name]);
+      renderCurrentRosterZh();
+      renderSelectionPanelsZh();
+      renderMobileTradeControls();
+    });
+    mobileAddIncomingBtn.addEventListener("click", () => {
+      const name = mobileIncomingPlayerSelect.value;
+      if (!name) {
+        return;
+      }
+      const player = state.incomingPool.find((item) => item.player_name === name);
+      rememberIncomingPlayers(player ? [player] : []);
+      setIncomingSelected(name, true);
+      renderIncomingPoolZh();
+      renderSelectionPanelsZh();
+      renderMobileTradeControls();
+    });
+    mobilePredictBtn.addEventListener("click", () => simulateTrade({ showMobileResult: true }));
+    mobileResetBtn.addEventListener("click", resetMobileTradeFlow);
+    mobileResultBackBtn.addEventListener("click", resetMobileTradeFlow);
+    languageToggle.addEventListener("click", () => {
+      setLanguage(state.language === "en" ? "zh" : "en");
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !posterPreviewModal.hidden) {
+        closePosterPreview();
+      }
+    });
+
+    applyStaticLanguage();
+    Promise.all([loadHome(), loadTeams(), loadSiteMetrics()]).then(() => {
+      rerenderForLanguage();
+    }).catch((error) => {
+      console.error(error);
+      alert(t("initFailed"));
+    });
+  </script>
+</body>
+</html>
