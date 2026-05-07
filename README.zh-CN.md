@@ -8,7 +8,7 @@
 
 纸上谈球是一个 NBA 阵容变动与交易影响模拟网站。它整合 1975-76 至 2025-26 的球员和球队赛季数据，以 2025-26 当前阵容为基线，预测交易发生后球队在 2026-27 赛季的表现变化。
 
-**在线访问：** 公开站点链接待更新
+**在线访问：** https://www.paperhoops.win/
 
 ## 功能简介
 
@@ -57,8 +57,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/<owner>/<repo>.git
-cd <repo>
+git clone git@github.com:YuanZhouhang/paperhoops.git
+cd paperhoops
 ```
 
 ### 2. 创建 Python 环境

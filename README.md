@@ -8,7 +8,7 @@
 
 Paper Hoops is an NBA roster-movement and trade-impact simulation website. It combines player and team season data from 1975-76 through 2025-26, uses the 2025-26 roster state as the current baseline, and projects how a trade may change a team's 2026-27 performance.
 
-**Public site:** public website link coming soon
+**Public site:** https://www.paperhoops.win/
 
 ## Features
 
@@ -57,8 +57,8 @@ Runtime inference uses exported NumPy bundles, so the web service does not need 
 ### 1. Clone The Repository
 
 ```bash
-git clone https://github.com/<owner>/<repo>.git
-cd <repo>
+git clone git@github.com:YuanZhouhang/paperhoops.git
+cd paperhoops
 ```
 
 ### 2. Create A Python Environment
