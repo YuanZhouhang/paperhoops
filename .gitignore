@@ -49,6 +49,12 @@ code/outputs/**
 assets/*_sources.md
 assets/player_advanced_impact_2025_26_nba.csv
 docs/DEPLOY.md
+info.md
+docs/pdf/
+docs/resume_assets/
+docs/resume_nba_china_*.md
+docs/resume_tool_research_nba_china.md
+docs/paper_hoops_portfolio_appendix.md
 
 nba_player_stats_unified_1975_76_to_2024_25.csv
 nba_team_stats_unified_1975_76_to_2024_25.csv

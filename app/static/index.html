@@ -950,6 +950,96 @@
       line-height: 1.55;
     }
 
+    .trade-rule-card {
+      display: grid;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.56);
+      border: 1px solid rgba(88, 70, 43, 0.1);
+    }
+
+    .trade-rule-card.is-passed {
+      border-color: rgba(35, 113, 95, 0.24);
+      background: rgba(35, 113, 95, 0.08);
+    }
+
+    .trade-rule-card.is-failed {
+      border-color: rgba(170, 58, 34, 0.26);
+      background: rgba(170, 58, 34, 0.08);
+    }
+
+    .trade-rule-card.is-unknown,
+    .trade-rule-card.is-not_applicable {
+      border-color: rgba(120, 92, 44, 0.22);
+      background: rgba(120, 92, 44, 0.08);
+    }
+
+    .trade-rule-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .trade-rule-title {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .trade-rule-status {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .trade-rule-card.is-passed .trade-rule-status { background: #23715f; }
+    .trade-rule-card.is-failed .trade-rule-status { background: var(--accent-deep); }
+    .trade-rule-card.is-unknown .trade-rule-status,
+    .trade-rule-card.is-not_applicable .trade-rule-status { background: #8a6b32; }
+
+    .trade-rule-summary,
+    .trade-rule-list,
+    .trade-rule-amounts {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .trade-rule-list {
+      padding-left: 18px;
+    }
+
+    .trade-rule-list li + li {
+      margin-top: 3px;
+    }
+
+    .trade-rule-amounts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .trade-rule-amounts span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--accent-deep);
+      font-weight: 800;
+    }
+
     .mini-list {
       display: grid;
       gap: 10px;
@@ -1539,6 +1629,7 @@
               class="hero-logo"
               src="/assets/brand/paper-hoops-logo.png"
               alt="纸上谈球"
+              decoding="async"
               onerror="this.classList.add('is-hidden')"
             >
             <span class="hero-logo-fallback">纸上谈球</span>
@@ -1633,6 +1724,7 @@
           <div class="mobile-stat-grid" id="mobileResultStats">
             <div class="empty">尚未生成预测结果。</div>
           </div>
+          <div id="mobileTradeRuleCheck"></div>
           <div class="mobile-poster-actions">
             <button class="btn btn-secondary" type="button" id="mobileDownloadCompactPosterBtn">精简海报</button>
             <button class="btn btn-secondary" type="button" id="mobileDownloadFullPosterBtn">完整海报</button>
@@ -1717,6 +1809,8 @@
           <div class="stat-grid" id="teamStatsProjected">
             <div class="empty">尚未生成预测结果。</div>
           </div>
+
+          <div id="tradeRuleCheck"></div>
 
           <div class="poster-actions">
             <button class="btn btn-secondary" type="button" id="downloadCompactPosterBtn" disabled>下载精简海报</button>
@@ -1847,6 +1941,7 @@
     const outgoingSalaryTotal = document.getElementById('outgoingSalaryTotal');
     const incomingSalaryTotal = document.getElementById('incomingSalaryTotal');
     const teamStatsProjected = document.getElementById('teamStatsProjected');
+    const tradeRuleCheck = document.getElementById('tradeRuleCheck');
     const projectedRoster = document.getElementById('projectedRoster');
     const playerStatsTable = document.getElementById('playerStatsTable');
     const playerPagination = document.getElementById('playerPagination');
@@ -1867,6 +1962,7 @@
     const mobileResetBtn = document.getElementById('mobileResetBtn');
     const mobileResultModal = document.getElementById('mobileResultModal');
     const mobileResultStats = document.getElementById('mobileResultStats');
+    const mobileTradeRuleCheck = document.getElementById('mobileTradeRuleCheck');
     const mobileResultBackBtn = document.getElementById('mobileResultBackBtn');
     const downloadCompactPosterBtn = document.getElementById('downloadCompactPosterBtn');
     const downloadFullPosterBtn = document.getElementById('downloadFullPosterBtn');
@@ -1929,6 +2025,19 @@
         outgoingSalary: "计薪移出薪资",
         incomingSalary: "移入薪资",
         salaryNote: "深色锁定球员为赛季末已离队的默认移出项，会参与阵容校正，但不计入交易薪资匹配。",
+        tradeRuleTitle: "现实交易规则检查",
+        tradeRuleEmpty: "生成预测后，这里会检查目标队基础交易配平。",
+        tradeRulePassed: "基础通过",
+        tradeRuleFailed: "未通过",
+        tradeRuleUnknown: "需人工确认",
+        tradeRuleNotApplicable: "不适用",
+        tradeRuleForced: "你仍可开启强制交易查看战力预测，但上方会标注现实规则风险。",
+        ruleOutgoing: "计薪移出",
+        ruleIncoming: "移入",
+        ruleAllowed: "可收回上限",
+        ruleTeamAfter: "交易后估算总薪资",
+        ruleFirstApron: "第一土豪线",
+        ruleSecondApron: "第二土豪线",
         chooseSourceTeam: "请选择来源球队。",
         projectedTitle: "交易后预测",
         projectedHint: "预测结果来自当前项目的交易模拟模型，面向 2026-27 赛季。",
@@ -2025,6 +2134,19 @@
         outgoingSalary: "Counted outgoing salary",
         incomingSalary: "Incoming salary",
         salaryNote: "Dark locked players are default outgoing roster-correction items. They affect roster correction but are excluded from salary matching.",
+        tradeRuleTitle: "Real-World Trade Rule Check",
+        tradeRuleEmpty: "After generating a projection, this panel will check basic salary matching for the target team.",
+        tradeRulePassed: "Basic Pass",
+        tradeRuleFailed: "Failed",
+        tradeRuleUnknown: "Needs Review",
+        tradeRuleNotApplicable: "N/A",
+        tradeRuleForced: "You can still force the trade for projection, but real-world rule risks are flagged above.",
+        ruleOutgoing: "Counted outgoing",
+        ruleIncoming: "Incoming",
+        ruleAllowed: "Allowed incoming",
+        ruleTeamAfter: "Estimated post-trade salary",
+        ruleFirstApron: "First apron",
+        ruleSecondApron: "Second apron",
         chooseSourceTeam: "Choose a source team.",
         projectedTitle: "Post-Trade Projection",
         projectedHint: "Projection results come from the current trade simulation model for the 2026-27 season.",
@@ -2169,9 +2291,13 @@
       if (state.projected?.team) {
         renderTeamStatGrid(teamStatsProjected, state.projected.team);
         renderMobileStatGrid(mobileResultStats, state.projected.team);
+        renderTradeRuleCheck(tradeRuleCheck, state.projected.trade_rule_check);
+        renderTradeRuleCheck(mobileTradeRuleCheck, state.projected.trade_rule_check);
       } else {
         renderTeamStatGrid(teamStatsProjected, null);
         renderMobileStatGrid(mobileResultStats, null);
+        renderTradeRuleCheck(tradeRuleCheck, null);
+        renderTradeRuleCheck(mobileTradeRuleCheck, null);
       }
       renderCurrentRosterZh();
       renderIncomingPoolZh();
@@ -2361,6 +2487,15 @@
       "net_rating",
     ]);
 
+    const NBA_SALARY_RULES_2025_26 = {
+      salaryCap: 154647000,
+      luxuryTax: 187895000,
+      firstApron: 195945000,
+      secondApron: 207824000,
+      matchingBuffer: 250000,
+      expandedTpeIncrement: 8527000,
+    };
+
     function playerTableColumnsForViewport() {
       return isMobileView()
         ? PLAYER_TABLE_VISIBLE_COLUMNS.filter((column) => MOBILE_PLAYER_TABLE_KEYS.has(column.key))
@@ -2420,7 +2555,7 @@
       const src = player?.avatar_url || "";
       const alt = escapeHtml(playerDisplayName(player));
       return src
-        ? `<img class="${sizeClass}" src="${src}" alt="${alt}">`
+        ? `<img class="${sizeClass}" src="${src}" alt="${alt}" loading="lazy" decoding="async">`
         : `<div class="${sizeClass}" style="display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;">No Photo</div>`;
     }
 
@@ -2468,6 +2603,206 @@
         return t("unknown");
       }
       return t("unknown");
+    }
+
+    function tradeRuleStatusLabel(status) {
+      if (status === "passed") return t("tradeRulePassed");
+      if (status === "failed") return t("tradeRuleFailed");
+      if (status === "unknown") return t("tradeRuleUnknown");
+      return t("tradeRuleNotApplicable");
+    }
+
+    function localizedTradeRuleText(payload, key) {
+      const value = payload?.[key];
+      if (!value) return "";
+      if (typeof value === "string") return value;
+      return value[state.language] || value.zh || value.en || "";
+    }
+
+    function localizedTradeRuleList(payload, key) {
+      const value = payload?.[key];
+      if (!value) return [];
+      if (Array.isArray(value)) return value;
+      return value[state.language] || value.zh || value.en || [];
+    }
+
+    function renderTradeRuleCheck(target, check) {
+      if (!target) return;
+      if (!check) {
+        target.innerHTML = `
+          <div class="trade-rule-card is-not_applicable">
+            <div class="trade-rule-heading">
+              <h4 class="trade-rule-title">${t("tradeRuleTitle")}</h4>
+              <span class="trade-rule-status">${t("tradeRuleNotApplicable")}</span>
+            </div>
+            <p class="trade-rule-summary">${t("tradeRuleEmpty")}</p>
+          </div>
+        `;
+        return;
+      }
+      const status = check.status || "unknown";
+      const reasons = localizedTradeRuleList(check, "reasons");
+      const warnings = localizedTradeRuleList(check, "warnings");
+      const summary = localizedTradeRuleText(check, "summary");
+      const amounts = check.amounts || {};
+      const amountRows = [
+        [t("ruleOutgoing"), amounts.outgoing_salary],
+        [t("ruleIncoming"), amounts.incoming_salary],
+        [t("ruleAllowed"), amounts.allowed_incoming_salary],
+        [t("ruleTeamAfter"), amounts.team_salary_after],
+        [t("ruleFirstApron"), amounts.first_apron],
+        [t("ruleSecondApron"), amounts.second_apron],
+      ];
+      const listItems = [...reasons, ...warnings].filter(Boolean);
+      target.innerHTML = `
+        <div class="trade-rule-card is-${escapeHtml(status)}">
+          <div class="trade-rule-heading">
+            <h4 class="trade-rule-title">${t("tradeRuleTitle")}</h4>
+            <span class="trade-rule-status">${escapeHtml(tradeRuleStatusLabel(status))}</span>
+          </div>
+          <p class="trade-rule-summary">${escapeHtml(summary)}</p>
+          <div class="trade-rule-amounts">
+            ${amountRows.map(([label, value]) => `<span>${escapeHtml(label)} ${formatSalary(value, { zeroAsDollar: true })}</span>`).join("")}
+          </div>
+          ${listItems.length ? `<ul class="trade-rule-list">${listItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>` : ""}
+          <p class="trade-rule-summary">${t("tradeRuleForced")}</p>
+        </div>
+      `;
+    }
+
+    function teamSalaryEstimateFromClient() {
+      return (state.teamView?.players || []).reduce((total, player) => (
+        total + salaryNumber(player, "salary_2025_26")
+      ), 0);
+    }
+
+    function buildClientTradeRuleCheck(team, outgoingNames, incomingNames) {
+      const countedOutgoing = uniqueNames(outgoingNames).filter((name) => !isDefaultOutgoing(name));
+      const defaultCorrection = uniqueNames(outgoingNames).filter((name) => isDefaultOutgoing(name));
+      const incoming = uniqueNames(incomingNames);
+      const outgoingMissing = countedOutgoing.filter((name) => salaryNumber(findCurrentPlayer(name), "salary_2025_26") <= 0);
+      const incomingMissing = incoming.filter((name) => salaryNumber(findCurrentPlayer(name), "salary_2025_26") <= 0);
+      const outgoingSalary = totalSalary(countedOutgoing, "salary_2025_26");
+      const incomingSalary = totalSalary(incoming, "salary_2025_26");
+      const teamSalaryBefore = teamSalaryEstimateFromClient();
+      const teamSalaryAfter = teamSalaryBefore - outgoingSalary + incomingSalary;
+      const capRoom = Math.max(0, NBA_SALARY_RULES_2025_26.salaryCap - teamSalaryBefore);
+      let status = "not_applicable";
+      let ruleType = "no_salary_movement";
+      let allowedIncoming = 0;
+      const reasonsZh = [];
+      const reasonsEn = [];
+      const warningsZh = [];
+      const warningsEn = [];
+      let summaryZh = "本次没有计入配平的交易薪资，仅进行阵容校正或空交易预测。";
+      let summaryEn = "No salary-matching trade package is present; this is only a roster-correction or empty-trade projection.";
+
+      if (countedOutgoing.length || incoming.length) {
+        if (teamSalaryAfter <= NBA_SALARY_RULES_2025_26.salaryCap) {
+          ruleType = "cap_room";
+          allowedIncoming = outgoingSalary + capRoom + NBA_SALARY_RULES_2025_26.matchingBuffer;
+          if (incomingSalary <= allowedIncoming) {
+            status = "passed";
+            summaryZh = "基础配平通过：目标队交易后仍不超过工资帽，或可用工资帽空间吸收薪资。";
+            summaryEn = "Basic check passed: the target team stays below the salary cap or can absorb salary with cap room.";
+          } else {
+            status = "failed";
+            summaryZh = "基础配平未通过：目标队工资帽空间不足以吸收移入薪资。";
+            summaryEn = "Basic check failed: the target team does not have enough cap room to absorb incoming salary.";
+            reasonsZh.push(`移入薪资 ${formatSalary(incomingSalary)} 超过可收回上限 ${formatSalary(allowedIncoming)}。`);
+            reasonsEn.push(`Incoming salary ${formatSalary(incomingSalary)} exceeds the allowed amount ${formatSalary(allowedIncoming)}.`);
+          }
+        } else if (teamSalaryAfter > NBA_SALARY_RULES_2025_26.firstApron) {
+          ruleType = "over_first_apron";
+          allowedIncoming = outgoingSalary;
+          if (incomingSalary <= allowedIncoming) {
+            status = "passed";
+            summaryZh = "基础配平通过：目标队交易后超过第一土豪线，按更严格的 100% 薪资收回规则估算。";
+            summaryEn = "Basic check passed: the target team finishes above the first apron, so the stricter 100% matching estimate is used.";
+          } else {
+            status = "failed";
+            summaryZh = "基础配平未通过：目标队交易后超过第一土豪线，不能使用宽松配平规则。";
+            summaryEn = "Basic check failed: the target team finishes above the first apron and cannot use the expanded matching rule.";
+            reasonsZh.push(`移入薪资 ${formatSalary(incomingSalary)} 高于计薪移出薪资 ${formatSalary(outgoingSalary)}。`);
+            reasonsEn.push(`Incoming salary ${formatSalary(incomingSalary)} is higher than counted outgoing salary ${formatSalary(outgoingSalary)}.`);
+            reasonsZh.push("交易后超过第一土豪线时，$250K 缓冲和 Expanded TPE 宽松配平不适用。");
+            reasonsEn.push("Above the first apron after the trade, the $250K buffer and Expanded TPE matching are not available.");
+          }
+        } else {
+          ruleType = "expanded_tpe";
+          allowedIncoming = outgoingSalary > 0
+            ? Math.max(
+                Math.min(
+                  outgoingSalary * 2 + NBA_SALARY_RULES_2025_26.matchingBuffer,
+                  outgoingSalary + NBA_SALARY_RULES_2025_26.expandedTpeIncrement,
+                ),
+                outgoingSalary * 1.25 + NBA_SALARY_RULES_2025_26.matchingBuffer,
+              )
+            : 0;
+          if (incomingSalary <= allowedIncoming) {
+            status = "passed";
+            summaryZh = "基础配平通过：目标队交易后未超过第一土豪线，按 Expanded TPE 宽松配平估算可行。";
+            summaryEn = "Basic check passed: the target team stays at or below the first apron, so the Expanded TPE estimate can support the trade.";
+          } else {
+            status = "failed";
+            summaryZh = "基础配平未通过：移入薪资超过 Expanded TPE 估算上限。";
+            summaryEn = "Basic check failed: incoming salary exceeds the Expanded TPE estimate.";
+            reasonsZh.push(`移入薪资 ${formatSalary(incomingSalary)} 超过可收回上限 ${formatSalary(allowedIncoming)}。`);
+            reasonsEn.push(`Incoming salary ${formatSalary(incomingSalary)} exceeds the allowed amount ${formatSalary(allowedIncoming)}.`);
+          }
+        }
+
+        if (teamSalaryAfter > NBA_SALARY_RULES_2025_26.secondApron && countedOutgoing.length > 1 && incomingSalary > 0) {
+          status = "failed";
+          reasonsZh.push("目标队交易后超过第二土豪线，基础版按规则不允许合并多名球员薪资完成配平。");
+          reasonsEn.push("The target team finishes above the second apron; this basic checker treats salary aggregation as unavailable.");
+        }
+      }
+
+      if (outgoingMissing.length || incomingMissing.length) {
+        if (status === "passed") status = "unknown";
+        const missingNames = [...outgoingMissing, ...incomingMissing];
+        warningsZh.push(`以下球员缺少薪资数据，配平结果需人工确认：${missingNames.join("、")}。`);
+        warningsEn.push(`These players are missing salary data, so the result needs manual review: ${missingNames.join(", ")}.`);
+      }
+      if (defaultCorrection.length) {
+        warningsZh.push(`默认移出项不计入薪资配平：${defaultCorrection.join("、")}。`);
+        warningsEn.push(`Default outgoing roster-correction players are excluded from salary matching: ${defaultCorrection.join(", ")}.`);
+      }
+      warningsZh.push("当前版本只做目标队基础薪资配平检查；未校验其他参与球队、交易奖金、签约等待期、Bird 权、非保障薪资、选秀权和现有交易特例。");
+      warningsEn.push("This version only checks basic salary matching for the target team; it does not verify other teams, trade bonuses, waiting periods, Bird rights, non-guaranteed salary, draft picks, or existing TPEs.");
+
+      return {
+        season: "2025-26",
+        status,
+        rule_type: ruleType,
+        force_trade_allowed: true,
+        summary: { zh: summaryZh, en: summaryEn },
+        reasons: { zh: reasonsZh, en: reasonsEn },
+        warnings: { zh: warningsZh, en: warningsEn },
+        amounts: {
+          team_salary_before: Math.round(teamSalaryBefore),
+          team_salary_after: Math.round(teamSalaryAfter),
+          outgoing_salary: Math.round(outgoingSalary),
+          incoming_salary: Math.round(incomingSalary),
+          allowed_incoming_salary: Math.round(allowedIncoming),
+          cap_room: Math.round(capRoom),
+          salary_cap: NBA_SALARY_RULES_2025_26.salaryCap,
+          luxury_tax: NBA_SALARY_RULES_2025_26.luxuryTax,
+          first_apron: NBA_SALARY_RULES_2025_26.firstApron,
+          second_apron: NBA_SALARY_RULES_2025_26.secondApron,
+          matching_buffer: NBA_SALARY_RULES_2025_26.matchingBuffer,
+          expanded_tpe_increment: NBA_SALARY_RULES_2025_26.expandedTpeIncrement,
+        },
+        players: {
+          counted_outgoing: countedOutgoing,
+          default_correction: defaultCorrection,
+          incoming,
+          outgoing_missing_salary: outgoingMissing,
+          incoming_missing_salary: incomingMissing,
+        },
+        client_fallback: true,
+      };
     }
 
     function playerSalaryLine(player) {
@@ -2565,7 +2900,7 @@
         const lockedDefault = isDefaultOutgoing(name);
         return `
           <div class="mini-player ${lockedDefault ? "is-locked" : ""}">
-            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}" loading="lazy" decoding="async">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
             <div>
               <div class="player-name">${escapeHtml(playerDisplayName(player))}</div>
               <div class="compact-meta">
@@ -2656,7 +2991,7 @@
 
     function tableImageMarkup(src, alt, className) {
       return src
-        ? `<img class="${className}" src="${src}" alt="${escapeHtml(alt)}" onerror="this.style.visibility='hidden'">`
+        ? `<img class="${className}" src="${src}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">`
         : `<div class="${className}"></div>`;
     }
 
@@ -2858,14 +3193,14 @@
 
     function renderHeroBackground(players) {
       const groups = [
-        players.slice(0, 6),
-        players.slice(6, 12),
-        players.slice(12, 18),
+        players.slice(0, 4),
+        players.slice(4, 8),
+        players.slice(8, 12),
       ];
       [heroStripOne, heroStripTwo, heroStripThree].forEach((node, idx) => {
         node.innerHTML = groups[idx].map((player) => `
           <div class="avatar-card">
-            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : ""}
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}" loading="lazy" decoding="async">` : ""}
             <div class="ppg">${escapeHtml(playerDisplayName(player))} · ${formatNumber(player.points_per_game, 1)} ${state.language === "en" ? "PPG" : "场均分"}</div>
           </div>
         `).join("");
@@ -2875,7 +3210,7 @@
     function renderHeadlineList(players) {
       headlineList.innerHTML = players.slice(0, 6).map((player) => `
         <div class="headline-row">
-          ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar"></div>`}
+          ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}" loading="lazy" decoding="async">` : `<div class="player-avatar"></div>`}
           <div>
             <div class="headline-name">${escapeHtml(playerDisplayName(player))}</div>
             <div class="headline-meta">${escapeHtml(playerEnglishName(player))}${playerEnglishName(player) ? " · " : ""}${escapeHtml(player.team_abbreviation || "")}</div>
@@ -3566,7 +3901,7 @@
         const player = findCurrentPlayer(name) || { player_name: name };
         return `
           <div class="mini-player">
-            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
+            ${player.avatar_url ? `<img src="${player.avatar_url}" alt="${escapeHtml(playerDisplayName(player))}" loading="lazy" decoding="async">` : `<div class="player-avatar" style="width:42px;height:42px;"></div>`}
             <div>
               <div class="player-name">${escapeHtml(playerDisplayName(player))}</div>
               <div class="compact-meta">
@@ -3666,6 +4001,8 @@
       renderSelectionPanelsZh();
       renderTeamStatGrid(teamStatsProjected, null);
       renderMobileStatGrid(mobileResultStats, null);
+      renderTradeRuleCheck(tradeRuleCheck, null);
+      renderTradeRuleCheck(mobileTradeRuleCheck, null);
       renderProjectedRosterZh();
       updatePosterActions();
       renderSourceTeamOptions();
@@ -3708,6 +4045,13 @@
         alert(result.error);
         return;
       }
+      if (!result.trade_rule_check) {
+        result.trade_rule_check = buildClientTradeRuleCheck(
+          payload.team,
+          result.outgoing || payload.outgoing,
+          result.incoming || payload.incoming,
+        );
+      }
       state.projected = result;
       if (result.site_metrics) {
         siteVisitCount.textContent = formatCount(result.site_metrics.total_visits);
@@ -3715,6 +4059,8 @@
       }
       renderTeamStatGrid(teamStatsProjected, result.team);
       renderMobileStatGrid(mobileResultStats, result.team);
+      renderTradeRuleCheck(tradeRuleCheck, result.trade_rule_check);
+      renderTradeRuleCheck(mobileTradeRuleCheck, result.trade_rule_check);
       renderProjectedRosterZh();
       updatePosterActions();
       if (options?.showMobileResult === true) {
@@ -3732,6 +4078,8 @@
       renderTeamStatGrid(teamStatsProjected, null);
       renderProjectedRosterZh();
       renderMobileStatGrid(mobileResultStats, null);
+      renderTradeRuleCheck(tradeRuleCheck, null);
+      renderTradeRuleCheck(mobileTradeRuleCheck, null);
       renderMobileTradeControls();
       updatePosterActions();
     }
