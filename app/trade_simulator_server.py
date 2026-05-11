@@ -7,6 +7,7 @@ import os
 import sys
 import threading
 import unicodedata
+from email.utils import formatdate
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -20,6 +21,8 @@ RUNTIME_DIR = Path(__file__).resolve().parent / "runtime"
 UNIFIED_DATA_DIR = ROOT / "data" / "unified"
 PUBLIC_RUNTIME_DATA_DIR = ROOT / "runtime_data"
 AVATAR_INDEX_PATH = ASSETS_DIR / "statmuse_avatars_2025_26" / "index.csv"
+AVATAR_WEBP_DIR = ASSETS_DIR / "statmuse_avatars_2025_26_webp"
+AVATAR_JPG_DIR = ASSETS_DIR / "statmuse_avatars_2025_26_jpg"
 PLAYER_NAME_MAP_PATH = ASSETS_DIR / "hupu_player_names_2025_26.csv"
 CURRENT_TEAM_OVERRIDES_PATH = ASSETS_DIR / "nba_current_team_overrides_2025_26.csv"
 END_ROSTER_PATH = ASSETS_DIR / "nba_end_rosters_2025_26.csv"
@@ -30,6 +33,14 @@ CURRENT_YEAR = 2026
 NEXT_YEAR = 2027
 CURRENT_SEASON_LABEL = "2025-26"
 NEXT_SEASON_LABEL = "2026-27"
+NBA_SALARY_CAP_2025_26 = 154_647_000
+NBA_LUXURY_TAX_2025_26 = 187_895_000
+NBA_FIRST_APRON_2025_26 = 195_945_000
+NBA_SECOND_APRON_2025_26 = 207_824_000
+NBA_TRADE_MATCH_BUFFER = 250_000
+# 2024-25 CBA 101 lists $7.752M for this Expanded TPE increment.
+# Scale it with the official 2025-26 cap and keep it configurable here.
+NBA_EXPANDED_TPE_INCREMENT_2025_26 = 8_527_000
 PUBLIC_PLAYER_DATA_PATH = PUBLIC_RUNTIME_DATA_DIR / "current_players_2025_26.csv"
 PUBLIC_TEAM_DATA_PATH = PUBLIC_RUNTIME_DATA_DIR / "current_teams_2025_26.csv"
 PUBLIC_WEIGHTED_PLAYER_PATH = PUBLIC_RUNTIME_DATA_DIR / "recent_weighted_rotation_players_2025_26.csv"
@@ -43,7 +54,13 @@ SITE_METRICS_PATH = RUNTIME_DIR / "site_metrics.json"
 HOST = os.getenv("HOST", "127.0.0.1")
 PORT = int(os.getenv("PORT", "8765"))
 MAX_JSON_BODY_BYTES = 32_768
-PUBLIC_ASSET_DIRS = {"brand", "statmuse_avatars_2025_26", "team_logos_2025_26"}
+PUBLIC_ASSET_DIRS = {
+    "brand",
+    "statmuse_avatars_2025_26",
+    "statmuse_avatars_2025_26_webp",
+    "statmuse_avatars_2025_26_jpg",
+    "team_logos_2025_26",
+}
 
 if str(CODE_DIR) not in sys.path:
     sys.path.insert(0, str(CODE_DIR))
@@ -486,7 +503,16 @@ class AppState:
                 player_name = (row.get("player_name") or "").strip()
                 if not player_name:
                     continue
-                lookup[normalize_name(player_name)] = f"/assets/statmuse_avatars_2025_26/{file_name}"
+                stem = Path(file_name).stem
+                webp_name = f"{stem}.webp"
+                jpg_name = f"{stem}.jpg"
+                if (AVATAR_WEBP_DIR / webp_name).exists():
+                    avatar_path = f"/assets/statmuse_avatars_2025_26_webp/{webp_name}"
+                elif (AVATAR_JPG_DIR / jpg_name).exists():
+                    avatar_path = f"/assets/statmuse_avatars_2025_26_jpg/{jpg_name}"
+                else:
+                    avatar_path = f"/assets/statmuse_avatars_2025_26/{file_name}"
+                lookup[normalize_name(player_name)] = avatar_path
         return lookup
 
     def _load_model(self, path: Path) -> NumpyTabularResNet:
@@ -735,6 +761,153 @@ class AppState:
             "salary_next_defaulted": (str(row.get("next_salary_defaulted") or "").lower() == "true") if row else False,
             "salary_source_url": (row.get("source_url") or "") if row else "",
             "salary_player_id": (row.get("hoopshype_player_id") or "") if row else "",
+        }
+
+    def _player_current_salary(self, player_name: str) -> int | None:
+        salary = self.player_salary_for(player_name).get("salary_2025_26")
+        return int(salary) if salary is not None else None
+
+    def _team_salary_estimate(self, team: str) -> int:
+        roster = self.roster_lookup.get(team, pd.DataFrame())
+        if roster.empty:
+            return 0
+        total = 0
+        for player_name in roster["player_name"].tolist():
+            total += self._player_current_salary(str(player_name)) or 0
+        return int(total)
+
+    def _salary_label(self, amount: int | float) -> str:
+        return f"${int(round(float(amount))):,}"
+
+    def _build_trade_rule_check(self, team: str, outgoing_names: list[str], incoming_names: list[str]) -> dict:
+        default_outgoing_names = {item["player_name"] for item in self.default_outgoing_lookup.get(team, [])}
+        counted_outgoing = [name for name in outgoing_names if name not in default_outgoing_names]
+        default_correction = [name for name in outgoing_names if name in default_outgoing_names]
+
+        outgoing_missing = [name for name in counted_outgoing if self._player_current_salary(name) is None]
+        incoming_missing = [name for name in incoming_names if self._player_current_salary(name) is None]
+        outgoing_salary = sum(self._player_current_salary(name) or 0 for name in counted_outgoing)
+        incoming_salary = sum(self._player_current_salary(name) or 0 for name in incoming_names)
+        team_salary_before = self._team_salary_estimate(team)
+        team_salary_after = int(team_salary_before - outgoing_salary + incoming_salary)
+        cap_room = max(0, NBA_SALARY_CAP_2025_26 - team_salary_before)
+
+        reasons_zh: list[str] = []
+        reasons_en: list[str] = []
+        warnings_zh: list[str] = []
+        warnings_en: list[str] = []
+        allowed_incoming = 0
+        rule_type = "no_salary_movement"
+
+        if not counted_outgoing and not incoming_names:
+            status = "not_applicable"
+            summary_zh = "本次没有计入配平的交易薪资，仅进行阵容校正或空交易预测。"
+            summary_en = "No salary-matching trade package is present; this is only a roster-correction or empty-trade projection."
+        else:
+            if team_salary_after <= NBA_SALARY_CAP_2025_26:
+                rule_type = "cap_room"
+                allowed_incoming = outgoing_salary + cap_room + NBA_TRADE_MATCH_BUFFER
+                if incoming_salary <= allowed_incoming:
+                    status = "passed"
+                    summary_zh = "基础配平通过：目标队交易后仍不超过工资帽，或可用工资帽空间吸收薪资。"
+                    summary_en = "Basic check passed: the target team stays below the salary cap or can absorb salary with cap room."
+                else:
+                    status = "failed"
+                    summary_zh = "基础配平未通过：目标队工资帽空间不足以吸收移入薪资。"
+                    summary_en = "Basic check failed: the target team does not have enough cap room to absorb incoming salary."
+                    reasons_zh.append(
+                        f"移入薪资 {self._salary_label(incoming_salary)} 超过可收回上限 {self._salary_label(allowed_incoming)}。"
+                    )
+                    reasons_en.append(
+                        f"Incoming salary {self._salary_label(incoming_salary)} exceeds the allowed amount {self._salary_label(allowed_incoming)}."
+                    )
+            elif team_salary_after > NBA_FIRST_APRON_2025_26:
+                rule_type = "over_first_apron"
+                allowed_incoming = outgoing_salary
+                if incoming_salary <= allowed_incoming:
+                    status = "passed"
+                    summary_zh = "基础配平通过：目标队交易后超过第一土豪线，按更严格的 100% 薪资收回规则估算。"
+                    summary_en = "Basic check passed: the target team finishes above the first apron, so the stricter 100% matching estimate is used."
+                else:
+                    status = "failed"
+                    summary_zh = "基础配平未通过：目标队交易后超过第一土豪线，不能使用宽松配平规则。"
+                    summary_en = "Basic check failed: the target team finishes above the first apron and cannot use the expanded matching rule."
+                    reasons_zh.append(
+                        f"移入薪资 {self._salary_label(incoming_salary)} 高于计薪移出薪资 {self._salary_label(outgoing_salary)}。"
+                    )
+                    reasons_en.append(
+                        f"Incoming salary {self._salary_label(incoming_salary)} is higher than counted outgoing salary {self._salary_label(outgoing_salary)}."
+                    )
+                    reasons_zh.append("交易后超过第一土豪线时，$250K 缓冲和 Expanded TPE 宽松配平不适用。")
+                    reasons_en.append("Above the first apron after the trade, the $250K buffer and Expanded TPE matching are not available.")
+            else:
+                rule_type = "expanded_tpe"
+                allowed_incoming = int(max(
+                    min(outgoing_salary * 2 + NBA_TRADE_MATCH_BUFFER, outgoing_salary + NBA_EXPANDED_TPE_INCREMENT_2025_26),
+                    outgoing_salary * 1.25 + NBA_TRADE_MATCH_BUFFER,
+                )) if outgoing_salary > 0 else 0
+                if incoming_salary <= allowed_incoming:
+                    status = "passed"
+                    summary_zh = "基础配平通过：目标队交易后未超过第一土豪线，按 Expanded TPE 宽松配平估算可行。"
+                    summary_en = "Basic check passed: the target team stays at or below the first apron, so the Expanded TPE estimate can support the trade."
+                else:
+                    status = "failed"
+                    summary_zh = "基础配平未通过：移入薪资超过 Expanded TPE 估算上限。"
+                    summary_en = "Basic check failed: incoming salary exceeds the Expanded TPE estimate."
+                    reasons_zh.append(
+                        f"移入薪资 {self._salary_label(incoming_salary)} 超过可收回上限 {self._salary_label(allowed_incoming)}。"
+                    )
+                    reasons_en.append(
+                        f"Incoming salary {self._salary_label(incoming_salary)} exceeds the allowed amount {self._salary_label(allowed_incoming)}."
+                    )
+
+            if team_salary_after > NBA_SECOND_APRON_2025_26 and len(counted_outgoing) > 1 and incoming_salary > 0:
+                status = "failed"
+                reasons_zh.append("目标队交易后超过第二土豪线，基础版按规则不允许合并多名球员薪资完成配平。")
+                reasons_en.append("The target team finishes above the second apron; this basic checker treats salary aggregation as unavailable.")
+
+        if outgoing_missing or incoming_missing:
+            status = "unknown" if status == "passed" else status
+            missing_names = outgoing_missing + incoming_missing
+            warnings_zh.append(f"以下球员缺少薪资数据，配平结果需人工确认：{'、'.join(missing_names)}。")
+            warnings_en.append(f"These players are missing salary data, so the result needs manual review: {', '.join(missing_names)}.")
+
+        if default_correction:
+            warnings_zh.append(f"默认移出项不计入薪资配平：{'、'.join(default_correction)}。")
+            warnings_en.append(f"Default outgoing roster-correction players are excluded from salary matching: {', '.join(default_correction)}.")
+
+        warnings_zh.append("当前版本只做目标队基础薪资配平检查；未校验其他参与球队、交易奖金、签约等待期、Bird 权、非保障薪资、选秀权和现有交易特例。")
+        warnings_en.append("This version only checks basic salary matching for the target team; it does not verify other teams, trade bonuses, waiting periods, Bird rights, non-guaranteed salary, draft picks, or existing TPEs.")
+
+        return {
+            "season": CURRENT_SEASON_LABEL,
+            "status": status,
+            "rule_type": rule_type,
+            "force_trade_allowed": True,
+            "summary": {"zh": summary_zh, "en": summary_en},
+            "reasons": {"zh": reasons_zh, "en": reasons_en},
+            "warnings": {"zh": warnings_zh, "en": warnings_en},
+            "amounts": {
+                "team_salary_before": team_salary_before,
+                "team_salary_after": team_salary_after,
+                "outgoing_salary": outgoing_salary,
+                "incoming_salary": incoming_salary,
+                "allowed_incoming_salary": int(allowed_incoming),
+                "cap_room": int(cap_room),
+                "salary_cap": NBA_SALARY_CAP_2025_26,
+                "luxury_tax": NBA_LUXURY_TAX_2025_26,
+                "first_apron": NBA_FIRST_APRON_2025_26,
+                "second_apron": NBA_SECOND_APRON_2025_26,
+                "matching_buffer": NBA_TRADE_MATCH_BUFFER,
+                "expanded_tpe_increment": NBA_EXPANDED_TPE_INCREMENT_2025_26,
+            },
+            "players": {
+                "counted_outgoing": counted_outgoing,
+                "default_correction": default_correction,
+                "incoming": incoming_names,
+                "outgoing_missing_salary": outgoing_missing,
+                "incoming_missing_salary": incoming_missing,
+            },
         }
 
     def _build_player_impact_baselines(self) -> dict[str, float]:
@@ -1365,6 +1538,7 @@ class AppState:
             "team": team_projection,
             "outgoing": valid_outgoing,
             "incoming": valid_incoming,
+            "trade_rule_check": self._build_trade_rule_check(team, valid_outgoing, valid_incoming),
             "players": serialized,
         }
 
@@ -1386,14 +1560,18 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(body)
 
-    def _send_file(self, path: Path, content_type: str | None = None) -> None:
+    def _send_file(self, path: Path, content_type: str | None = None, cache_control: str | None = None) -> None:
         body = path.read_bytes()
         self.send_response(200)
         self.send_header("Content-Type", content_type or (mimetypes.guess_type(str(path))[0] or "application/octet-stream"))
         self.send_header("Content-Length", str(len(body)))
+        self.send_header("Last-Modified", formatdate(path.stat().st_mtime, usegmt=True))
+        if cache_control:
+            self.send_header("Cache-Control", cache_control)
         self.end_headers()
         self.wfile.write(body)
 
@@ -1401,7 +1579,7 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         if parsed.path in {"/", "/index.html"}:
             METRICS.increment_visit()
-            return self._send_file(STATIC_DIR / "index.html", "text/html; charset=utf-8")
+            return self._send_file(STATIC_DIR / "index.html", "text/html; charset=utf-8", "no-cache")
         if parsed.path.startswith("/assets/"):
             rel_parts = [part for part in parsed.path[len("/assets/"):].split("/") if part]
             if not rel_parts or rel_parts[0] not in PUBLIC_ASSET_DIRS:
@@ -1413,7 +1591,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_error(404)
             if not asset_path.exists() or not asset_path.is_file():
                 return self.send_error(404)
-            return self._send_file(asset_path)
+            return self._send_file(asset_path, cache_control="public, max-age=31536000, immutable")
         if parsed.path == "/api/home":
             return self._send_json(STATE.home_payload())
         if parsed.path == "/api/site_metrics":
